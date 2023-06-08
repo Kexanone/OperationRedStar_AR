@@ -1,0 +1,64 @@
+PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 4882.956 28.595 11789.217
+}
+SCR_BaseGameMode GameMode_ORS : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ components {
+  ORS_LoadtimeEntityDeleterComponent "{5D88EB002F388504}" {
+  }
+  SCR_AutomaticRespawnHandlerComponent "{56B4EA4DA0EEFF85}" {
+   Enabled 0
+  }
+  SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
+   m_sConfigPath "{09F7AAA14A642683}Configs/NameTags/NametagFriendlies.conf"
+  }
+  SCR_RespawnBriefingComponent "{5D881CA8F1FD0221}" {
+  }
+  SCR_RespawnMenuHandlerComponent "{5D881CA9D1B84DFC}" {
+   m_bAllowLoadoutSelection 0
+  }
+  SCR_RespawnTimerComponent "{5D881CA8F9CEADE6}" {
+   m_fRespawnTime 3
+  }
+  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5D881CAFBCCBEFAF}" {
+   m_bRandomStartingDaytime 1
+   m_bRandomStartingWeather 1
+   m_bAllowHeaderSettings 1
+  }
+ }
+ coords 4872.537 28.595 11794.595
+ PlayerControllerPrefab "{D0A048B12BEE9329}Prefabs/Characters/Core/ORS_PlayerControllerMP.et"
+ m_fAutoReloadTime 20
+}
+TagManager TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
+ coords 4883.142 28.595 11791.755
+}
+SCR_FactionManager FactionManager : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ coords 4882.477 28.595 11789.608
+ Factions {
+  SCR_Faction "{56DEAC40D3C2E623}" {
+   m_bIsPlayable 1
+  }
+ }
+ m_bCanChangeFactionsPlayable 0
+}
+RadioManagerEntity RadioManager : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 4886.187 28.595 11790.065
+}
+HitRegistrationManager HitRegManager : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
+ coords 4883.488 28.595 11781.587
+}
+SCR_LoadoutManager LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutManager_Base.et" {
+ coords 4882.66 28.595 11786.305
+ m_aPlayerLoadouts {
+  SCR_PlayerArsenalLoadout "{5D881CA973E24892}" {
+   m_sLoadoutName "#AR-Loadout_Editor_SavedArsenalLoadout_Name"
+   m_sLoadoutResource "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+   m_sAffiliatedFaction "USSR"
+  }
+ }
+}
+SCR_LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
+ coords 4882.921 28.595 11783.896
+}

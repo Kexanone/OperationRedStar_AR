@@ -1,0 +1,9 @@
+SCR_SpawnPoint : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
+ coords 4884.12 28.595 11798.683
+ m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+  Name "Headquarters"
+ }
+}
+GenericEntity : "{EDE6EC8B05227E3E}Prefabs/Systems/Arsenal/ArsenalBoxes/USSR/ArsenalBox_USSR.et" {
+ coords 4887.157 28.595 11793.003
+}
