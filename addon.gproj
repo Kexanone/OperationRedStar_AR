@@ -1,0 +1,8 @@
+GameProject {
+ ID "OperationRedStar"
+ GUID "5D881CA0DC56C71C"
+ TITLE "Operation Red Star"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}
