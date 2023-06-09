@@ -6,6 +6,8 @@
 
 A PvE CTI game mode for Arma Reforger. Inspired by Conflict, Invade & Annex and SOG PF Mike Force.
 
+<img src="https://cdn.pixabay.com/photo/2017/06/16/07/26/under-construction-2408062_1280.png" alt="Under Construction" width="330"/>
+
 ## Features
 
 - [x] Tree removal interaction
