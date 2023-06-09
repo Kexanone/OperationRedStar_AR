@@ -4,7 +4,7 @@
 [![Issues](https://img.shields.io/github/issues-raw/Kexanone/OperationRedStar_AR.svg?label=Issues&style=flat-square)](https://github.com/Kexanone/OperationRedStar_AR/issues)
 [![License](https://img.shields.io/badge/License-APL-orange.svg?style=flat-square)](https://github.com/Kexanone/OperationRedStar_AR/blob/master/LICENSE.md)
 
-A PvE CTI game mode for Arma Reforger. Inspired by Conflict, Invade and Annex and SOG PF Mike Force.
+A PvE CTI game mode for Arma Reforger. Inspired by Conflict, Invade & Annex and SOG PF Mike Force.
 
 ## Features
 
