@@ -4,6 +4,7 @@
 
 modded class SCR_BaseGameMode : BaseGameMode
 {
+	[RplProp(onRplName: "ORS_DeleteInitialEntityPositions")]
 	protected ref array<vector> m_ORS_DeletedEntityPositions = {};
 	protected IEntity m_eORS_NearestEntity;
 	protected vector m_ORS_SearchPos;
@@ -11,11 +12,9 @@ modded class SCR_BaseGameMode : BaseGameMode
 	protected const float ORS_SEARCH_DISTANCE = 0.01;
 	
 	// Ensures that already deleted loadtime entities are deleted for JIPs
-	override void OnPlayerConnected(int playerId)
+	void ORS_DeleteInitialEntityPositions()
 	{
-		super.OnPlayerConnected(playerId);
-		SCR_PlayerController deleteCtrl = SCR_PlayerController.Cast(GetGame().GetPlayerManager().GetPlayerController(playerId));
-		deleteCtrl.Rpc(deleteCtrl.ORS_DeleteInitialEntityPositions, m_ORS_DeletedEntityPositions);
+		ORS_DeleteEntityPositionsLocal(m_ORS_DeletedEntityPositions);
 	};
 	
 	// Deletes loadtime entities for all machines

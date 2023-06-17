@@ -17,6 +17,7 @@ class ORS_RemoveTreeAction : ScriptedUserAction
 		deleterCtrl.ORS_RequestDeleteEntityPosition(pOwnerEntity.GetOrigin());
 	};
 	
+	// Trees have no RplComponent, hence only local scripts will work
 	override bool HasLocalEffectOnlyScript()
 	{
 		return true;
