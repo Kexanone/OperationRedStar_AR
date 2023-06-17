@@ -3,8 +3,6 @@ PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/Perc
 }
 SCR_BaseGameMode GameMode_ORS : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
  components {
-  ORS_LoadtimeEntityDeleterComponent "{5D88EB002F388504}" {
-  }
   SCR_AutomaticRespawnHandlerComponent "{56B4EA4DA0EEFF85}" {
    Enabled 0
   }
@@ -28,7 +26,6 @@ SCR_BaseGameMode GameMode_ORS : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMo
   }
  }
  coords 4872.537 28.595 11794.595
- PlayerControllerPrefab "{D0A048B12BEE9329}Prefabs/Characters/Core/ORS_PlayerControllerMP.et"
  m_fAutoReloadTime 20
 }
 TagManager TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {

@@ -6,11 +6,11 @@ class ORS_RemoveTreeAction : ScriptedUserAction
 		if (!userCtrl)
 			return;
 		
-		ORS_LoadtimeEntityDeleterController deleterCtrl = ORS_LoadtimeEntityDeleterController.Cast(userCtrl.FindComponent(ORS_LoadtimeEntityDeleterController));
+		SCR_PlayerController deleterCtrl = SCR_PlayerController.Cast(GetGame().GetPlayerController());
 		if (!deleterCtrl)
 			return;
 		
-		deleterCtrl.RequestDeleteEntityPosition(pOwnerEntity.GetOrigin());
+		deleterCtrl.ORS_RequestDeleteEntityPosition(pOwnerEntity.GetOrigin());
 	};
 	
 	override bool HasLocalEffectOnlyScript()

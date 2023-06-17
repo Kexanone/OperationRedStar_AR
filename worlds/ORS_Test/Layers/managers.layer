@@ -20,8 +20,6 @@ SCR_BaseGameMode GameMode_ORS : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMo
  components {
   SignalsManagerComponent "{5D883CA4987D5F17}" {
   }
-  ORS_LoadtimeEntityDeleterComponent "{5D88715018D7D0EE}" {
-  }
   SCR_ArsenalManagerComponent "{5D881CADBDE8C0C5}" {
   }
   SCR_AutomaticRespawnHandlerComponent "{56B4EA4DA0EEFF85}" {
@@ -71,7 +69,6 @@ SCR_BaseGameMode GameMode_ORS : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMo
   }
  }
  coords 104.169 1.001 154.723
- PlayerControllerPrefab "{D0A048B12BEE9329}Prefabs/Characters/Core/ORS_PlayerControllerMP.et"
  m_fAutoReloadTime 20
 }
 TagManager TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
