@@ -1,3 +1,7 @@
+/*
+	Tree deletion user action
+*/
+
 class ORS_RemoveTreeAction : ScriptedUserAction
 {
 	override void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity) 
