@@ -6,15 +6,11 @@ class ORS_RemoveTreeAction : ScriptedUserAction
 {
 	override void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity) 
 	{
-		PlayerController userCtrl = GetGame().GetPlayerController();
+		SCR_PlayerController userCtrl = SCR_PlayerController.Cast(GetGame().GetPlayerController());
 		if (!userCtrl)
 			return;
 		
-		SCR_PlayerController deleterCtrl = SCR_PlayerController.Cast(GetGame().GetPlayerController());
-		if (!deleterCtrl)
-			return;
-		
-		deleterCtrl.ORS_RequestDeleteEntityPosition(pOwnerEntity.GetOrigin());
+		userCtrl.Rpc(userCtrl.ORS_RpcAsk_DeleteEntityPosition, pOwnerEntity.GetOrigin());
 	};
 	
 	// Trees have no RplComponent, hence only local scripts will work
