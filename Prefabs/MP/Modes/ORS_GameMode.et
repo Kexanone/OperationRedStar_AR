@@ -1,0 +1,159 @@
+ORS_GameMode : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
+ ID "56B2B479C6B96951"
+ components {
+  SCR_GroupsManagerComponent "{5706EC99934496F5}" {
+   m_sDefaultGroupPrefab "{5D1731EDAA56A96E}Prefabs/Groups/COE_PlayableGroup.et"
+  }
+  SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
+   m_sConfigPath "{09F7AAA14A642683}Configs/NameTags/NametagFriendlies.conf"
+  }
+  SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
+   m_iKillFeedType FULL
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_MenuSpawnLogic "{5D36888CC966608A}" {
+   }
+  }
+  SignalsManagerComponent "{5EB875B09F5373FA}" {
+  }
+  SCR_CommunicationSoundComponent "{5EB875B09F537303}" {
+   Filenames {
+    "{91D53896F5AD5DB4}Sounds/RadioProtocol/RadioProtocol_CombatPatrol_US.acp"
+   }
+  }
+  SCR_ArsenalManagerComponent "{5EB875B09F537301}" {
+  }
+  SCR_CampaignBuildingManagerComponent "{5EB86693D635A9C7}" {
+   m_sFreeRoamBuildingClientTrigger "{5E191CEAF4B95816}Prefabs/MP/FreeRoamBuildingClientTrigger.et"
+   m_BudgetType CAMPAIGN
+   m_iCompositionRefundPercentage 100
+   m_iXpRewardTreshold 0
+   m_OutlineManager SCR_CampaignBuildingCompositionOutlineManager "{5D7A73031D9A11E1}" {
+   }
+   m_sPrefabsToBuildResource "{AD18A21685585CAC}Configs/Editor/PlaceableEntities/Compositions/ORS_FreeRoamBuilding.conf"
+  }
+  SCR_CommandingManagerComponent "{5EB875B09F53730F}" {
+  }
+  SCR_CompositionSlotManagerComponent "{5EB875B09F53730E}" {
+  }
+  SCR_DebriefingScreenComponent "{5EB875B09F537309}" {
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_DebriefingScreenUnevenFourTiles "{5EB875B09F537316}" {
+    m_TopLeftTile SCR_DebriefingScreenBigImageContent "{5EB875B09F537314}" {
+     m_sContentImage "{DE06FBCB3D1D9E6E}gfx/preview.edds"
+    }
+    m_TopRightTile SCR_DebriefingScreenFinishedObjectivesContent "{5EB875B09F537312}" {
+     m_sTitleText "#AR-DebriefingScreen_Objectives"
+    }
+    m_BottomLeftTile SCR_DebriefingScreenSummaryContent "{5EB875B09F537310}" {
+     m_sTitleText "#AR-DebriefingScreen_Debriefing"
+     m_sSubtitleText "#AR-DebriefingScreen_Subtitle"
+    }
+    m_BottomRightTile SCR_DebriefingScreenStatisticsContent "{5EB875B09F53731F}" {
+     m_sTitleText "#AR-DebriefingScreen_Statistics"
+     m_aStatistics {
+      SCR_DebriefingScreenStatisticShotsFired "{5EB875B09F53731B}" {
+      }
+      SCR_DebriefingScreenStatisticKills "{5EB875B09F53731A}" {
+      }
+      SCR_DebriefingScreenStatisticDeaths "{5EB875B09F537319}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceWalked "{5EB875B09F537327}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceDriven "{5EB875B09F537326}" {
+      }
+     }
+    }
+   }
+  }
+  SCR_GameModeSFManager "{5EB875B09F537324}" {
+  }
+  SCR_RespawnBriefingComponent "{5EB875B09F537320}" {
+   m_Info SCR_UIInfo "{5EB875B09F53732E}" {
+    Description "#CombatScenario_Briefing"
+   }
+   m_aGameModeHints {
+    SCR_HintUIInfo "{5EB875B09F53732C}" {
+     Name "#AR-Workshop_TabName_Briefing"
+     Description "#AR-CombatScenario_Briefing"
+    }
+   }
+   m_aWinConditions {
+    SCR_BriefingVictoryCondition "{5EB875B09F53732A}" {
+     victoryCondition CUSTOM
+     name "#AR-CombatScenario_Intel_Title"
+     description "#AR-CombatScenario_Intel_Title"
+    }
+    SCR_BriefingVictoryCondition "{5EB875B09F537329}" {
+     victoryCondition SEIZE
+     name "#AR-CombatScenario_ClearAreaTask_Title"
+     description "#AR-CombatScenario_ClearAreaTask_Title"
+    }
+    SCR_BriefingVictoryCondition "{5EB875B09F537337}" {
+     victoryCondition GUARD
+     name "#AR-EditableEntity_AIWaypoint_SearchAndDestroy_Name"
+     description "#AR-EditableEntity_AIWaypoint_SearchAndDestroy_Name"
+    }
+    SCR_BriefingVictoryCondition "{5EB875B09F537333}" {
+     name "#AR-CombatScenario_ExfilTask_Title"
+     description "#AR-CombatScenario_ExfilTask_Title"
+    }
+   }
+  }
+  SCR_RespawnTimerComponent "{5EB875B09F53733D}" {
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5EB875B09F53733B}" {
+   m_bRandomStartingDaytime 1
+   m_bRandomStartingWeather 1
+   m_bAllowHeaderSettings 1
+  }
+  SCR_WelcomeScreenComponent "{5EB875B09F537339}" {
+   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5EB875B09F537338}" {
+    m_LeftColumn SCR_WelcomeScreenFactionContent "{5EB875B09F537347}" {
+     m_sTitleText "#AR-DeployScreen_AvailableFactionsTitle"
+     m_sBottomTitleText "#AR-DeployScreen_MoreFactions"
+    }
+    m_MiddleColumn SCR_WelcomeScreenMissionObjectivesContent "{5EB875B09F537345}" {
+     m_sTitleText "Possible Objectives"
+     m_aMissionObjectives {
+      SCR_WelcomeScreenMissionObjectives "{5EB875B09F537344}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-CombatScenario_Kill_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5EB875B09F537343}" {
+       m_sObjectiveQuadName "Custom"
+       m_sDescription "#AR-CombatScenario_Intel_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5EB875B09F537342}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-CombatScenario_ClearAreaTask_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5EB875B09F537341}" {
+       m_sObjectiveQuadName "Defend"
+       m_sDescription "#AR-Commanding_Command_SaD"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5EB875B09F537340}" {
+       m_sObjectiveQuadName "GetOut"
+       m_sDescription "#AR-CombatScenario_ExfilTask_Title"
+      }
+     }
+    }
+    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5EB875B09F53734E}" {
+     m_sTitleText "Introduction"
+     m_aIntroduction {
+      SCR_WelcomeScreenIntroduction "{5EB875B09F53734D}" {
+       m_sContentImage "{DE06FBCB3D1D9E6E}gfx/preview.edds"
+       m_sContentTitleText "#AR-Workshop_TabName_Briefing"
+       m_sContentDescriptionText "#AR-CombatScenario_Briefing"
+      }
+     }
+    }
+   }
+  }
+  SerializerInventoryStorageManagerComponent "{5EB875B09F53734B}" {
+  }
+ }
+ PlayerControllerPrefab "{BF6438F6F5CD15E3}Prefabs/Characters/Core/ORS_PlayerController.et"
+ m_bAutoPlayerRespawn 0
+ m_fAutoReloadTime 30
+}

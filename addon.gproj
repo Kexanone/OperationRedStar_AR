@@ -3,6 +3,6 @@ GameProject {
  GUID "5D881CA0DC56C71C"
  TITLE "Operation Red Star"
  Dependencies {
-  "58D0FB3206B6F859"
+  "5E6EFC469852BFC2" "58D0FB3206B6F859"
  }
 }

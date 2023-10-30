@@ -1,0 +1,10 @@
+ORS_BaseTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
+ ID "54C6755D430721B8"
+ components {
+  SCR_MapDescriptorComponent "{54C6755D2955E709}" {
+   ForceGroupScale 1
+  }
+ }
+ m_sName "Seize %1"
+ m_sDescription "Seek and destroy installations and hold the area."
+}

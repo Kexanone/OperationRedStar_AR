@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{7D0C0B23F2608D50}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/ORS_SupplyShippingContainers_01_10ft.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

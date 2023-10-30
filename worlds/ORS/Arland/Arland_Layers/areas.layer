@@ -1,0 +1,15 @@
+$grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" {
+ AO_Beauregard {
+  coords 3177.308 11.691 2764.914
+  angleX 0.895
+  angleZ -0.895
+  m_fAreaRadius 600
+ }
+ AO_Arleville {
+  coords 2750.78 77.387 1630.55
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 600
+ }
+}

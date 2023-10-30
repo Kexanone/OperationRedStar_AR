@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{53E5D391DE04A98A}Prefabs/Compositions/Installation/USSR/ORS_R404_Antenna.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

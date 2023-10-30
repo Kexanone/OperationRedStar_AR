@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{2FF27BCE04A24E52}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

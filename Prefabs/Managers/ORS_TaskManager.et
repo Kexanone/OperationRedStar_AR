@@ -1,0 +1,66 @@
+SCR_BaseTaskManager {
+ ID "5EBA679FBEF37162"
+ components {
+  SCR_TextsTaskManagerComponent "{58F09D2393A7D715}" : "{6F59CB11B5383430}Prefabs/MP/Managers/Tasks/TaskManagerComponent.ct" {
+  }
+  SCR_UITaskManagerComponent "{523EEBD95FFA676F}" {
+  }
+  RplComponent "{523EEBD95FFA6799}" {
+   Streamable Disabled
+  }
+ }
+ coords 801.915 39.01 2614.053
+ {
+  SCR_ScenarioFrameworkTaskClearAreaSupportEntity {
+   ID "5EBA679FBEF34F4C"
+   coords -6 0 -6
+   m_sTaskPrefab "{A5E8E68E46D3E064}Prefabs/ScenarioFramework/Tasks/TaskClearArea.et"
+  }
+  SCR_ScenarioFrameworkTaskDefendSupportEntity {
+   ID "5EBA679FBEF34F4B"
+   coords 0.243 0 0.04
+  }
+  SCR_ScenarioFrameworkTaskDeliverSupportEntity {
+   ID "5EBA679FBEF336E2"
+   coords -5 0 -5
+   m_sTaskPrefab "{9DDDA4BB387EC0B6}Prefabs/ScenarioFramework/Tasks/TaskDeliver.et"
+  }
+  SCR_ScenarioFrameworkTaskDestroySupportEntity {
+   ID "5EBA679FBEF3341A"
+   coords -4 0 -4
+   m_sTaskPrefab "{2BA67286E2C06835}Prefabs/ScenarioFramework/Tasks/TaskDestroy.et"
+  }
+  SCR_ScenarioFrameworkTaskExtractSupportEntity {
+   ID "5EBA679FBEF33419"
+   coords -3 0 -3
+   m_sTaskPrefab "{6829FAD588965A88}Prefabs/ScenarioFramework/Tasks/TaskExtract.et"
+  }
+  SCR_ScenarioFrameworkTaskKillSupportEntity {
+   ID "5EBA679FBEF2C481"
+   coords -1.442 0 -1.163
+   m_sTaskPrefab "{CD66837DD5606573}Prefabs/ScenarioFramework/Tasks/TaskKill.et"
+  }
+  SCR_ScenarioFrameworkTaskSupportEntity {
+   ID "5EBA679FBEF28891"
+   coords 2503.309 147.787 2255.878
+  }
+  SCR_EditorTaskSupportEntity : "{0FEB5AC6942C7F6E}Prefabs/Tasks/SupportEntities/ORS_BuildFobTaskSupportEntity.et" {
+   ID "5EBA679FBEF288FC"
+   coords 0 0 0
+  }
+  SCR_TriggerTaskSupportEntity : "{4C8DA18200A21299}Prefabs/Tasks/SupportEntities/TriggerTaskSupportEntity.et" {
+   ID "5EBA679FBEF28889"
+  }
+  SCR_EditorTaskSupportEntity : "{CB9D29FD69ABF3F3}Prefabs/Tasks/SupportEntities/EditorTaskSupportEntity.et" {
+   ID "5EBA679FBEF28888"
+  }
+  SCR_EditorTaskSupportEntity : "{CF2F1B6A7BAF9EE2}Prefabs/Tasks/SupportEntities/ORS_SeizeTaskSupportEntity.et" {
+   ID "5EBA679FBEF28880"
+   coords 0 0 0
+   m_sTaskPrefab "{A7315BBDDAB4EF1F}Prefabs/Tasks/ORS_SeizeTask.et"
+  }
+  SCR_BaseTaskSupportEntity : "{F927E136363469D2}Prefabs/Tasks/SupportEntities/BaseTaskSupportEntity.et" {
+   ID "5EBA679FBEF28887"
+  }
+ }
+}

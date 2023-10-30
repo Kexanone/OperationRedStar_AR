@@ -1,0 +1,232 @@
+GenericEntity : "{6E9190BC2713551D}Prefabs/Compositions/Slotted/BuildableComposition_Base.et" {
+ ID "5282DCB5DFC8538F"
+ components {
+  RigidBody "{5E96A067A67C5029}" {
+   Geometries {
+    PhysicsBoxGeometry UserAction {
+     Extents 12 0.5 12
+    }
+   }
+  }
+  Hierarchy "{5DC704E5281F8CCA}" {
+   Enabled 1
+  }
+ }
+ coords 3269.49 2.115 2877.144
+ angleX -0.895
+ angleZ 0.895
+ {
+  GenericEntity : "{00B3E3FD05C85DBD}Prefabs/Structures/Military/CamoNets/FIA/CamoNet_Small_Top_FIA_01_V1.et" {
+   ID "5EBB239875250D5A"
+   coords -3.221 0.1 0.409
+   angleY -24.445
+  }
+  GenericEntity : "{114DE81321786CD9}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01_PKM.et" {
+   ID "5EBB2398752593BF"
+   coords 1.398 0.022 7.383
+   angleX 0.895
+   angleY -0.014
+   angleZ -0.895
+   {
+    GenericEntity {
+     ID "5CCCBEDC9EB8023A"
+     {
+      Turret {
+       ID "5CC6B4BEF18D0296"
+       components {
+        SCR_BaseCompartmentManagerComponent "{51ACFBB07A14CFA6}" {
+         CompartmentSlots {
+          TurretCompartmentSlot TurretCompartment {
+           m_DefaultOccupantData SCR_DefaultOccupantData "{59BAA9F0962E63A3}" {
+            m_sDefaultOccupantPrefab "{84B40583F4D1B7A3}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Rifleman.et"
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  GenericEntity : "{24F98A215FAA249C}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_FIA.et" {
+   ID "5EBB239875250D56"
+   components {
+    Hierarchy "{5E331960E230F13B}" {
+    }
+   }
+   coords -6.198 0 2.094
+   angleX 1.351
+   angleY 7.156
+   angleZ -1.061
+  }
+  GenericEntity : "{424A7D535B73C7FF}Prefabs/Compositions/Misc/SubCompositions/Storage/Slotted/Storage_Supplies_FIA_05.et" {
+   ID "5EBB239875250D53"
+   coords -2.335 0.001 -2.332
+  }
+  $grp StaticModelEntity : "{48A04E0A139BB167}Prefabs/Structures/Military/Camps/TentSmallFIA_01/TentSmallFIA_01.et" {
+   {
+    ID "5EBB239875250D28"
+    components {
+     Hierarchy "{5D6477362F0B2BFF}" {
+      Enabled 1
+     }
+    }
+    coords -5.972 0 -0.629
+    angleY -106.283
+   }
+   {
+    ID "5EBB23987525C6AD"
+    components {
+     Hierarchy "{5D6477362F035B93}" {
+      Enabled 1
+     }
+    }
+    coords 2.534 0 -4.901
+    angleY 6.462
+   }
+  }
+  GenericEntity : "{6CD65604C7945A66}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_03.et" {
+   ID "5EBB23987525C6A2"
+   coords -2.327 0 -0.556
+   angleY -17.688
+  }
+  GenericEntity : "{740D9BB1621387C5}Prefabs/Systems/Compositions/GameLogic/GameLogic_RallyPoint.et" {
+   ID "5EBB23987525C6A5"
+   components {
+    Hierarchy "{5D6477362F3BB344}" {
+     Enabled 1
+    }
+   }
+   coords 1.345 0 7.352
+  }
+  GenericEntity : "{795D20A26B62F82F}Prefabs/Compositions/Misc/SubCompositions/Tents/Tent_Barracks_FIA_01.et" {
+   ID "5EBB23987525C6A7"
+   coords 1.397 0 0
+  }
+  GenericEntity : "{7A40BF128BB47EFD}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01.et" {
+   ID "5EBB2398752593B1"
+   coords 5.518 -0.11 -7.176
+   angleX -0.044
+   angleY 136.977
+   angleZ 1.265
+   {
+    GenericEntity {
+     ID "5CCCBEDC9EB8023A"
+     {
+      Turret {
+       ID "5CC6B4BEF18D0296"
+       components {
+        SCR_BaseCompartmentManagerComponent "{51ACFBB07A14CFA6}" {
+         CompartmentSlots {
+          TurretCompartmentSlot TurretCompartment {
+           m_DefaultOccupantData SCR_DefaultOccupantData "{59BAA9F0962E63A3}" {
+            m_sDefaultOccupantPrefab "{84B40583F4D1B7A3}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Rifleman.et"
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  GenericEntity : "{7FD0B9852EFAC033}Prefabs/Props/Military/Compositions/FIA/PersonnelService_FIA_Small.et" {
+   ID "5EBB23987525C68C"
+   coords -2.961 0 2.155
+   angleY -107.154
+  }
+  GenericEntity : "{894A1AFDCB71CD0D}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_02.et" {
+   ID "5EBB23987525C68D"
+   coords 0.797 0 4.758
+  }
+  GenericEntity : "{C0D09A53EEA441D6}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_US_02.et" {
+   ID "5EBB239875259347"
+   coords -8.365 0.028 -6.076
+   angleX 1.252
+   angleY -126.836
+   angleZ 0.18
+   {
+    GenericEntity {
+     ID "5CCCBEC480BAEE00"
+     {
+      Turret {
+       ID "5CB0D9912FD9E690"
+       components {
+        SCR_BaseCompartmentManagerComponent "{51ACFBB07A14CFA6}" {
+         CompartmentSlots {
+          TurretCompartmentSlot TurretCompartment {
+           m_DefaultOccupantData SCR_DefaultOccupantData "{59BAA9F0A2B5D5D1}" {
+            m_sDefaultOccupantPrefab "{84B40583F4D1B7A3}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Rifleman.et"
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  $grp GenericEntity : "{CC66836BF4E211F9}Prefabs/Props/Military/Camps/Duckboard_01.et" {
+   {
+    ID "5EBB2398752593A6"
+    components {
+     Hierarchy "{5D6477362F284123}" {
+      Enabled 1
+     }
+    }
+    coords -3.362 0 4.579
+    angleY 43.759
+   }
+   {
+    ID "5EBB23987525C680"
+    components {
+     Hierarchy "{5D6477362F301C6E}" {
+      Enabled 1
+     }
+    }
+    coords -4.059 0 0.989
+    angleY -9.794
+   }
+  }
+  StaticModelEntity : "{CF84120477F3A54E}Prefabs/Compositions/Misc/SubCompositions/Furniture/Chair_Light_USSR_01.et" {
+   ID "5EBB2398752593A4"
+   coords -2.728 0 3.488
+   angleY -19.748
+  }
+  GenericEntity : "{E105D2F87098E1D8}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_LoiterPoint.et" {
+   ID "5EBB2398752593A2"
+   components {
+    Hierarchy "{5D6477362F20ABAB}" {
+     Enabled 1
+    }
+   }
+   coords -5.66 0 -2.415
+   angleY 82.422
+  }
+  $grp GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+   {
+    ID "5EBB2398752593A0"
+    components {
+     Hierarchy "{5D6477362F515EAB}" {
+      Enabled 1
+     }
+    }
+    coords 4.916 0 4.764
+    angleY -101.313
+   }
+   {
+    ID "5EBB2398752593A3"
+    components {
+     Hierarchy "{5D6477362F590C3A}" {
+      Enabled 1
+     }
+    }
+    coords -6.766 0 2.968
+    angleY -68.657
+   }
+  }
+ }
+}

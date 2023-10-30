@@ -1,0 +1,12 @@
+Vehicle : "{DC1C2350CF665F9E}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_FIA_tanker.et" {
+ ID "BBCBA43A9778AE21"
+ coords 3271.27 2.003 2885.71
+ angleX -0.895
+ angleZ 0.895
+ {
+  GenericEntity : "{33E3D08C2B13A817}Prefabs/Structures/Military/CamoNets/FIA/ORS_CamoNet_Medium_FIA_01_V2.et" {
+   ID "5EBA85239FB525AA"
+   coords -0.203 0 -0.646
+  }
+ }
+}

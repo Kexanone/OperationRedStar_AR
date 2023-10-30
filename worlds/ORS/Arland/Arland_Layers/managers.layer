@@ -1,0 +1,143 @@
+SCR_AIWorld AIWorld : "{01DC74137CFDDB6A}Prefabs/AI/SCR_AIWorld_Arland.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5EBB2380276E7973}" {
+     NavmeshFile "{D8EF7131FB31AF97}worlds/GameMaster/Navmeshes/GM_Arland.nmn"
+    }
+   }
+  }
+ }
+ coords 1374.906 38.991 2820.59
+}
+PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 1383.184 39 2822.974
+}
+TagManager TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
+ coords 1378.222 39.214 2824.714
+}
+ORS_GameMode ORS_GameMode : "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et" {
+ coords 1362.228 38.01 2886.429
+ m_aObjectiveAreaNames {
+  "AO_Arleville" "AO_Beauregard"
+ }
+}
+RadioManagerEntity RadioManager : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 423.82 -11.981 2367.603
+}
+SCR_CampaignFactionManager FactionManager : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+ coords 1384.026 38.01 2888.961
+ Factions {
+  SCR_CampaignFaction "{50B30C3AF4BFD934}" {
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C9E82F285C09E24}" {
+     m_aEntityEntryList {
+      SCR_EntityCatalogEntry "{5D2348260FAC0091}" {
+       m_bEnabled 0
+      }
+      SCR_EntityCatalogEntry "{5D2348264A1BDEA3}" {
+       m_bEnabled 0
+      }
+      SCR_EntityCatalogEntry "{5E48B2F67C89A886}" {
+       m_bEnabled 0
+      }
+     }
+    }
+   }
+  }
+  SCR_CampaignFaction "{50B30C3ADB052C80}" {
+   m_bIsPlayable 0
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C9E82F29B327997}" {
+     m_aEntityEntryList {
+      SCR_EntityCatalogEntry "{5D23482664F150D9}" {
+       m_bEnabled 0
+      }
+      SCR_EntityCatalogEntry "{5D23482661E39833}" {
+       m_bEnabled 0
+      }
+      SCR_EntityCatalogEntry "{5E48B2F63A087FE5}" {
+       m_bEnabled 0
+      }
+     }
+    }
+   }
+  }
+ }
+}
+ScriptedChatEntity ChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity.et" {
+ coords 309.42 -12.981 2261.12
+ Flags 0
+}
+COE_VehicleSpawnManager VehicleSpawnManager : "{03A3F74C83B9255B}Prefabs/Managers/COE_VehicleSpawnManager.et" {
+ coords 1376.472 39 2818.856
+ m_fDesertedPlayerDistance 25
+}
+HitRegistrationManager HitRegManager : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
+ coords 1381.321 39 2821.325
+}
+SCR_LoadoutManager LoadoutManager : "{4193EDCF6585A770}Prefabs/MP/Managers/COE_LoadoutManager.et" {
+ coords 1381.428 39.079 2824.488
+}
+SCR_BaseTaskManager TaskManager : "{42922D9971F7C251}Prefabs/Managers/ORS_TaskManager.et" {
+ coords 1282.198 39.01 2857.361
+}
+COE_ObjectiveManager ObjectiveManager : "{973B5090288C8ADC}Prefabs/Managers/COE_ObjectiveManager.et" {
+ coords 1370.072 40.01 2665.523
+ m_aLocationConfigs {
+  COE_FreeRoamingLocationConfig "{5E7B42E9CB2B02CF}" {
+   m_bWeight 42
+   m_fMaxDistanceMainBase 10000
+  }
+  COE_PrefabLocationConfig "{5E7B42D1349C35C1}" {
+   m_bWeight 18
+   m_fMaxDistanceMainBase 10000
+  }
+  COE_SlotLocationConfig "{5E7B42D0793541FB}" {
+   m_bWeight 10
+   m_fMaxDistanceMainBase 10000
+  }
+  COE_NamedLocationConfig "{5E7D7A70CD6A5F2A}" {
+   m_sComment "Towns"
+   m_bWeight 12
+   m_fMaxDistanceMainBase 10000
+   m_aNamedLocations {
+    "C_Location_St_Pierre" "C_LocationChotain" "C_LocationDurras" "C_LocationEntreDeux" "C_LocationErquy" "C_LocationFigari" "C_LocationGravette" "C_LocationLamentin" "C_LocationLaruns" "C_LocationLeMoule" "C_LocationLevie" "C_LocationMeaux" "C_LocationMontignac" "C_LocationMorton" "C_LocationProvins" "C_LocationRegina" "C_LocationStPhilippe" "C_LocationTyrone" "C_LocationVernon" "C_LocationVilleneuve"
+   }
+  }
+  COE_NamedLocationConfig "{5E8F1CE937D132EA}" {
+   m_bWeight 3
+   m_fMaxDistanceMainBase 10000
+   m_aNamedLocations {
+    "G_Military" "G_Military2" "G_Military3" "G_Military4" "G_Military5" "G_Military6"
+   }
+  }
+  COE_NamedLocationConfig "{5E8F1CE955E96A2B}" {
+   m_bWeight 3
+   m_fMaxDistanceMainBase 10000
+   m_aNamedLocations {
+    "G_Harbour" "G_Harbour2" "G_Harbour3" "G_Harbour4" "G_Harbour5" "G_Harbour6"
+   }
+  }
+  COE_NamedLocationConfig "{5E8F1CE953563688}" {
+   m_bWeight 3
+   m_fMaxDistanceMainBase 10000
+   m_aNamedLocations {
+    "G_Industrial" "G_Industrial3" "G_Sawmill" "G_Quarry" "G_Landfill"
+   }
+  }
+ }
+ m_aTaskConfigs {
+  COE_TaskClearAreaConfig "{5E83606A455304A0}" {
+  }
+  COE_TaskDestroyConfig "{5E83606AACFAFC49}" {
+  }
+  COE_TaskDestroyConfig "{5E8360688CB4482C}" {
+  }
+  COE_TaskKillConfig "{5E83606A43AC974F}" {
+  }
+  COE_TaskDeliverIntelConfig "{5E83606A41749631}" {
+   m_bEnabled 1
+  }
+ }
+}

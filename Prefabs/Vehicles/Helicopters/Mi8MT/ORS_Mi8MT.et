@@ -1,0 +1,70 @@
+Vehicle : "{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT.et" {
+ ID "5A7CEB06421662F8"
+ components {
+  SCR_CampaignBuildingProviderComponent "{5EB875A6FD56F666}" {
+   m_bUserActionActivationOnly 1
+   m_fBuildingRadius 25
+   m_iMaxPropValue 1200
+   m_aAvailableTraits {
+    904
+   }
+  }
+  SlotManagerComponent "{55BCE45E438E4CFF}" {
+   Slots {
+    RegisteringComponentSlotInfo SeatsRear {
+    }
+    RegisteringComponentSlotInfo SupplyStorage_01 {
+     Offset -0.8089 1.1518 -2.2147
+     Angles 0 -90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_02 {
+     Offset 0.8089 1.1518 -2.3519
+     Angles 0 90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_03 {
+     Offset -0.8089 1.1518 -1.3883
+     Angles 0 -90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_04 {
+     Offset 0.8089 1.1518 -1.5383
+     Angles 0 90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+    }
+    RegisteringComponentSlotInfo Supplystorage_05 {
+     Offset -0.8089 1.1518 -0.493
+     Angles 0 -90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo Supplystorage_06 {
+     Offset 0.8089 1.1518 -0.6394
+     Angles 0 90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo Supplystorage_07 {
+     Offset -0.8089 1.1518 0.3398
+     Angles 0 -90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo Supplystorage_08 {
+     Offset 0.8089 1.1518 0.1819
+     Angles 0 90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+   }
+  }
+  SCR_ResourceComponent "{5E429668F7A8358A}" {
+   m_aContainers {
+    SCR_ResourceContainer "{5E42966B382452A6}" {
+     m_fResourceValueMax 0
+    }
+   }
+  }
+ }
+}

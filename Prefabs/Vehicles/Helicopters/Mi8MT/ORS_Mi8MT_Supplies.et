@@ -1,0 +1,110 @@
+Vehicle : "{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT.et" {
+ ID "5A7CEB06421662F8"
+ components {
+  SCR_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
+   m_bUserActionActivationOnly 1
+   m_fBuildingRadius 25
+   m_iMaxPropValue 1200
+   m_aAvailableTraits {
+    230
+   }
+  }
+  SlotManagerComponent "{55BCE45E438E4CFF}" {
+   Slots {
+    RegisteringComponentSlotInfo SeatsRear {
+     Enabled 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_01 {
+     Offset -0.56 1.0177 -2.4617
+     Angles 0 -90 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_02 {
+     Offset 0.53 1.0177 -2.4617
+     Angles 0 90 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_03 {
+     Offset 0.53 1.0177 -1.3095
+     Angles 0 90 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_04 {
+     Offset -0.56 1.0177 -1.3095
+     Angles 0 -90 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_05 {
+     Offset 0.55 1.0177 -0.166
+     Angles 0 90 0
+     Prefab "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo SupplyStorage_06 {
+     Offset -0.5 1.0177 -0.1359
+     Angles 0 -90 0
+     Prefab "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo SupplyStorage_07 {
+     Offset 0.566 1.0177 0.8904
+     Angles 0 -90 0
+     Prefab "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo SupplyStorage_08 {
+     Offset -0.5 1.0177 0.8904
+     Angles 0 90 0
+     Prefab "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+   }
+  }
+  ActionsManagerComponent "{C97BE5489221AE18}" {
+   additionalActions {
+    SCR_CampaignBuildingStartUserAction "{5EB8669114C65B44}" {
+     ParentContextList {
+      "door_l01"
+     }
+     UIInfo UIInfo "{5EB86691204A1630}" {
+      Name "START BUILDING FOB"
+     }
+     Duration 2
+     "Sort Priority" 23
+    }
+   }
+  }
+  SCR_ResourceComponent "{5E429668F7A8358A}" {
+   m_aContainers {
+    SCR_ResourceContainer "{5E42966B382452A6}" {
+     m_fResourceValueMax 0
+    }
+   }
+   m_aGenerators {
+    SCR_ResourceGenerator "{5EB8B5AA66EF6DA0}" {
+     m_sDebugName "Generator - Engineer Helo"
+     m_eResourceRights ALL
+     m_fStorageRange 25
+     m_ContainerQueue SCR_ResourceGeneratorContainerQueue "{5EB8B5AB86BF1113}" {
+      m_StoragePolicies {
+       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB809D86BB}" {
+        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5AB9587324A}" {
+        }
+        m_eStorageType CARGO_VEHICLE
+       }
+       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB8FB25BBC}" {
+        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5AB9939A5FC}" {
+        }
+        m_eStorageType STORED
+       }
+       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB88E4C089}" {
+        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5ABA5BD4E4D}" {
+        }
+       }
+      }
+     }
+     m_aActions {
+      SCR_ResourceGeneratorActionStore "{5EB8B5AA7DB4D5C0}" {
+      }
+     }
+    }
+   }
+  }
+ }
+}

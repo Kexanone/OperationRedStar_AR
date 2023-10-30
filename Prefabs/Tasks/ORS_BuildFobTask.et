@@ -1,0 +1,12 @@
+ORS_BaseTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
+ ID "54C6755D430721B8"
+ components {
+  SCR_MapDescriptorComponent "{54C6755D2955E709}" {
+   ForceGroupScale 1
+  }
+ }
+ m_sName "Build FOB near %1"
+ m_sDescription "Create a FOB in the objective area."
+ m_sMapIconName "Icon_Task_Build"
+ m_sTaskListIconName "Icon_Task_Build"
+}

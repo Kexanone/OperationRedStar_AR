@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{2E370B9717DF71B8}Prefabs/Compositions/Installation/FIA/ORS_Ural4320_FIA_tanker.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}
