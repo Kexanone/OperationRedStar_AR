@@ -1,10 +1,10 @@
 //------------------------------------------------------------------------------------------------
-class ORS_BaseTaskSupportEntityClass: SCR_BaseTaskSupportEntityClass
+class ORS_LocationBaseTaskSupportEntityClass: SCR_BaseTaskSupportEntityClass
 {
-};
+}
 
 //------------------------------------------------------------------------------------------------
-class ORS_BaseTaskSupportEntity : SCR_BaseTaskSupportEntity
+class ORS_LocationBaseTaskSupportEntity : SCR_BaseTaskSupportEntity
 {
 	//------------------------------------------------------------------------------------------------
 	SCR_BaseTask CreateTask(vector pos)
@@ -43,4 +43,4 @@ class ORS_BaseTaskSupportEntity : SCR_BaseTaskSupportEntity
 		return string.Format(task.GetTitle(), nearestLocation.GetDisplayName());
 		
 	}
-};
+}

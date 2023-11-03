@@ -1,0 +1,271 @@
+GenericEntity ORS_MainBase {
+ coords 4896.191 28.594 11817.401
+ {
+  GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+   components {
+    SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+     m_bOrientChildrenToTerrain 0
+    }
+    SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+     m_aContainers {
+      SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+       m_vBoundingVolumeMins -2.711 0 -1.989
+       m_vBoundingVolumeMaxs 2.585 1.367 2.221
+      }
+     }
+     m_aEncapsulators {
+      SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+       m_aActions {
+        SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+         m_bEnableResourceGain 1
+         m_fResourceGain 900
+         m_fResourceGainTickrate 3600
+        }
+       }
+      }
+     }
+    }
+    Hierarchy "{5DE29DEA80C1E29B}" {
+    }
+   }
+   coords -11.979 0 34.522
+   {
+    $grp GenericEntity : "{7D0C0B23F2608D50}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/ORS_SupplyShippingContainers_01_10ft.et" {
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -1.532 0 1.831
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -4.268 0 -1.231
+      angleY -180
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -1.559 0 -1.382
+      angleY -180
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 1.054 0 -1.244
+      angleY -180
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 1.128 0 1.82
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 3.64 0 -1.295
+      angleY -180
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 3.714 0 1.767
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -4.187 0 1.65
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -4.159 2.526 1.676
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -1.505 2.526 1.856
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -4.24 2.526 -1.206
+      angleY 180
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -1.531 2.526 -1.356
+      angleY 180
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 1.081 2.526 -1.219
+      angleY 180
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 1.155 2.526 1.846
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 3.667 2.526 -1.27
+      angleY 180
+     }
+     {
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 3.741 2.526 1.792
+     }
+    }
+    GenericEntity : "{E149B20BCA1BC51B}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_USSR.et" {
+     coords 4.983 -0.059 0.223
+     angleY 90
+    }
+   }
+  }
+  GenericEntity : "{AD59EDEAA26CE792}Prefabs/Props/Military/Compositions/USSR/ArsenalBox_USSR.et" {
+   components {
+    SCR_ResourceComponent "{5D7D07D2F7A252D2}" {
+     m_aContainers {
+      SCR_ResourceContainer "{5E9C307BDDE748AD}" {
+       m_eResourceRights SELF
+       m_eStorageType STORED
+       m_fResourceValueCurrent 2147483648
+       m_fResourceValueMax 2147483648
+      }
+     }
+    }
+   }
+   coords 21.035 0.125 19.157
+   angleX -0.479
+   angleY 90
+   angleZ 1.171
+  }
+ }
+}
+SCR_SpawnPoint : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
+ coords 4925.665 28.61 11833.125
+ angleX -1.01
+ angleY -90
+}
+$grp COE_VehicleSpawnSlot : "{737F3D65682DD64F}Prefabs/Spawner/COE_VehicleSpawnSlot.et" {
+ {
+  coords 4883.971 28.594 11870.108
+  angleY -90
+  m_sVehiclePrefabToSpawn "{2FF27BCE04A24E51}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT_Supplies.et"
+ }
+ {
+  coords 4883.971 28.593 11835.245
+  angleY -90
+  m_sVehiclePrefabToSpawn "{2FF27BCE04A24E51}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT_Supplies.et"
+ }
+ {
+  coords 4883.971 28.593 11801.078
+  angleY -90
+  m_sVehiclePrefabToSpawn "{2FF27BCE04A24E52}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT.et"
+ }
+ {
+  coords 4883.971 28.593 11757.89
+  angleY -90
+  m_sVehiclePrefabToSpawn "{2FF27BCE04A24E52}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT.et"
+ }
+}

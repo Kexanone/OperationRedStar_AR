@@ -22,6 +22,9 @@ class ORS_ObjectiveArea : GenericEntity
 	[Attribute(defvalue: "50", desc: "Minimum distance between tasks in meters", category: "Tasks")]
 	protected float m_fMinDistanceBetweenTasks;
 	
+	[Attribute(defvalue: "720", desc: "Final defense duration in seconds", category: "Tasks")]
+	protected int m_iFinalDefenseDuration;
+	
 #ifdef WORKBENCH
 	[Attribute(defvalue: "1", desc: "Show the debug shapes in Workbench", category: "Debug")];
 	protected bool m_bShowDebugShapesInWorkbench;
@@ -42,9 +45,10 @@ class ORS_ObjectiveArea : GenericEntity
 	protected static SCR_CampaignFaction s_EnemyFaction;
 	protected static string s_sFobPrefabName;
 	protected COE_SlotsManagerComponent m_pSlotsManager;
-	protected ref array<IEntity> m_aTargetsToDestroy = {};
-	protected ref array<AIGroup> m_aManagedGroups = {};
-	
+	protected ref array<ref ORS_TargetToDestroyWrapper> m_aTargetsToDestroy = {};
+	protected ORS_AiManagerComponent m_pAiManager;
+	protected IEntity m_pFob;
+
 	//------------------------------------------------------------------------------------------------
 	void ORS_ObjectiveArea(IEntitySource src, IEntity parent)
 	{
@@ -55,6 +59,14 @@ class ORS_ObjectiveArea : GenericEntity
 		m_pArea = COE_CircleArea(m_vAreaCenter, m_fAreaRadius);
 		CreateAreaMarkerLocal();
 	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Only called on the server
+	void Init(bool isFinished = false)
+	{
+		if (isFinished)
+			OnFinished();
+	};
 	
 	//------------------------------------------------------------------------------------------------
 	void CreateAreaMarkerLocal()
@@ -81,7 +93,7 @@ class ORS_ObjectiveArea : GenericEntity
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void Init()
+	void Spawn()
 	{
 		if (!s_PlayerFaction)
 		{
@@ -89,6 +101,9 @@ class ORS_ObjectiveArea : GenericEntity
 			s_EnemyFaction = SCR_CampaignFaction.Cast(GetGame().GetFactionManager().GetFactionByKey("FIA"));
 			s_sFobPrefabName = s_PlayerFaction.GetBuildingPrefab(EEditableEntityLabel.SERVICE_HQ);
 		};
+		
+		m_pAiManager = ORS_AiManagerComponent.Cast(FindComponent(ORS_AiManagerComponent));
+		m_pAiManager.Start();
 		
 		m_pSlotsManager = COE_SlotsManagerComponent.Cast(FindComponent(COE_SlotsManagerComponent));
 		if (!m_pSlotsManager)
@@ -98,22 +113,36 @@ class ORS_ObjectiveArea : GenericEntity
 		
 		SpawnMainTask(ORS_BuildFobTaskSupportEntity);
 		
-		GetGame().GetCallqueue().CallLater(QueryFob, 10000, true);
+		GetGame().GetCallqueue().CallLater(HandleInitialFobBuilt, 10000, true);
 		SpawnHQ();
 		SpawnAssetsToDestroy();
 		SpawnRoadblocks();
 		m_pSlotsManager.PopulateTurrets();
 		SpawnPatrols();
+		SpawnMarksmen();
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	protected void SpawnMainTask(typename supportEntityType)
+	vector GetDefaultMainTaskPosition()
 	{
-		ORS_BaseTaskSupportEntity supportEntity = ORS_BaseTaskSupportEntity.Cast(GetTaskManager().FindSupportEntity(supportEntityType));
+		IEntity child = GetChildren();
+		if (child)
+			return child.GetOrigin();
+		else
+			return GetOrigin();
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	protected void SpawnMainTask(typename supportEntityType, vector pos = vector.Zero)
+	{
+		if (pos == vector.Zero)
+			pos = GetDefaultMainTaskPosition();
+		
+		ORS_LocationBaseTaskSupportEntity supportEntity = ORS_LocationBaseTaskSupportEntity.Cast(GetTaskManager().FindSupportEntity(supportEntityType));
 		if (!supportEntity)
 			return;
 		
-		m_pMainTask = supportEntity.CreateTask(m_vAreaCenter);
+		m_pMainTask = supportEntity.CreateTask(pos);
 		supportEntity.SetTargetFaction(m_pMainTask, s_PlayerFaction);
 	}
 	
@@ -127,12 +156,40 @@ class ORS_ObjectiveArea : GenericEntity
 		params.MaxSlopeAngle = 90;
 		vector transform[4];
 				
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			COE_WorldTools.SampleTransformInArea(transform, sampleArea, {}, params);
 			AIGroup group = COE_GameTools.SpawnGroupPrefab("{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et", transform[3]);
-			COE_AITasks.Patrol(group, m_vAreaCenter, patrolRadius);
-			m_aManagedGroups.Insert(group);
+			COE_AITasks.Patrol(group, GetDefaultMainTaskPosition(), patrolRadius);
+			m_pAiManager.AddGroup(group);
+		};
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	protected void SpawnMarksmen()
+	{
+		Math.Randomize(-1);
+		int count = Math.RandomInt(3, 5);		
+				
+		for (int i = 0; i < count; i++)
+		{
+			COE_AISlotConfig config = m_pSlotsManager.GetRandomMarksmanSlot();
+			if (!config)
+				return;
+			
+			SCR_AIGroup group = SCR_AIGroup.Cast(COE_GameTools.SpawnGroupPrefab("{000CD338713F2B5A}Prefabs/AI/Groups/Group_Base.et"));
+			if (!group)
+				return;
+			
+			group.SetFaction(GetGame().GetFactionManager().GetFactionByKey("FIA"));
+			
+			vector transform[4];
+			config.GetTransform(transform);
+			IEntity entity = COE_GameTools.SpawnPrefab("{CE33AB22F61F3365}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Sharpshooter.et", transform);
+			
+			AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{4C919D3F6F1CD1B8}Prefabs/AI/Waypoints/COE_AIWaypoint_Defend_0m.et", transform[3]);
+			group.AddWaypoint(wp);
+			m_pAiManager.AddGroup(group);
 		};
 	}
 	
@@ -149,7 +206,7 @@ class ORS_ObjectiveArea : GenericEntity
 		AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{05C25B8FADA10C69}Prefabs/AI/Waypoints/ORS_AIWaypoint_Defend_25m.et", hq.GetOrigin());
 		AIGroup group = COE_GameTools.SpawnGroupPrefab("{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et", hq.GetOrigin());
 		group.AddWaypoint(wp);
-		m_aManagedGroups.Insert(group);
+		m_pAiManager.AddGroup(group);
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -193,7 +250,7 @@ class ORS_ObjectiveArea : GenericEntity
 			AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{05C25B8FADA10C69}Prefabs/AI/Waypoints/ORS_AIWaypoint_Defend_25m.et", roadblock.GetOrigin());
 			AIGroup group = COE_GameTools.SpawnGroupPrefab("{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et", roadblock.GetOrigin());
 			group.AddWaypoint(wp);
-			m_aManagedGroups.Insert(group);
+			m_pAiManager.AddGroup(group);
 		};
 	}
 	
@@ -238,46 +295,31 @@ class ORS_ObjectiveArea : GenericEntity
 			
 			m_aExcludedAreas.Insert(COE_CircleArea(slot.GetOrigin(), m_fMinDistanceBetweenTasks));
 			
-			ScriptedDamageManagerComponent objectDmgManager = ScriptedDamageManagerComponent.Cast(target.FindComponent(ScriptedDamageManagerComponent));
-		
-			// Set subjet to child if parent is not destructible
-			if (!objectDmgManager)
-			{
-				target = target.GetChildren();
-				objectDmgManager = ScriptedDamageManagerComponent.Cast(target.FindComponent(ScriptedDamageManagerComponent));
-			};
-			
-			if (objectDmgManager)
-				objectDmgManager.GetOnDamageStateChanged().Insert(OnAssetDamageStateChanged);
-			
-			m_aTargetsToDestroy.Insert(target);
-			
+			m_aTargetsToDestroy.Insert(ORS_TargetToDestroyWrapper(this, target));
+									
 			vector pos;
 			SCR_WorldTools.FindEmptyTerrainPosition(pos, target.GetOrigin(), 10);
 			AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{05C25B8FADA10C69}Prefabs/AI/Waypoints/ORS_AIWaypoint_Defend_25m.et", target.GetOrigin());
 			AIGroup group = COE_GameTools.SpawnGroupPrefab("{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et", pos);
 			group.AddWaypoint(wp);
-			m_aManagedGroups.Insert(group);
+			m_pAiManager.AddGroup(group);
 		}
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void OnAssetDamageStateChanged(EDamageState state)
+	void OnTargetDestroyed(IEntity target)
 	{
-		if (state != EDamageState.DESTROYED)
-			return;
-		
 		m_iNumberOfDestroyedTargets++;
 		
-		if (m_iNumberOfDestroyedTargets < m_iNumberOfDestroyTasks)
+		if (m_iNumberOfDestroyedTargets != m_aTargetsToDestroy.Count())
 			return;
 		
-		m_pMainTask.Finish();
-		ORS_GameMode gameMode = ORS_GameMode.Cast(GetGame().GetGameMode());
-		if (!gameMode)
+		SCR_BaseTaskSupportEntity supportEntity = GetTaskManager().FindSupportEntity(ORS_DestroyTaskSupportEntity);
+		if (!supportEntity)
 			return;
-		
-		gameMode.GenerateNextObjective();
+
+		supportEntity.FinishTask(m_pMainTask);
+		StartFinalDefense();
 	}
 	
 	protected bool IsTaskPositionValid(vector pos)
@@ -304,19 +346,67 @@ class ORS_ObjectiveArea : GenericEntity
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	//! Search for FOBs and complete build task if one has been found
-	protected void QueryFob()
+	array<vector> GetPositionsToDefend()
+	{
+		array<vector> positions = {GetDefaultMainTaskPosition()};
+		
+		foreach (ORS_TargetToDestroyWrapper targetWrapper : m_aTargetsToDestroy)
+		{
+			if (targetWrapper.IsAssetAlive())
+				positions.Insert(targetWrapper.GetAssetOrigin());
+		};
+		
+		return positions;
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	vector GetPositionToAttack()
+	{
+		IEntity fob = GetFob();
+		if (fob)
+			return fob.GetOrigin();
+		else
+			return GetDefaultMainTaskPosition();
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Search for FOB and complete build task if one has been found
+	protected void HandleInitialFobBuilt()
+	{
+		IEntity fob = GetFob();
+		if (!fob)
+			return;
+		
+		SCR_BaseTaskSupportEntity buildSupportEntity = GetTaskManager().FindSupportEntity(ORS_BuildFobTaskSupportEntity);
+		if (!buildSupportEntity)
+			return;
+
+		buildSupportEntity.FinishTask(m_pMainTask);
+		GetGame().GetCallqueue().Remove(HandleInitialFobBuilt);
+		SpawnMainTask(ORS_SeizeTaskSupportEntity);
+		
+		foreach (ORS_TargetToDestroyWrapper targetWrapper : m_aTargetsToDestroy)
+		{
+			targetWrapper.CreateTask();
+		};
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Returns the currenty active FOB in the area
+	protected IEntity GetFob()
 	{
 		float offset = GetBuildingPlacingRadius();
 		vector mins, maxs;
 		GetGame().GetWorld().GetBoundBox(mins, maxs);
 		mins = Vector(m_vAreaCenter[0] - offset, mins[1], m_vAreaCenter[2] - offset);
 		maxs = Vector(m_vAreaCenter[0] + offset, maxs[1], m_vAreaCenter[2] + offset);
-		GetGame().GetWorld().QueryEntitiesByAABB(mins, maxs, QueryFobCallback);
+		m_pFob = null;
+		GetGame().GetWorld().QueryEntitiesByAABB(mins, maxs, QueryGetFobCallback);
+		return m_pFob;
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	protected bool QueryFobCallback(IEntity entity)
+	protected bool QueryGetFobCallback(IEntity entity)
 	{
 		EntityPrefabData prefabData = entity.GetPrefabData();
 		if (!prefabData)
@@ -325,21 +415,42 @@ class ORS_ObjectiveArea : GenericEntity
 		if (prefabData.GetPrefabName() != s_sFobPrefabName)
 			return true;
 		
-		m_pMainTask.Finish();
-		GetGame().GetCallqueue().Remove(QueryFob);
-		SpawnMainTask(ORS_SeizeTaskSupportEntity);
+		m_pFob = entity;
 		return false;
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	void StartFinalDefense()
+	{
+		vector pos = vector.Zero;
+		
+		// Assign defend position to FOB if one exists
+		IEntity fob = GetFob();
+		if (fob)
+			pos = fob.GetOrigin();
+		
+		m_pAiManager.SetMode(ORS_EAiManagementMode.ATTACK);
+		SpawnMainTask(ORS_DefendTaskSupportEntity, pos);		
+		GetGame().GetCallqueue().CallLater(Finish, m_iFinalDefenseDuration*1000);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	void Finish()
 	{
-		SCR_BaseTaskSupportEntity supportEntity = GetTaskManager().FindSupportEntity(ORS_SeizeTaskSupportEntity);
+		SCR_BaseTaskSupportEntity supportEntity = GetTaskManager().FindSupportEntity(ORS_DefendTaskSupportEntity);
 		if (!supportEntity)
 			return;
 
 		supportEntity.FinishTask(m_pMainTask);
 		OnFinished();
+		m_pAiManager.Stop();
+		ScheduleCleanUp();
+		
+		ORS_GameMode gameMode = ORS_GameMode.Cast(GetGame().GetGameMode());
+		if (!gameMode)
+			return;
+		
+		gameMode.SpawnNextObjective();
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -362,6 +473,25 @@ class ORS_ObjectiveArea : GenericEntity
 	//------------------------------------------------------------------------------------------------
 	void ScheduleCleanUp()
 	{
+		array<int> playerIds = {};
+		GetGame().GetPlayerManager().GetPlayers(playerIds);
+		
+		foreach (int playerId : playerIds)
+		{
+			IEntity player = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId);
+			if (!player)
+				continue;
+			
+			if (vector.DistanceXZ(m_vAreaCenter, player.GetOrigin()) > 1000)
+				continue;
+			
+			// There are still players nearby => Delay clean-up
+			GetGame().GetCallqueue().CallLater(ScheduleCleanUp, 60000);
+			return;
+		};
+		
+		// All players have left => Start clean-up
+		m_pAiManager.DeleteGroups();
 	}
 	
 #ifdef WORKBENCH
@@ -396,3 +526,64 @@ class ORS_ObjectiveArea : GenericEntity
 	}
 #endif	
 }
+
+class ORS_TargetToDestroyWrapper : Managed
+{
+	protected ORS_ObjectiveArea m_pArea;
+	protected IEntity m_pAsset;
+	protected ScriptedDamageManagerComponent m_pDamageManager;
+	
+	//------------------------------------------------------------------------------------------------
+	void ORS_TargetToDestroyWrapper(ORS_ObjectiveArea area, IEntity asset)
+	{
+		m_pArea = area;
+		m_pAsset = asset;
+		
+		m_pDamageManager = ScriptedDamageManagerComponent.Cast(asset.FindComponent(ScriptedDamageManagerComponent));
+		if (!m_pDamageManager)
+			m_pDamageManager = ScriptedDamageManagerComponent.Cast(asset.GetChildren().FindComponent(ScriptedDamageManagerComponent));
+		
+		m_pDamageManager.GetOnDamageStateChanged().Insert(OnStateChanged);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	IEntity GetAsset()
+	{
+		return m_pAsset;
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	vector GetAssetOrigin()
+	{
+		return m_pAsset.GetOrigin();
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	bool IsAssetAlive()
+	{
+		return !m_pDamageManager.IsDestroyed();
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	void CreateTask()
+	{
+		if (!IsAssetAlive())
+			return;
+		
+		ORS_DestroyTaskSupportEntity destroySupportEntity = ORS_DestroyTaskSupportEntity.Cast(GetTaskManager().FindSupportEntity(ORS_DestroyTaskSupportEntity));
+		if (!destroySupportEntity)
+			return;
+		
+		destroySupportEntity.CreateTask(m_pAsset);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	void OnStateChanged(EDamageState state)
+	{
+		if (state != EDamageState.DESTROYED)
+			return;
+		
+		m_pDamageManager.GetOnDamageStateChanged().Remove(OnStateChanged);
+		m_pArea.OnTargetDestroyed(m_pAsset);
+	}
+};

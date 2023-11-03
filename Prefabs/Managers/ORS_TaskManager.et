@@ -44,20 +44,28 @@ SCR_BaseTaskManager {
    ID "5EBA679FBEF28891"
    coords 2503.309 147.787 2255.878
   }
-  SCR_EditorTaskSupportEntity : "{0FEB5AC6942C7F6E}Prefabs/Tasks/SupportEntities/ORS_BuildFobTaskSupportEntity.et" {
+  ORS_BuildFobTaskSupportEntity : "{0FEB5AC6942C7F6E}Prefabs/Tasks/SupportEntities/ORS_BuildFobTaskSupportEntity.et" {
    ID "5EBA679FBEF288FC"
    coords 0 0 0
   }
   SCR_TriggerTaskSupportEntity : "{4C8DA18200A21299}Prefabs/Tasks/SupportEntities/TriggerTaskSupportEntity.et" {
    ID "5EBA679FBEF28889"
   }
+  ORS_DefendTaskSupportEntity : "{8B72F7DCA1A8EE0B}Prefabs/Tasks/SupportEntities/ORS_DefendTaskSupportEntity.et" {
+   ID "5EC431361D567622"
+   coords 0 0 0
+  }
   SCR_EditorTaskSupportEntity : "{CB9D29FD69ABF3F3}Prefabs/Tasks/SupportEntities/EditorTaskSupportEntity.et" {
    ID "5EBA679FBEF28888"
   }
-  SCR_EditorTaskSupportEntity : "{CF2F1B6A7BAF9EE2}Prefabs/Tasks/SupportEntities/ORS_SeizeTaskSupportEntity.et" {
+  ORS_SeizeTaskSupportEntity : "{CF2F1B6A7BAF9EE2}Prefabs/Tasks/SupportEntities/ORS_SeizeTaskSupportEntity.et" {
    ID "5EBA679FBEF28880"
    coords 0 0 0
-   m_sTaskPrefab "{A7315BBDDAB4EF1F}Prefabs/Tasks/ORS_SeizeTask.et"
+   m_sTaskPrefab "{328CFB229A6150E0}Prefabs/Tasks/ORS_SeizeTask.et"
+  }
+  ORS_DestroyTaskSupportEntity : "{D6FD561EFC6C27A0}Prefabs/Tasks/SupportEntities/ORS_DestroyTaskSupportEntity.et" {
+   ID "5EC2A82FF44FAE6D"
+   coords 0 0 0
   }
   SCR_BaseTaskSupportEntity : "{F927E136363469D2}Prefabs/Tasks/SupportEntities/BaseTaskSupportEntity.et" {
    ID "5EBA679FBEF28887"

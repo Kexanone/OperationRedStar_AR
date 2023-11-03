@@ -1,9 +1,9 @@
 //------------------------------------------------------------------------------------------------
-class ORS_BuildFobTaskSupportEntityClass : ORS_BaseTaskSupportEntityClass
+class ORS_BuildFobTaskSupportEntityClass : ORS_LocationBaseTaskSupportEntityClass
 {
 };
 
 //------------------------------------------------------------------------------------------------
-class ORS_BuildFobTaskSupportEntity : ORS_BaseTaskSupportEntity
+class ORS_BuildFobTaskSupportEntity : ORS_LocationBaseTaskSupportEntity
 {
 };

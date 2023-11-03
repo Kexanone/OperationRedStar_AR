@@ -223,6 +223,24 @@ GenericEntity ORS_MainBase {
     }
    }
   }
+  GenericEntity : "{AD59EDEAA26CE792}Prefabs/Props/Military/Compositions/USSR/ArsenalBox_USSR.et" {
+   components {
+    SCR_ResourceComponent "{5D7D07D2F7A252D2}" {
+     m_aContainers {
+      SCR_ResourceContainer "{5E9C307BDDE748AD}" {
+       m_eResourceRights SELF
+       m_eStorageType STORED
+       m_fResourceValueCurrent 2147483648
+       m_fResourceValueMax 2147483648
+      }
+     }
+    }
+   }
+   coords -64.178 -0.062 34.333
+   angleX -0.479
+   angleY -22.743
+   angleZ 1.171
+  }
   $grp StaticModelEntity : "{B00E14C07DEE788A}Prefabs/Compositions/Misc/SubCompositions/Utility/Helipad_Lights_USSR_01.et" {
    {
     components {
@@ -286,22 +304,4 @@ $grp COE_VehicleSpawnSlot : "{737F3D65682DD64F}Prefabs/Spawner/COE_VehicleSpawnS
   angleY 165.868
   m_sVehiclePrefabToSpawn "{2FF27BCE04A24E51}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT_Supplies.et"
  }
-}
-GenericEntity : "{AD59EDEAA26CE792}Prefabs/Props/Military/Compositions/USSR/ArsenalBox_USSR.et" {
- components {
-  SCR_ResourceComponent "{5D7D07D2F7A252D2}" {
-   m_aContainers {
-    SCR_ResourceContainer "{5E9C307BDDE748AD}" {
-     m_eResourceRights SELF
-     m_eStorageType STORED
-     m_fResourceValueCurrent 2147483648
-     m_fResourceValueMax 2147483648
-    }
-   }
-  }
- }
- coords 1349.86 37.938 2958.11
- angleX -0.479
- angleY -22.743
- angleZ 1.171
 }

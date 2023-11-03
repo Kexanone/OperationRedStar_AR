@@ -1,0 +1,207 @@
+$grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" {
+ AO_StPhillipe {
+  coords 4443.977 12.869 10733.222
+  angleY -0.042
+  m_fAreaRadius 700
+ }
+ AO_Montignac {
+  coords 4728.745 163.915 6992.467
+  m_fAreaRadius 600
+ }
+ AO_Lamentin {
+  coords 1294.677 37.772 6035.031
+  m_fAreaRadius 600
+ }
+ AO_Morton {
+  coords 5131.696 14.909 4008.951
+  m_fAreaRadius 900
+ }
+ AO_LevieMilitary {
+  coords 7463.378 164.562 4312.788
+  m_fAreaRadius 700
+ }
+ AO_StPierre {
+  coords 9795.618 6.199 1374.404
+  angleX -0.895
+  angleZ 3.576
+  m_fAreaRadius 650
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54DAF869A41}" {
+     }
+    }
+    coords -100.186 4.073 171.11
+    angleX 0.893
+    angleY -0.056
+    angleZ -3.576
+   }
+  }
+ }
+ AO_Regina {
+  coords 7192.021 136.989 2335.309
+  angleX -0.895
+  angleZ 3.576
+  m_fAreaRadius 600
+ }
+ AO_Quarry {
+  coords 8790.764 196.594 3905.052
+  m_fAreaRadius 600
+ }
+ AO_AndreasBeacon {
+  coords 7215.46 41.688 8090.398
+  m_fAreaRadius 750
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54D847A0508}" {
+     }
+    }
+    coords 476.027 -28.72 12.678
+   }
+  }
+ }
+ AO_Kermovan {
+  coords 6093.515 12.203 9873.794
+  m_fAreaRadius 600
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54D9022C513}" {
+     }
+    }
+    coords 259.39 -6.47 -230.583
+   }
+  }
+ }
+ AO_EntreDeux {
+  coords 6036.667 211.816 7256.584
+  m_fAreaRadius 700
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54D894D3088}" {
+     }
+    }
+    coords -281.261 5.522 -200.631
+   }
+  }
+ }
+ AO_PinewoodLake {
+  coords 4535.711 53.436 5839.597
+  m_fAreaRadius 600
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54DA4E26BDA}" {
+     }
+    }
+    coords -57.281 3.188 330.445
+   }
+  }
+ }
+ AO_LeMoule {
+  coords 2684.297 91.848 5359.707
+  m_fAreaRadius 600
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6A5E74A6B380A}" {
+     }
+    }
+    coords -16.59 2.097 23.215
+   }
+  }
+ }
+ AO_Villeneuf {
+  coords 2966.23 70.912 6496.821
+  m_fAreaRadius 600
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54DAAD87412}" {
+     }
+    }
+    coords -125.188 15.488 -156.297
+   }
+  }
+ }
+ AO_Gravette {
+  coords 3946.694 25.966 8065.202
+  m_fAreaRadius 700
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54D94B730B8}" {
+     }
+    }
+    coords -42.038 -10.643 380.161
+   }
+  }
+ }
+ AO_MeauxTyrone {
+  coords 4853.933 15.548 9386.428
+  m_fAreaRadius 700
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54C2EAB996A}" {
+     }
+    }
+    coords -333.58 -1.495 73.935
+   }
+  }
+ }
+ AO_Chotain {
+  coords 7170.343 82.874 6437.463
+  m_fAreaRadius 600
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54D814FC995}" {
+     }
+    }
+    coords 267.71 -74.217 286.371
+   }
+  }
+ }
+ AO_Laruns {
+  coords 7641.328 71.522 5459.199
+  m_fAreaRadius 500
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54D9F327EB1}" {
+     }
+    }
+    coords -84.513 11.016 82.786
+   }
+  }
+ }
+ AO_Durras {
+  coords 9186.174 94.687 2591.736
+  m_fAreaRadius 700
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54D8A3D2A05}" {
+     }
+    }
+    coords -360.794 0.487 180.66
+   }
+  }
+ }
+ AO_ProvinsFigari {
+  coords 5652.049 63.389 5563.534
+  m_fAreaRadius 650
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54DA0540B23}" {
+     }
+    }
+    coords -133.347 32.256 457.588
+   }
+  }
+ }
+}

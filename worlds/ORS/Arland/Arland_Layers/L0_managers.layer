@@ -71,7 +71,7 @@ ScriptedChatEntity ChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity
 }
 COE_VehicleSpawnManager VehicleSpawnManager : "{03A3F74C83B9255B}Prefabs/Managers/COE_VehicleSpawnManager.et" {
  coords 1376.472 39 2818.856
- m_fDesertedPlayerDistance 25
+ m_fDesertedPlayerDistance 75
 }
 HitRegistrationManager HitRegManager : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
  coords 1381.321 39 2821.325
@@ -80,7 +80,7 @@ SCR_LoadoutManager LoadoutManager : "{4193EDCF6585A770}Prefabs/MP/Managers/COE_L
  coords 1381.428 39.079 2824.488
 }
 SCR_BaseTaskManager TaskManager : "{42922D9971F7C251}Prefabs/Managers/ORS_TaskManager.et" {
- coords 1282.198 39.01 2857.361
+ coords 1374.906 38.991 2820.59
 }
 COE_ObjectiveManager ObjectiveManager : "{973B5090288C8ADC}Prefabs/Managers/COE_ObjectiveManager.et" {
  coords 1370.072 40.01 2665.523

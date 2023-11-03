@@ -3,6 +3,8 @@ ORS_ObjectiveArea {
  components {
   COE_SlotsManagerComponent "{5EBA8527A43B57E8}" {
   }
+  ORS_AiManagerComponent "{5EC3452E7B1CD714}" {
+  }
   RplComponent "{5EBA63A81B534DD5}" {
    Streamable Disabled
   }

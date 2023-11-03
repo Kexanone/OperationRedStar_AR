@@ -15,13 +15,37 @@ class ORS_GameMode : SCR_GameModeCampaign
 	protected ref SCR_SortedArray<ORS_ObjectiveArea> m_aObjectiveAreas = new SCR_SortedArray<ORS_ObjectiveArea>();
 	
 	[RplProp(onRplName: "OnObjectiveAreaChangedProxy")]
-	protected RplId m_iCurrentObjectiveAreaId = Replication.INVALID_ID;
+	protected RplId m_iCurrentObjectiveAreaRplId = Replication.INVALID_ID;
 	protected ORS_ObjectiveArea m_pCurrentObjectiveArea;
+	protected int m_iCurrentObjectiveAreaIdx = 0;
 	
+	protected ref SCR_MissionHeader m_pMissionHeader;
+	
+	//------------------------------------------------------------------------------------------------
 	void ORS_GameMode(IEntitySource src, IEntity parent)
 	{
-		if (!GetGame().InPlayMode() || !Replication.IsServer())
+		if (!GetGame().InPlayMode())
 			return;
+		
+		// Create a mission header for workbench sessions
+	#ifdef WORKBENCH
+		m_pMissionHeader = new SCR_MissionHeader();
+		m_pMissionHeader.m_sSaveFileName = FilePath.StripPath(FilePath.StripExtension(GetGame().GetWorldFile()));
+		m_pMissionHeader.m_bIsSavingEnabled = true;
+	#else
+		m_pMissionHeader = SCR_MissionHeader.Cast(GetGame().GetMissionHeader());
+	#endif
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	override protected void OnGameStart()
+	{
+		super.OnGameStart();
+		
+		if (!IsMaster())
+			return;
+		
+		LoadSession();
 		
 		// Get position of the main base
 		IEntity mainBaseEntity = GetGame().GetWorld().FindEntityByName(m_sMainBaseEntityName);
@@ -40,13 +64,61 @@ class ORS_GameMode : SCR_GameModeCampaign
 			int order = vector.DistanceSqXZ(m_vMainBasePos, area.GetOrigin());
 			m_aObjectiveAreas.Insert(order, area);
 		};
+		
+		// Initialize areas;
+		for (int i = 0; i < m_aObjectiveAreas.Count(); i++)
+		{
+			m_aObjectiveAreas[i].Init(i < m_iCurrentObjectiveAreaIdx);
+		}
+		
+		SpawnObjective();
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Loads the state of the previous session
+	protected void LoadSession()
+	{
+		string saveName = m_pMissionHeader.GetSaveFileName();
+		
+		if (!GetGame().GetSaveManager().HasLatestSave(saveName))
+			return;
+		
+		string fileName;
+		GetGame().GetSaveManager().FindLatestSave(saveName, fileName);
+		GetGame().GetSaveManager().Load(fileName);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Loads the state of the previous session
+	void LoadSessionData(ORS_SessionStruct data)
+	{
+		m_iCurrentObjectiveAreaIdx = data.GetCurrentObjectiveAreaIdx();
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Loads the state of the previous session
+	void SaveSessionData(out ORS_SessionStruct data)
+	{
+		data.SetCurrentObjectiveAreaIdx(m_iCurrentObjectiveAreaIdx);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Delete auto save files when mission is finished
+	override void EndGameMode(SCR_GameModeEndData endData)
+	{
+		super.EndGameMode(endData);
+		
+		if (!IsMaster())
+			return;
+		
+		GetGame().GetSaveManager().Delete(ESaveType.AUTO);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	//! Called when RplId of current objective area is updated
 	void OnObjectiveAreaChangedProxy()
 	{
-		RplComponent rpl = RplComponent.Cast(Replication.FindItem(m_iCurrentObjectiveAreaId));
+		RplComponent rpl = RplComponent.Cast(Replication.FindItem(m_iCurrentObjectiveAreaRplId));
 		if (!rpl)
 			return;
 		
@@ -60,43 +132,40 @@ class ORS_GameMode : SCR_GameModeCampaign
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void GenerateNextObjective()
+	void SpawnObjective()
 	{
-		// Clean up previous objective
-		if (m_pCurrentObjectiveArea)
-			m_pCurrentObjectiveArea.ScheduleCleanUp();
-		
 		// No more objective left => End game mode
-		if (m_aObjectiveAreas.IsEmpty())
+		if (m_iCurrentObjectiveAreaIdx >= m_aObjectiveAreas.Count())
 			EndGameMode(SCR_GameModeEndData.CreateSimple(EGameOverTypes.COMBATPATROL_VICTORY));
 		
-		// Generate next objective
-		m_pCurrentObjectiveArea = m_aObjectiveAreas.Get(0);
-		m_aObjectiveAreas.Remove(0);
-		m_pCurrentObjectiveArea.Init();
+		m_pCurrentObjectiveArea = m_aObjectiveAreas[m_iCurrentObjectiveAreaIdx];
+		m_pCurrentObjectiveArea.Spawn();
 		
 		// Update objective area on clients
 		RplComponent rpl = RplComponent.Cast(m_pCurrentObjectiveArea.FindComponent(RplComponent));
 		if (!rpl)
 			return;
 		
-		m_iCurrentObjectiveAreaId = rpl.Id();
+		m_iCurrentObjectiveAreaRplId = rpl.Id();
 		Replication.BumpMe();
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	override protected void OnGameStart()
+	void ScheduleObjectiveCleanUp(int objectiveAreaIdx)
 	{
-		super.OnGameStart();
-		
-		if (!Replication.IsServer())
-			return;
-		
-		GenerateNextObjective();
+		ORS_ObjectiveArea objectiveArea = m_aObjectiveAreas[objectiveAreaIdx];
+		objectiveArea.ScheduleCleanUp();
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void ScheduleTaskDefendHQ()
+	void SpawnNextObjective()
 	{
+		// Clean up previous objective
+		ScheduleObjectiveCleanUp(m_iCurrentObjectiveAreaIdx);
+		
+		// Generate next objective
+		m_iCurrentObjectiveAreaIdx++;
+		SCR_SaveManagerCore.Cast(GetGame().GetSaveManager()).Save(ESaveType.AUTO);
+		SpawnObjective();
 	}
 }

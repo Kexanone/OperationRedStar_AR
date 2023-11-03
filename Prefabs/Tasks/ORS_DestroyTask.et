@@ -1,0 +1,12 @@
+ORS_DestroyTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
+ ID "54C6755D430721B8"
+ components {
+  SCR_MapDescriptorComponent "{54C6755D2955E709}" {
+   ForceGroupScale 1
+  }
+ }
+ m_sName "Destroy %1"
+ m_sDescription "Destroy the specified target."
+ m_sMapIconName "Icon_Task_Sabotage"
+ m_sTaskListIconName "Icon_Task_Sabotage"
+}

@@ -1,0 +1,4 @@
+ORS_DestroyTaskSupportEntity : "{F927E136363469D2}Prefabs/Tasks/SupportEntities/BaseTaskSupportEntity.et" {
+ ID "5A0AA0B3355390E7"
+ m_sTaskPrefab "{08E48A63D4CC7CBE}Prefabs/Tasks/ORS_DestroyTask.et"
+}

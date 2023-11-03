@@ -3,8 +3,8 @@ Vehicle : "{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT.et" {
  components {
   SCR_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
    m_bUserActionActivationOnly 1
-   m_fBuildingRadius 25
-   m_iMaxPropValue 1200
+   m_fBuildingRadius 35
+   m_iMaxPropValue -1
    m_aAvailableTraits {
     230
    }

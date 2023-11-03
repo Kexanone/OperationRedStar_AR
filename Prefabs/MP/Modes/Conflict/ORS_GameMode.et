@@ -1,10 +1,14 @@
 ORS_GameMode : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
  ID "56B2B479C6B96951"
  components {
-  SCR_GameModeSFManager "{5EB8B51C7D49E12B}" {
-  }
   SCR_GroupsManagerComponent "{5706EC99934496F5}" {
    m_sDefaultGroupPrefab "{5D1731EDAA56A96E}Prefabs/Groups/COE_PlayableGroup.et"
+  }
+  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
+   m_Struct SCR_MissionStruct "{5C6E86B1D6F0EC89}" {
+    m_Struct0 ORS_SessionStruct "{5C6E86B1D41E4E2F}" {
+    }
+   }
   }
   SCR_XPHandlerComponent "{5CAAA397E5408ABF}" {
    Enabled 0
