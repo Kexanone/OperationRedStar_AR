@@ -116,6 +116,7 @@ class ORS_ObjectiveArea : GenericEntity
 		GetGame().GetCallqueue().CallLater(HandleInitialFobBuilt, 10000, true);
 		SpawnHQ();
 		SpawnAssetsToDestroy();
+		SpawnSupplyCache();
 		SpawnRoadblocks();
 		m_pSlotsManager.PopulateTurrets();
 		SpawnPatrols();
@@ -201,10 +202,26 @@ class ORS_ObjectiveArea : GenericEntity
 			return;
 		
 		m_aExcludedAreas.Insert(COE_CircleArea(slot.GetOrigin(), m_fMinDistanceBetweenTasks));
-		IEntity hq = slot.SpawnEntityInSlot(Resource.Load("{FA39C56DECF3FB1F}ORS_LivingArea_FIA_01.et"));
+		IEntity hq = slot.SpawnEntityInSlot(Resource.Load("{FA39C56DECF3FB1F}Prefabs/Compositions/Slotted/SlotFlatSmall/ORS_LivingArea_FIA_01.et"));
 		
 		AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{05C25B8FADA10C69}Prefabs/AI/Waypoints/ORS_AIWaypoint_Defend_25m.et", hq.GetOrigin());
 		AIGroup group = COE_GameTools.SpawnGroupPrefab("{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et", hq.GetOrigin());
+		group.AddWaypoint(wp);
+		m_pAiManager.AddGroup(group);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	protected void SpawnSupplyCache()
+	{
+		SCR_SiteSlotEntity slot = SCR_SiteSlotEntity.Cast(m_pSlotsManager.GetRandomMediumFlatSlot());
+		if (!slot)
+			return;
+		
+		m_aExcludedAreas.Insert(COE_CircleArea(slot.GetOrigin(), m_fMinDistanceBetweenTasks));
+		IEntity cache = slot.SpawnEntityInSlot(Resource.Load("{47F9ED960D72C24E}Prefabs/Compositions/Slotted/SlotFlatSmall/ORS_SupplyCache_S_FIA_01.et"));
+		
+		AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{05C25B8FADA10C69}Prefabs/AI/Waypoints/ORS_AIWaypoint_Defend_25m.et", cache.GetOrigin());
+		AIGroup group = COE_GameTools.SpawnGroupPrefab("{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et", cache.GetOrigin());
 		group.AddWaypoint(wp);
 		m_pAiManager.AddGroup(group);
 	}
@@ -352,8 +369,10 @@ class ORS_ObjectiveArea : GenericEntity
 		
 		foreach (ORS_TargetToDestroyWrapper targetWrapper : m_aTargetsToDestroy)
 		{
-			if (targetWrapper.IsAssetAlive())
-				positions.Insert(targetWrapper.GetAssetOrigin());
+			if (!targetWrapper.GetAsset() || !targetWrapper.IsAssetAlive())
+				continue;
+			
+			positions.Insert(targetWrapper.GetAssetOrigin());
 		};
 		
 		return positions;
@@ -567,7 +586,7 @@ class ORS_TargetToDestroyWrapper : Managed
 	//------------------------------------------------------------------------------------------------
 	void CreateTask()
 	{
-		if (!IsAssetAlive())
+		if (!m_pAsset || !IsAssetAlive())
 			return;
 		
 		ORS_DestroyTaskSupportEntity destroySupportEntity = ORS_DestroyTaskSupportEntity.Cast(GetTaskManager().FindSupportEntity(ORS_DestroyTaskSupportEntity));

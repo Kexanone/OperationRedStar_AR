@@ -1,6 +1,7 @@
 //------------------------------------------------------------------------------------------------
 [BaseContainerProps()]
-class ORS_SessionStruct : SCR_CampaignStruct
+class ORS_SessionStruct : SCR_JsonApiStruct
+//class ORS_SessionStruct : SCR_CampaignStruct
 {
 	protected int m_iCurrentObjectiveIdx;
 	
@@ -39,9 +40,11 @@ class ORS_SessionStruct : SCR_CampaignStruct
 	}
 	
 	//------------------------------------------------------------------------------------------------
+	/*
 	override void Clear()
 	{
 		super.Clear();
 		m_iCurrentObjectiveIdx = 0;
 	}
+	*/
 }

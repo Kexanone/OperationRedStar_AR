@@ -1,0 +1,142 @@
+GenericEntity : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
+ ID "5282DCB5DFC8538F"
+ components {
+  Hierarchy "{5DC704E508136864}" {
+   Enabled 1
+  }
+ }
+ coords 233.193 1 74.811
+ {
+  GenericEntity : "{1EC801E208CB16C6}Prefabs/Vegetation/Cuttings/Rubus_idaeus_small_01.et" {
+   ID "5ED039E1F892C3D9"
+   coords -4.045 0 -1.514
+   angleY -50.257
+  }
+  GenericEntity : "{24F98A215FAA249C}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_FIA.et" {
+   ID "5ED039E1F892C3D6"
+   components {
+    Hierarchy "{5E331960ECC46AF5}" {
+     Enabled 1
+    }
+   }
+   coords 0.042 0 -1.432
+   angleX 0.133
+   angleY -2.838
+   angleZ 0.83
+  }
+  GenericEntity : "{49ADEF17D3D91B4F}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_A_Soviet.et" {
+   ID "5ED039E1F892C3D3"
+   components {
+    Hierarchy "{5D64773615F68FE3}" {
+     Enabled 1
+    }
+   }
+   coords 0 0 -3.779
+  }
+  GenericEntity : "{4A09EF1D855AF2C4}Prefabs/Vegetation/Cuttings/Rosa_canina_small_01.et" {
+   ID "5ED039E1F892C3D2"
+   coords -3.698 0 -1.402
+  }
+  GenericEntity : "{89EF4CBC37EABDBE}Prefabs/Vegetation/Cuttings/Carpinus_betulus_large_01.et" {
+   ID "5ED039E1F892C3D0"
+   coords 3.569 0 -2.244
+   angleX 41.208
+   angleY 89.73
+   angleZ -0.145
+  }
+  GenericEntity : "{9AE2149222FAD9A3}Prefabs/Compositions/Misc/SubCompositions/Storage/Slotted/Storage_Supplies_FIA_03.et" {
+   ID "5ED039E1F892C22E"
+   components {
+    SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+     m_aEncapsulators {
+      SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+       m_aActions {
+        SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+         m_bEnableResourceGain 0
+        }
+       }
+      }
+     }
+    }
+   }
+   coords -0.134 0.295 -4.007
+   {
+    $grp GenericEntity : "{3FD3F403025BBDF5}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_storage.et" {
+     {
+      ID "5ED039E1F892C220"
+      coords -0.876 -0.295 1.486
+      angleY 1.214
+     }
+     {
+      ID "5ED039E1F892FB29"
+      coords -0.775 -0.295 0.237
+      angleY 1.412
+     }
+     {
+      ID "5ED039E1F892FB34"
+      coords -0.645 -0.295 -1.348
+      angleY -6.992
+     }
+    }
+   }
+  }
+  GenericEntity : "{A85E67003277D049}Prefabs/Vegetation/Cuttings/Malus_domestica_large_01.et" {
+   ID "5ED039E1F892FB35"
+   coords -3.942 0 -4.466
+   angleY 52.057
+  }
+  GenericEntity : "{C258AD45887AA8CA}Prefabs/Vegetation/Cuttings/Picea_abies_medium_01.et" {
+   ID "5ED039E1F892FB32"
+   coords 3.159 0 -0.868
+   angleY -70.264
+  }
+  GenericEntity : "{CC66836BF4E211F9}Prefabs/Props/Military/Camps/Duckboard_01.et" {
+   ID "5ED039E1F892FB30"
+   components {
+    Hierarchy "{5D647736141AE9A2}" {
+     Enabled 1
+    }
+   }
+   coords -0.098 0 -0.274
+   angleY 87.03
+  }
+  GenericEntity : "{D16F58EC1C0027D7}Prefabs/Vegetation/Cuttings/Salix_cinerea_medium_01.et" {
+   ID "5ED039E1F892FB31"
+   coords 0.563 0 -6.103
+   angleY -180
+  }
+  StaticModelEntity : "{DF649B29EC7635F3}Prefabs/Structures/Military/Fortifications/DirtPile_01/DirtPile_01_small.et" {
+   ID "5ED039E1F892FB3F"
+   components {
+    Hierarchy "{5D6477361410326D}" {
+     Enabled 1
+    }
+   }
+   coords 0.04 0 -1.446
+  }
+  GenericEntity : "{E8181E2E360A8AF4}Prefabs/Vegetation/Cuttings/Juniperus_communis_medium_01.et" {
+   ID "5ED039E1F892FB3C"
+   coords 2.059 0 -6.081
+   angleY 68.893
+  }
+  GenericEntity : "{EFA7233213E77C2E}Prefabs/Systems/SpawnPoints/SpawnPosition.et" {
+   ID "5ED039E1F892FB3A"
+   components {
+    Hierarchy "{5E331960ECDD8DD3}" {
+     Enabled 1
+    }
+   }
+   coords 1.017 0.01 -1.213
+   angleY -8.367
+  }
+  GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+   ID "5ED039E1F892FB38"
+   components {
+    Hierarchy "{5E5CB307E510DDF1}" {
+    }
+   }
+   coords -2.695 0 -0.41
+   angleY -82.492
+  }
+ }
+}

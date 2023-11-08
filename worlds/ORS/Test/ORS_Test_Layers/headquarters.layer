@@ -1,14 +1,5 @@
-SCR_SpawnPoint : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
- coords 101.498 0.31 148.531
- m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
-  Name "Headquarters"
- }
-}
 GenericEntity : "{7DA20C66CE0299D6}Prefabs/Structures/Signs/Military/Sign_CommandPost_USSR_01.et" {
  components {
-  Hierarchy "{5654C1ECC9B656D2}" {
-   Enabled 1
-  }
   SCR_CampaignBuildingProviderComponent "{5D884AF7D0ABB7C2}" {
    m_bUserActionActivationOnly 1
   }
@@ -41,16 +32,15 @@ GenericEntity : "{7DA20C66CE0299D6}Prefabs/Structures/Signs/Military/Sign_Comman
    }
    AllowCrossHierarchy 1
   }
+  Hierarchy "{5654C1ECC9B656D2}" {
+   Enabled 1
+  }
  }
  coords 105.498 0.821 149.002
  angleX -1.914
  angleY -137.827
  angleZ -0.816
 }
-GenericEntity : "{EDE6EC8B05227E3E}Prefabs/Systems/Arsenal/ArsenalBoxes/USSR/ArsenalBox_USSR.et" {
- components {
-  SCR_FactionAffiliationComponent "{5A50E7655452A21D}" {
-  }
- }
+GenericEntity : "{EDE6EC8B05227E3E}Prefabs/Props/Military/Arsenal/ArsenalBoxes/USSR/ArsenalBox_USSR.et" {
  coords 101.042 1.001 143.99
 }

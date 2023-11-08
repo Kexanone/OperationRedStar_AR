@@ -12,4 +12,5 @@ ORS_ObjectiveArea {
  coords 1435.507 38.01 2882.32
  m_AreaMarkerColor 1 0 0 0.353
  m_AreaMarkerColorFinished 0 1 0 0.353
+ m_iFinalDefenseDuration 7
 }

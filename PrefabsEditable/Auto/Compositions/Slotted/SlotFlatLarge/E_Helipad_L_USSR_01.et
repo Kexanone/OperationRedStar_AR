@@ -1,12 +1,37 @@
 GenericEntity : "{525C793E1943EA05}Prefabs/Compositions/Slotted/SlotFlatLarge/Helipad_L_USSR_01.et" {
  ID "5282DCB5DFC8538F"
  components {
-  SCR_EditableEntityComponent "{5E92E73D83A9BBD4}" {
+  SCR_EditableEntityComponent "{5EA88D6485245007}" {
    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
     m_EntityBudgetCost {
-     SCR_EntityBudgetValue "{5E92E73D83D6A945}" {
-      m_Value 120
+     SCR_EntityBudgetValue "{5EA88D64853F4BA8}" {
+      m_Value 150
      }
+    }
+   }
+  }
+  SCR_EditorLinkComponent "{5EA88D6482F18E4E}" {
+   m_aEntries {
+    SCR_EditorLinkEntry "{5EA88D6482F296DD}" {
+     m_Prefab ""
+    }
+    SCR_EditorLinkEntry "{5EA88D6482F60D43}" {
+     m_Prefab ""
+    }
+    SCR_EditorLinkEntry "{5EA88D6482C94675}" {
+     m_Prefab ""
+    }
+    SCR_EditorLinkEntry "{5EA88D6482CC6286}" {
+     m_Prefab ""
+    }
+    SCR_EditorLinkEntry "{5EA88D6482CF2EE7}" {
+     m_Prefab ""
+    }
+    SCR_EditorLinkEntry "{5EA88D6482C1FBFA}" {
+     m_Prefab ""
+    }
+    SCR_EditorLinkEntry "{5EA88D6482C48715}" {
+     m_Prefab ""
     }
    }
   }

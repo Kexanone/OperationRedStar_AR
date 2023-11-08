@@ -18,8 +18,8 @@ GenericEntity ORS_MainBase {
        m_aActions {
         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
          m_bEnableResourceGain 1
-         m_fResourceGain 900
-         m_fResourceGainTickrate 3600
+         m_fResourceGain 3200
+         m_fResourceGainTickrate 900
         }
        }
       }
