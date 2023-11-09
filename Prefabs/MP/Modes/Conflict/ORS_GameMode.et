@@ -8,6 +8,8 @@ ORS_GameMode : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et
    m_Struct SCR_MissionStruct "{5C6E86B1D6F0EC89}" {
     m_Struct0 ORS_SessionStruct "{5C6E86B1D41E4E2F}" {
     }
+    m_Struct1 ORS_EmptyStruct "{5E2C9BB6F87D9794}" {
+    }
    }
   }
   SCR_XPHandlerComponent "{5CAAA397E5408ABF}" {

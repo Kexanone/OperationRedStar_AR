@@ -48,3 +48,20 @@ class ORS_SessionStruct : SCR_JsonApiStruct
 	}
 	*/
 }
+
+//------------------------------------------------------------------------------------------------
+[BaseContainerProps()]
+class ORS_EmptyStruct: SCR_JsonApiStruct
+{
+	//------------------------------------------------------------------------------------------------
+	override bool Serialize()
+	{
+		return true;
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	override bool Deserialize()
+	{
+		return true;
+	}
+}
