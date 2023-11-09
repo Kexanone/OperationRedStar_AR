@@ -1,0 +1,105 @@
+Vehicle : "{70BAEEFC2D3FEE64}Prefabs/Vehicles/Helicopters/UH1H/UH1H.et" {
+ ID "5DB688595BAB2FD7"
+ components {
+  SCR_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
+   m_bUserActionActivationOnly 1
+   m_fBuildingRadius 35
+   m_iMaxPropValue -1
+   m_aAvailableTraits {
+    230
+   }
+  }
+  SlotManagerComponent "{55BCE45E438E4CFF}" {
+   Slots {
+    RegisteringComponentSlotInfo Seat_Gunners {
+     Enabled 0
+    }
+    RegisteringComponentSlotInfo Seat_Cargo {
+     Enabled 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_01 {
+     Offset 0.5563 0.8858 0.913
+     Angles 0 -90 0
+     Prefab "{98A34AE10104A932}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V1_storage.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_02 {
+     Offset -0.5119 0.8858 0.913
+     Angles 0 -90 0
+     Prefab "{98A34AE10104A932}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V1_storage.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_03 {
+     Offset 0.788 0.8781 -0.1313
+     Angles 0 90 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_04 {
+     Offset -0.788 0.8781 -0.1313
+     Angles 0 90 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_05 {
+     Offset 0.788 1.1873 -0.1313
+     Angles 0 90 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_06 {
+     Offset -0.788 1.1873 -0.1313
+     Angles 0 90 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_07 {
+     Offset 0.788 1.4981 -0.1313
+     Angles 0 -90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_08 {
+     Offset -0.788 1.4981 -0.1313
+     Angles 0 -90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_09 {
+     Offset 0.788 1.8066 -0.1313
+     Angles 0 90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_10 {
+     Offset -0.788 1.8066 -0.1313
+     Angles 0 -90 0
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_11 {
+     Offset -0.4532 1.776 0.6118
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo SupplyStorage_12 {
+     Offset 0.4532 1.776 0.6118
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo SupplyStorage_13 {
+     Offset -0.4532 1.776 1.1597
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+    RegisteringComponentSlotInfo SupplyStorage_14 {
+     Offset 0.4532 1.776 1.1597
+     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+     DisablePhysicsInteraction 1
+    }
+   }
+  }
+  ActionsManagerComponent "{C97BE5489221AE18}" {
+   additionalActions {
+    SCR_ResourceContainerVehicleLoadAction "{5E42966A989974E7}" {
+    }
+    SCR_CampaignBuildingStartUserAction "{5EB8669114C65B44}" {
+     ParentContextList {
+      "door_r03" "door_l03"
+     }
+     UIInfo UIInfo "{5EB86691204A1630}" {
+      Name "START BUILDING FOB"
+     }
+     Duration 2
+     "Sort Priority" 23
+    }
+   }
+  }
+ }
+}
