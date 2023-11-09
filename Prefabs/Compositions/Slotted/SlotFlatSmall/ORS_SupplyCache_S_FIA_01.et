@@ -51,6 +51,9 @@ GenericEntity : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.
      m_aEncapsulators {
       SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
        m_aActions {
+        SCR_ResourceEncapsulatorActionChangeDecay "{5DE296D4DA405559}" {
+         m_bEnableResourceDecay 1
+        }
         SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
          m_bEnableResourceGain 0
         }
