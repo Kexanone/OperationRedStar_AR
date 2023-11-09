@@ -1,4 +1,4 @@
 ORS_BuildFobTaskSupportEntity : "{F927E136363469D2}Prefabs/Tasks/SupportEntities/BaseTaskSupportEntity.et" {
  ID "5A0AA0B314831EF7"
- m_sTaskPrefab "{23F2DCFF54CBD2F6}Prefabs/Tasks/ORS_BuildFobTask.et"
+ m_sTaskPrefab "{4EC23A29962C21F2}Prefabs/Tasks/ORS_BuildFobTask.et"
 }
