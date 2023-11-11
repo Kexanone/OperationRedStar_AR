@@ -5,8 +5,8 @@ ORS_BaseTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
    ForceGroupScale 1
   }
  }
- m_sName "Defend %1"
- m_sDescription "The enemy is pereparing for a final counter attack. Do not let them retake the area."
+ m_sName "#AR-Editor_DefendTask_0_Name"
+ m_sDescription "#ORS-Task_Defend_Description"
  m_sMapIconName "Icon_Task_Defend"
  m_sTaskListIconName "Icon_Task_Defend"
 }

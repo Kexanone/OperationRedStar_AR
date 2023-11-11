@@ -94,7 +94,7 @@ Vehicle : "{70BAEEFC2D3FEE64}Prefabs/Vehicles/Helicopters/UH1H/UH1H.et" {
       "door_r03" "door_l03"
      }
      UIInfo UIInfo "{5EB86691204A1630}" {
-      Name "START BUILDING FOB"
+      Name "#ORS-Action_StartBuildingFob_Name"
      }
      Duration 2
      "Sort Priority" 23

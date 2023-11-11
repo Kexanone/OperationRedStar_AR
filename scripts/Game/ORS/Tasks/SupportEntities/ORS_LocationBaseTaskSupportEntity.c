@@ -10,37 +10,38 @@ class ORS_LocationBaseTaskSupportEntity : SCR_BaseTaskSupportEntity
 	SCR_BaseTask CreateTask(vector pos)
 	{
 		SCR_BaseTask task = super.CreateTask();
-		LocalizedString taskTitle = FormatTaskTitle(task, pos);
 		int taskID = task.GetTaskID();
-		Rpc(RPC_CreateTask, taskID, pos, taskTitle);
-		RPC_CreateTask(taskID, pos, taskTitle);
+		LocalizedString locationName = GetLocationName(pos);
+		Rpc(RPC_CreateTask, taskID, pos, locationName);
+		RPC_CreateTask(taskID, pos, locationName);
 		return task;
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	[RplRpc(RplChannel.Reliable, RplRcver.Broadcast)]
-	protected void RPC_CreateTask(int taskID, vector pos, LocalizedString taskTitle)
+	protected void RPC_CreateTask(int taskID, vector pos, LocalizedString locationName)
 	{
-		SCR_BaseTask task = GetTaskManager().GetTask(taskID);
+		ORS_BaseTask task = ORS_BaseTask.Cast(GetTaskManager().GetTask(taskID));
 		if (!task)
 			return;
 		
 		task.SetOrigin(pos);
-		task.SetTitle(taskTitle);
+		PrintFormat("|||g|%1|||", locationName);
+		task.SetFormatParams(locationName);
 		task.Create();
 	}
 	
-	LocalizedString FormatTaskTitle(SCR_BaseTask task, vector pos)
+	LocalizedString GetLocationName(vector pos)
 	{
 		SCR_EditableEntityCore core = SCR_EditableEntityCore.Cast(SCR_EditableEntityCore.GetInstance(SCR_EditableEntityCore));
 		if (!core)
-			return task.GetTitle();
+			return string.Empty;
 		
 		SCR_EditableEntityComponent nearestLocation = core.FindNearestEntity(pos, EEditableEntityType.COMMENT, EEditableEntityFlag.LOCAL);
 		if (!nearestLocation)
-			return task.GetTitle();
+			return string.Empty;
 		
-		return string.Format(task.GetTitle(), nearestLocation.GetDisplayName());
+		return nearestLocation.GetDisplayName();
 		
 	}
 }

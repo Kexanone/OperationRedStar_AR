@@ -5,8 +5,8 @@ ORS_BaseTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
    ForceGroupScale 1
   }
  }
- m_sName "Build FOB near %1"
- m_sDescription "Start building a FOB by creating a command post in the objective area."
+ m_sName "#ORS-Task_BuildFob_Name"
+ m_sDescription "#ORS-Task_BuildFob_Description"
  m_sMapIconName "Icon_Task_Build"
  m_sTaskListIconName "Icon_Task_Build"
 }

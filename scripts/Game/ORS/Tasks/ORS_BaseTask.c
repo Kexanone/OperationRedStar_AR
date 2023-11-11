@@ -1,63 +1,3 @@
-modded class SCR_BaseTaskManager : GenericEntity
-{
-	//------------------------------------------------------------------------------------------------
-	override void LoadTasksForRpl(ScriptBitReader reader, int count)
-	{
-		reader.ReadInt(count);
-		
-		ResourceName resourceName;
-		Resource resource;
-		SCR_BaseTask task;
-		bool readTask;
-		for (int i = 0; i < count; i++)
-		{
-			reader.ReadBool(readTask);
-			if (!readTask)
-				continue;
-			
-			reader.ReadString(resourceName);
-			
-			resource = Resource.Load(resourceName);
-			if (!resource.IsValid())
-				continue;
-			
-			task = SCR_BaseTask.Cast(GetGame().SpawnEntityPrefab(resource, GetWorld()));
-			if (!task)
-				continue;
-			
-			task.Deserialize(reader);
-		}
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	override void SaveTasksForRpl(ScriptBitWriter writer, array<SCR_BaseTask> taskArray)
-	{
-		int count = taskArray.Count();
-		writer.WriteInt(count);
-		
-		for (int i = 0; i < count; i++)
-		{
-			SCR_BaseTask task = taskArray[i];
-			if (!task || task.FindComponent(RplComponent)) //--- Assume that tasks with their own replication will sync data themselves
-			{
-				writer.WriteBool(false);
-				continue;
-			}
-			
-			writer.WriteBool(true);
-			
-			EntityPrefabData prefabData = task.GetPrefabData();
-			ResourceName resourceName;
-			if (prefabData)
-				resourceName = prefabData.GetPrefabName();
-			
-			writer.WriteString(prefabData.GetPrefabName()); //Write prefab, then read it in load & spawn correct task
-			
-			task.Serialize(writer);
-		}
-	}
-}
-
 //------------------------------------------------------------------------------------------------
 class ORS_BaseTaskClass: SCR_BaseTaskClass
 {
@@ -67,6 +7,10 @@ class ORS_BaseTaskClass: SCR_BaseTaskClass
 //! Basically SCR_EditorTask, but with custom titles
 class ORS_BaseTask : SCR_BaseTask
 {
+	protected string m_sFormatParam1 = string.Empty;
+	protected string m_sFormatParam2 = string.Empty;
+	protected string m_sFormatParam3 = string.Empty;
+	
 	//------------------------------------------------------------------------------------------------
 	protected void PopUpNotification(string prefix, bool alwaysInEditor)
 	{
@@ -83,14 +27,14 @@ class ORS_BaseTask : SCR_BaseTask
 		if (IsAssignedToLocalPlayer() || playerFaction == GetTargetFaction() || (alwaysInEditor && !SCR_EditorManagerEntity.IsLimitedInstance()))
 		{
 			//--- SCR_PopUpNotification.GetInstance() is never null, as it creates the instance if it doesn't exist yet
-			SCR_PopUpNotification.GetInstance().PopupMsg(prefix + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, sound: SCR_SoundEvent.TASK_SUCCEED);
+			SCR_PopUpNotification.GetInstance().PopupMsg(prefix + " " + GetTitle(), prio: SCR_ECampaignPopupPriority.TASK_DONE, param1: m_sFormatParam1, param2: m_sFormatParam2, param3: m_sFormatParam3, sound: SCR_SoundEvent.TASK_SUCCEED);
 		}
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	override protected void ShowPopUpNotification(string subtitle)
 	{
-		SCR_PopUpNotification.GetInstance().PopupMsg(GetTitle(), text2: subtitle);
+		SCR_PopUpNotification.GetInstance().PopupMsg(GetTitle(), text2: subtitle, param1: m_sFormatParam1, param2: m_sFormatParam2, param3: m_sFormatParam3);
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -192,4 +136,44 @@ class ORS_BaseTask : SCR_BaseTask
 		
 		ShowTaskNotification(ENotification.EDITOR_TASK_CANCELED);	
 	}
-};
+	
+	//------------------------------------------------------------------------------------------------
+	void SetFormatParams(string param1 = string.Empty, string param2 = string.Empty, string param3 = string.Empty)
+	{
+		m_sFormatParam1 = param1;
+		m_sFormatParam2 = param2;
+		m_sFormatParam3 = param3;
+		PrintFormat("|||a|%1|%2|%3||||", m_sFormatParam1, m_sFormatParam2, m_sFormatParam3);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	override void SetTitleWidgetText(notnull TextWidget textWidget, string taskText)
+	{
+		PrintFormat("|||%1|%2|%3|%4|||", taskText, m_sFormatParam1, m_sFormatParam2, m_sFormatParam3);
+		textWidget.SetTextFormat(taskText, m_sFormatParam1, m_sFormatParam2, m_sFormatParam3);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	override void SetDescriptionWidgetText(notnull TextWidget textWidget, string taskText)
+	{
+		textWidget.SetTextFormat(taskText, m_sFormatParam1, m_sFormatParam2, m_sFormatParam3);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	override void Serialize(ScriptBitWriter writer)
+	{
+		super.Serialize(writer);
+		writer.WriteString(m_sFormatParam1);
+		writer.WriteString(m_sFormatParam2);
+		writer.WriteString(m_sFormatParam3);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	override void Deserialize(ScriptBitReader reader)
+	{
+		super.Deserialize(reader);
+		reader.ReadString(m_sFormatParam1);
+		reader.ReadString(m_sFormatParam2);
+		reader.ReadString(m_sFormatParam3);
+	}
+}

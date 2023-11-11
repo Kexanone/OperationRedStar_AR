@@ -5,8 +5,8 @@ ORS_DestroyTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
    ForceGroupScale 1
   }
  }
- m_sName "Destroy %1"
- m_sDescription "Destroy the specified target."
+ m_sName "#ORS-Task_Destroy_Name"
+ m_sDescription "#ORS-Task_Destroy_Description"
  m_sMapIconName "Icon_Task_Sabotage"
  m_sTaskListIconName "Icon_Task_Sabotage"
 }

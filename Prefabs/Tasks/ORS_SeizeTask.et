@@ -5,6 +5,6 @@ ORS_BaseTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
    ForceGroupScale 1
   }
  }
- m_sName "Seize %1"
- m_sDescription "Seek and destroy targets and hold the area."
+ m_sName "#ORS-Task_Seize_Name"
+ m_sDescription "#ORS-Task_Seize_Description"
 }

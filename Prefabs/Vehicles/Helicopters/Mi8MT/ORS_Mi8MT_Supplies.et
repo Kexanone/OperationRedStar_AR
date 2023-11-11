@@ -63,7 +63,7 @@ Vehicle : "{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT.et" {
       "door_l01"
      }
      UIInfo UIInfo "{5EB86691204A1630}" {
-      Name "START BUILDING FOB"
+      Name "#ORS-Action_StartBuildingFob_Name"
      }
      Duration 2
      "Sort Priority" 23
