@@ -40,7 +40,7 @@ class ORS_ObjectiveArea : GenericEntity
 	protected ref COE_AreaBase m_pArea;
 	protected ref array<ref COE_AreaBase> m_aExcludedAreas = {};
 	protected SCR_BaseTask m_pMainTask;
-	protected ref MapItem m_pMapMarker;
+	protected ref ORS_AreaMarker m_pAreaMarker;
 	protected static SCR_CampaignFaction s_PlayerFaction;
 	protected static SCR_CampaignFaction s_EnemyFaction;
 	protected static string s_sFobPrefabName;
@@ -75,21 +75,12 @@ class ORS_ObjectiveArea : GenericEntity
 		if (!mapEntity)
 			return;
 		
-		m_pMapMarker = mapEntity.CreateCustomMapItem();
-		m_pMapMarker.SetPos(m_vAreaCenter[0], m_vAreaCenter[2]);
-		m_pMapMarker.SetBaseType(EMapDescriptorType.MDT_TASK);
-		MapDescriptorProps props = m_pMapMarker.GetProps();
-		
 		if (m_bIsFinished)
-			props.SetFrontColor(m_AreaMarkerColorFinished);
+			m_pAreaMarker = ORS_AreaMarker(m_vAreaCenter, m_fAreaRadius, m_AreaMarkerColorFinished);
 		else
-			props.SetFrontColor(m_AreaMarkerColor);
-		// Circumscribe area with a square => Sqrt(2)
-		// Empirical scaling factor: 1.3 / 50
-		float size = m_fAreaRadius * 1.3 / 50 * Math.Sqrt(2);
-		props.SetIconSize(size, size, size);
-		props.Activate(true);
-		m_pMapMarker.SetProps(props);
+			m_pAreaMarker = ORS_AreaMarker(m_vAreaCenter, m_fAreaRadius, m_AreaMarkerColor);
+		
+		mapEntity.ORS_AddAreaMarker(m_pAreaMarker);
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -477,10 +468,8 @@ class ORS_ObjectiveArea : GenericEntity
 	{
 		m_bIsFinished = true;
 		Replication.BumpMe();
-			
-		MapDescriptorProps props = m_pMapMarker.GetProps();
-		props.SetFrontColor(m_AreaMarkerColorFinished);
-		m_pMapMarker.SetProps(props);
+		
+		m_pAreaMarker.SetColor(m_AreaMarkerColorFinished);
 	}
 	
 	//------------------------------------------------------------------------------------------------

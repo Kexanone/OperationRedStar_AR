@@ -1,0 +1,27 @@
+FrameWidgetClass {
+ Name "rootFrame"
+ Slot FrameWidgetSlot "{5ED4238EAF855BAD}" {
+  OffsetLeft 0
+  OffsetTop 0
+  OffsetRight -100
+  OffsetBottom -30
+ }
+ "Z Order" -1
+ Clipping False
+ {
+  ImageWidgetClass "{5ED4239D87BC0505}" {
+   Name "AreaMarkerImage"
+   Slot FrameWidgetSlot "{5ED4238C0CA356E1}" {
+    OffsetLeft 0
+    OffsetTop 0
+    OffsetRight -100
+    OffsetBottom -30
+    Alignment 0.5 0.5
+    SizeToContent 1
+   }
+   Pivot 0.5 0.5
+   Texture "{F2EB1E817F8B2ADD}UI/Textures/Map/AreaMarker/ORS_CircleArea.edds"
+   Size 100 100
+  }
+ }
+}
