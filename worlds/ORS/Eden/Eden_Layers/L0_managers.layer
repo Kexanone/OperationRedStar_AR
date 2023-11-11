@@ -25,7 +25,7 @@ TagManager TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
 ORS_GameMode ORS_GameMode : "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et" {
  coords 1362.228 38.01 2886.429
  m_aObjectiveAreaNames {
-  "AO_AndreasBeacon" "AO_Chotain" "AO_Durras" "AO_EntreDeux" "AO_Gravette" "AO_Kermovan" "AO_Lamentin" "AO_Laruns" "AO_LeMoule" "AO_LevieMilitary" "AO_MeauxTyrone" "AO_Montignac" "AO_Morton" "AO_PinewoodLake" "AO_ProvinsFigari" "AO_Quarry" "AO_Regina" "AO_StPhillipe" "AO_StPierre" "AO_Villeneuf"
+  "AO_AndreasBeacon" "AO_Chotain" "AO_Durras" "AO_EntreDeux" "AO_Erquy" "AO_Figari" "AO_Gravette" "AO_Kermovan" "AO_Lamentin" "AO_Laruns" "AO_LeMoule" "AO_Levie" "AO_Meaux" "AO_Montignac" "AO_Morton" "AO_PinewoodLake" "AO_Provins" "AO_Quarry" "AO_Regina" "AO_StPhillipe" "AO_StPierre" "AO_Tyrone" "AO_Villeneuf"
  }
 }
 RadioManagerEntity RadioManager : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {

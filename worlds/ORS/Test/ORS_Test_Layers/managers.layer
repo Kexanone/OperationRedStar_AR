@@ -19,14 +19,6 @@ PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/Perc
 TagManager TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
  coords 114.774 1.001 151.883
 }
-ORS_GameMode ORS_GameMode : "{78A99E93AD3ED733}Prefabs/MP/Modes/ORS_GameMode.et" {
- coords 89.099 1 138.535
- PlayerControllerPrefab "{BF6438F6F5CD15E3}Prefabs/Characters/Core/ORS_PlayerController.et"
- m_sMainBaseEntityName "AO_1"
- m_aObjectiveAreaNames {
-  "AO_1"
- }
-}
 RadioManagerEntity RadioManager : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
  coords 117.819 1.001 150.194
 }

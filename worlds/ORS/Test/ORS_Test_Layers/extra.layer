@@ -1,6 +1,9 @@
 SCR_MapEntity MapEntity : "{731564B66F91B107}Prefabs/World/Game/MapEntity.et" {
  coords 106.517 1.001 144.949
 }
+ORS_GameMode ORS_GameMode1 : "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et" {
+ coords 62.739 1 76.623
+}
 ORS_ObjectiveArea Area1 {
  components {
   RplComponent "{5EB8B5CEC7CE445B}" {
