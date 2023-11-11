@@ -133,11 +133,15 @@ class ORS_AiManagerComponent : ScriptComponent
 			};
 		};
 		
+		// AddAgent seems to have the undesired behavior to move all group members to the agent
+		// We need to wait for a proper group joining function
 		// Orphaned units hould join reinforcements
+		/*
 		foreach (AIAgent orphan : orphans)
 		{
 			group.AddAgent(orphan);
 		};
+		*/
 	}
 	
 	//------------------------------------------------------------------------------------------------
