@@ -153,6 +153,11 @@ class ORS_AiManagerComponent : ScriptComponent
 		
 		AIGroup group = COE_GameTools.SpawnGroupPrefab("{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et", spawnPos);
 		group.AddWaypoint(m_pAttackWp);
+		
+		AIFormationComponent formationHandler = AIFormationComponent.Cast(group.FindComponent(AIFormationComponent));
+		if (formationHandler)
+			formationHandler.SetFormation("Line");
+		
 		AddGroup(group);
 		return group;
 	}
@@ -204,9 +209,16 @@ class ORS_AiManagerComponent : ScriptComponent
 		if (spawnPos == vector.Zero)
 			return null;
 		
-		AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et", targetPos);
+		//AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et", targetPos);
+		AIWaypoint wp = COE_GameTools.SpawnWaypointPrefab("{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et", targetPos);
 		AIGroup group = COE_GameTools.SpawnGroupPrefab("{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et", spawnPos);
 		group.AddWaypoint(wp);
+		COE_AITasks.Patrol(group, targetPos, 30, 3, 25);
+		
+		AIFormationComponent formationHandler = AIFormationComponent.Cast(group.FindComponent(AIFormationComponent));
+		if (formationHandler)
+			formationHandler.SetFormation("Wedge");
+		
 		AddGroup(group);
 		return group;
 	}
