@@ -1,0 +1,6 @@
+ORS_GameMode ORS_GameMode : "{E37512BCC61DF518}Prefabs/MP/Modes/Conflict/ORS_GameMode_Eden.et" {
+ coords 4804.25 27.82 11800.352
+}
+SCR_CampaignFactionManager FactionManager : "{ECDF8CB21677FE75}Prefabs/Managers/ORS_FactionManager.et" {
+ coords 4826.045 28.487 11802.886
+}

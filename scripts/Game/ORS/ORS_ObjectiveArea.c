@@ -88,7 +88,23 @@ class ORS_ObjectiveArea : GenericEntity
 	{
 		if (!s_PlayerFaction)
 		{
-			s_PlayerFaction = SCR_CampaignFaction.Cast(GetGame().GetFactionManager().GetFactionByKey("USSR"));
+			FactionManager factionManager = GetGame().GetFactionManager();
+			array<Faction> factions = {};
+			factionManager.GetFactionsList(factions);
+			
+			foreach (Faction faction : factions)
+			{
+				SCR_CampaignFaction campaignFaction = SCR_CampaignFaction.Cast(faction);
+				if (!campaignFaction)
+					continue;
+				
+				if (campaignFaction.IsPlayable())
+				{
+					s_PlayerFaction = campaignFaction;
+					break;
+				}
+			}
+			
 			s_EnemyFaction = SCR_CampaignFaction.Cast(GetGame().GetFactionManager().GetFactionByKey("FIA"));
 			s_sFobPrefabName = s_PlayerFaction.GetBuildingPrefab(EEditableEntityLabel.SERVICE_HQ);
 		};
@@ -303,7 +319,7 @@ class ORS_ObjectiveArea : GenericEntity
 			
 			m_aExcludedAreas.Insert(COE_CircleArea(slot.GetOrigin(), m_fMinDistanceBetweenTasks));
 			
-			m_aTargetsToDestroy.Insert(ORS_TargetToDestroyWrapper(this, target));
+			m_aTargetsToDestroy.Insert(ORS_TargetToDestroyWrapper(this, target, s_PlayerFaction));
 									
 			vector pos;
 			SCR_WorldTools.FindEmptyTerrainPosition(pos, target.GetOrigin(), 10);
@@ -538,14 +554,17 @@ class ORS_ObjectiveArea : GenericEntity
 class ORS_TargetToDestroyWrapper : Managed
 {
 	protected ORS_ObjectiveArea m_pArea;
+	protected ORS_BaseTask m_pTask;
 	protected IEntity m_pAsset;
 	protected ScriptedDamageManagerComponent m_pDamageManager;
+	protected SCR_Faction m_PlayerFaction;
 	
 	//------------------------------------------------------------------------------------------------
-	void ORS_TargetToDestroyWrapper(ORS_ObjectiveArea area, IEntity asset)
+	void ORS_TargetToDestroyWrapper(ORS_ObjectiveArea area, IEntity asset, SCR_Faction playerFaction)
 	{
 		m_pArea = area;
 		m_pAsset = asset;
+		m_PlayerFaction = playerFaction;
 		
 		m_pDamageManager = ScriptedDamageManagerComponent.Cast(asset.FindComponent(ScriptedDamageManagerComponent));
 		if (!m_pDamageManager)
@@ -582,7 +601,8 @@ class ORS_TargetToDestroyWrapper : Managed
 		if (!destroySupportEntity)
 			return;
 		
-		destroySupportEntity.CreateTask(m_pAsset);
+		m_pTask = ORS_BaseTask.Cast(destroySupportEntity.CreateTask(m_pAsset));
+		destroySupportEntity.SetTargetFaction(m_pTask, m_PlayerFaction);
 	}
 	
 	//------------------------------------------------------------------------------------------------
