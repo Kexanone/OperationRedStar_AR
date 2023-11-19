@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{0E714B8AC19209FB}Prefabs/Compositions/Slotted/SlotRoadLarge/ORS_Checkpoint_L_FIA_01.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

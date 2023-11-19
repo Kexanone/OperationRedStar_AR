@@ -1,0 +1,67 @@
+ORS_GameMode : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
+ ID "56B2B479C6B96951"
+ components {
+  SCR_GroupsManagerComponent "{5706EC99934496F5}" {
+   m_sDefaultGroupPrefab "{5D1731EDAA56A96E}Prefabs/Groups/COE_PlayableGroup.et"
+  }
+  SCR_RespawnBriefingComponent "{5B2A94A3CF791D6F}" {
+   m_sJournalConfigPath "{7D17B2E96AC77862}Configs/Journal/ORS_Journal.conf"
+  }
+  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
+   m_Struct SCR_MissionStruct "{5C6E86B1D6F0EC89}" {
+    m_Struct0 ORS_SessionStruct "{5C6E86B1D41E4E2F}" {
+    }
+    m_Struct1 ORS_EmptyStruct "{5E2C9BB6F87D9794}" {
+    }
+   }
+  }
+  SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
+   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5D349E3E90D4315E}" {
+    m_MiddleColumn SCR_WelcomeScreenMissionObjectivesContent "{5D349E3E8A5CF4C3}" {
+     m_aMissionObjectives {
+      SCR_WelcomeScreenMissionObjectives "{5D349E3F455821CC}" {
+       m_sObjectiveQuadName "Ressuply"
+       m_sDescription "#ORS-Briefing_Task_BuildFob_Description"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E3F45C63A88}" {
+       m_sDescription "#ORS-Briefing_Task_Seize_Description"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E3F45967A8B}" {
+       m_sObjectiveQuadName "Defend"
+       m_sDescription "#ORS-Briefing_Task_Defend_Description"
+      }
+     }
+    }
+    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5D349E3E89289BE9}" {
+     m_aIntroduction {
+      SCR_WelcomeScreenIntroduction "{5D349E3F6FF705DE}" {
+       m_sContentImage "{DE06FBCB3D1D9E6F}gfx/preview.edds"
+       m_sContentTitleText "#ORS-Scenario_Everon_USSR_Name"
+       m_sContentDescriptionText "#ORS-Scenario_Everon_Description"
+      }
+      SCR_WelcomeScreenIntroduction "{5D349E3F6C78332F}" {
+       m_sContentImage ""
+       m_sContentTitleText ""
+       m_sContentDescriptionText ""
+      }
+      SCR_WelcomeScreenIntroduction "{5D349E3F6C38011F}" {
+       m_sContentImage ""
+       m_sContentTitleText ""
+       m_sContentDescriptionText ""
+      }
+     }
+    }
+   }
+  }
+  SCR_XPHandlerComponent "{5CAAA397E5408ABF}" {
+   Enabled 0
+  }
+ }
+ PlayerControllerPrefab "{BF6438F6F5CD15E3}Prefabs/Characters/Core/ORS_PlayerController.et"
+ m_bAutoPlayerRespawn 0
+ m_bAllowFactionChange 1
+ m_fAutoReloadTime 30
+ m_bAutostart 0
+ m_bTerminateScenario 0
+ m_sMainBaseEntityName "ORS_MainBase"
+}

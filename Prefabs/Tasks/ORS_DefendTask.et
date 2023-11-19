@@ -1,0 +1,12 @@
+ORS_BaseTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
+ ID "54C6755D430721B8"
+ components {
+  SCR_MapDescriptorComponent "{54C6755D2955E709}" {
+   ForceGroupScale 1
+  }
+ }
+ m_sName "#AR-Editor_DefendTask_0_Name"
+ m_sDescription "#ORS-Task_Defend_Description"
+ m_sMapIconName "Icon_Task_Defend"
+ m_sTaskListIconName "Icon_Task_Defend"
+}

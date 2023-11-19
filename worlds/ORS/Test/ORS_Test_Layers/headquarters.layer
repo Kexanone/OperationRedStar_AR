@@ -1,0 +1,46 @@
+GenericEntity : "{7DA20C66CE0299D6}Prefabs/Structures/Signs/Military/Sign_CommandPost_USSR_01.et" {
+ components {
+  SCR_CampaignBuildingProviderComponent "{5D884AF7D0ABB7C2}" {
+   m_bUserActionActivationOnly 1
+  }
+  SCR_CampaignSuppliesComponent "{5D884AF1C07029C6}" {
+   m_iSupplies 5000
+   m_iSuppliesMax 100000
+  }
+  SCR_FactionAffiliationComponent "{5D884AF740847F44}" {
+   "faction affiliation" "USSR"
+  }
+  ActionsManagerComponent "{5D884AF43990FC2F}" {
+   ActionContexts {
+    UserActionContext "{5D884AF446C095D8}" {
+     ContextName "default"
+     Position PointInfo "{5D884AF79B4F3F91}" {
+      Offset 0 1.2601 0.04
+     }
+    }
+   }
+   additionalActions {
+    SCR_CampaignBuildingStartUserAction "{5D884AF45B222FCC}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{5D884AF474AC3083}" {
+      Name "Build"
+     }
+     Duration 1
+    }
+   }
+   AllowCrossHierarchy 1
+  }
+  Hierarchy "{5654C1ECC9B656D2}" {
+   Enabled 1
+  }
+ }
+ coords 105.498 0.821 149.002
+ angleX -1.914
+ angleY -137.827
+ angleZ -0.816
+}
+GenericEntity : "{EDE6EC8B05227E3E}Prefabs/Props/Military/Arsenal/ArsenalBoxes/USSR/ArsenalBox_USSR.et" {
+ coords 101.042 1.001 143.99
+}

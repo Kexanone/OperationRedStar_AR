@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{5C907FF76A38F3D6}Prefabs/Compositions/Installation/USSR/ORS_RPL5_Radar.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

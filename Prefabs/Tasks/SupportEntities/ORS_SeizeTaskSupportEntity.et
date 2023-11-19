@@ -1,0 +1,4 @@
+ORS_SeizeTaskSupportEntity : "{F927E136363469D2}Prefabs/Tasks/SupportEntities/BaseTaskSupportEntity.et" {
+ ID "5A0AA0B314831EF7"
+ m_sTaskPrefab "{328CFB229A6150E0}Prefabs/Tasks/ORS_SeizeTask.et"
+}

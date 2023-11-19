@@ -1,0 +1,86 @@
+StaticModelEntity : "{2BC7C6DE43AC49E2}Prefabs/Structures/Military/Radar/ApproachRadar_RPL5_01/ApproachRadar_RPL5_01_short.et" {
+ ID "56ACD1C4DB91DB10"
+ components {
+  SCR_AISmartActionSentinelComponent "{5EBA85231ECA25AA}" {
+   AIBehaviorTree "{12B4838160EDE026}AI/BehaviorTrees/SmartActions/SA_CoverPost.bt"
+   Tags {
+    "CoverPost"
+   }
+   ActionOffset 1.506 0 -4.852
+   m_vLookPosition -0.754 0 -11.109
+   m_fLookDirectionRange 45
+   m_iCharacterStance CROUCH
+  }
+  SCR_AISmartActionSentinelComponent "{5EBA8523F4CC20AD}" {
+   AIBehaviorTree "{12B4838160EDE026}AI/BehaviorTrees/SmartActions/SA_CoverPost.bt"
+   Tags {
+    "CoverPost"
+   }
+   ActionOffset 4.917 0 -2.664
+   m_vLookPosition 7.452 0 0.929
+   m_fLookDirectionRange 45
+   m_iCharacterStance CROUCH
+  }
+  SCR_EditableEntityComponent "{5EBA8523B27B4B28}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5EBA8523B27B4B35}" {
+    Name "RPL-5 Radar"
+   }
+   m_bAutoRegister ALWAYS
+  }
+  RplComponent "{5EBA8523B27B4B30}" {
+  }
+ }
+ coords 1392.12 0 2148.93
+ angleY -36.522
+ {
+  GenericEntity : "{A528F04F41F2A2D0}Prefabs/Structures/Military/Radar/ApproachRadar_RPL5_01/ApproachRadar_RPL5_01_on.et" {
+   ID "5EBA8523B27B4B02"
+   components {
+    Hierarchy "{5EBA8523B27B4B3C}" {
+    }
+   }
+   coords -0.088 1.088 0
+   {
+    GenericEntity : "{B526FBF1999025E5}Prefabs/Structures/Military/Radar/ApproachRadar_RPL5_01/ApproachRadar_RPL5_01_cables_short.et" {
+     ID "5EBA8523B27B4B0C"
+     components {
+      SignalsManagerComponent "{5A5B46889896D4F3}" {
+       Enabled 0
+      }
+      RplComponent "{5624A88DC2D9928D}" {
+       Enabled 1
+      }
+     }
+     coords 0 -1.087 0
+    }
+   }
+  }
+  GenericEntity : "{F15B99F6B06E7200}Prefabs/Structures/Military/Radar/ApproachRadar_RPL5_01/ApproachRadar_RPL5_01_generator.et" {
+   ID "5EBA8523B27B4B17"
+   components {
+    SignalsManagerComponent "{5A50CBEAD73E05FB}" {
+     Enabled 0
+    }
+    RplComponent "{5624A88DC2D9928D}" {
+     Enabled 1
+    }
+   }
+   coords 5.68 0 -5.221
+   angleY 90
+   {
+    GenericEntity : "{FCAEC0CB2F8FF8BD}Prefabs/Structures/Military/Radar/ApproachRadar_Prop_Base.et" {
+     ID "5EBA8523B27B4B14"
+     components {
+      MeshObject "{5872F0EB7FA40561}" {
+       Object "{B7A2D182981478C0}Assets/Structures/Military/Radar/ApproachRadar_01/ApproachRadar_RPL5_01_generator_antenna.xob"
+      }
+      RplComponent "{5624A88DC2D9928D}" {
+       Enabled 1
+      }
+     }
+     coords 0 0 0
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{C1CB2E508DC277B4}Prefabs/Compositions/Installation/FIA/ORS_Ural4320_FIA_command.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

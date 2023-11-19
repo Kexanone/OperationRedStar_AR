@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{47F9ED960D72C24E}Prefabs/Compositions/Slotted/SlotFlatSmall/ORS_SupplyCache_S_FIA_01.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,15 @@
+ORS_ObjectiveArea {
+ ID "5EBA38E50B96B502"
+ components {
+  COE_SlotsManagerComponent "{5EBA8527A43B57E8}" {
+  }
+  ORS_AiManagerComponent "{5EC3452E7B1CD714}" {
+  }
+  RplComponent "{5EBA63A81B534DD5}" {
+   Streamable Disabled
+  }
+ }
+ coords 1435.507 38.01 2882.32
+ m_AreaMarkerColor 1 0 0 0.353
+ m_AreaMarkerColorFinished 0 1 0 0.353
+}

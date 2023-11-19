@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{8B72F7DCA1A8EE0B}Prefabs/Tasks/SupportEntities/ORS_DefendTaskSupportEntity.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

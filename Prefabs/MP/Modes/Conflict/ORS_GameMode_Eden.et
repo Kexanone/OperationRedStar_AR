@@ -1,0 +1,7 @@
+ORS_GameMode : "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et" {
+ ID "56B2B479C6B96951"
+ coords 1362.228 38.01 2886.429
+ m_aObjectiveAreaNames {
+  "AO_AndreasBeacon" "AO_Chotain" "AO_Durras" "AO_EntreDeux" "AO_Erquy" "AO_Figari" "AO_Gravette" "AO_Kermovan" "AO_Lamentin" "AO_Laruns" "AO_LeMoule" "AO_Levie" "AO_Meaux" "AO_Montignac" "AO_Morton" "AO_PinewoodLake" "AO_Provins" "AO_Quarry" "AO_Regina" "AO_StPhillipe" "AO_StPierre" "AO_Tyrone" "AO_Villeneuf"
+ }
+}

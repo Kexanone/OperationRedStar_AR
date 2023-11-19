@@ -1,0 +1,335 @@
+SCR_MapEntity MapEntity : "{731564B66F91B107}Prefabs/World/Game/MapEntity.et" {
+ coords 106.517 1.001 144.949
+}
+ORS_GameMode ORS_GameMode1 : "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et" {
+ coords 62.739 1 76.623
+}
+ORS_ObjectiveArea Area1 {
+ components {
+  RplComponent "{5EB8B5CEC7CE445B}" {
+  }
+ }
+ coords 185.921 1 182.951
+ m_fAreaRadius 75
+}
+SCR_EditorTask {
+ coords 142.983 1 165.019
+ m_sDescription "Create a FOB near the objective area."
+}
+SCR_TriggerTask {
+ coords 151.713 1 165.975
+}
+ORS_ObjectiveArea AO_1 : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" {
+ coords 94.92 1 118.144
+}
+$grp GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+ {
+  components {
+   SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+    m_aEncapsulators {
+     SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+      m_aActions {
+       SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+        m_bEnableResourceGain 1
+        m_fResourceGain 400
+        m_fResourceGainTickrate 225
+       }
+      }
+     }
+    }
+   }
+  }
+  coords 96.793 1 47.442
+ }
+ {
+  components {
+   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+    m_bOrientChildrenToTerrain 0
+   }
+   SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+    m_aContainers {
+     SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+      m_vBoundingVolumeMins -2.793 0 -2.993
+      m_vBoundingVolumeMaxs 2.438 2.631 3.408
+     }
+    }
+    m_aEncapsulators {
+     SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+      m_aActions {
+       SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+        m_bEnableResourceGain 1
+        m_fResourceGain 2000
+        m_fResourceGainTickrate 3600
+       }
+      }
+     }
+    }
+   }
+   Hierarchy "{5DE29DEA858102C7}" {
+   }
+  }
+  coords 96.701 1 47.386
+  {
+   $grp GenericEntity : "{7D0C0B23F2608D50}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/ORS_SupplyShippingContainers_01_10ft.et" {
+    {
+     coords -3.798 0 1.691
+    }
+    {
+     coords -3.807 0 -1.447
+     angleY -180
+    }
+    {
+     coords -1.247 0 1.694
+    }
+    {
+     coords -1.256 0 -1.444
+     angleY -180
+    }
+    {
+     coords 1.309 0 -1.459
+     angleY -180
+    }
+    {
+     coords 3.86 0 -1.456
+     angleY -180
+    }
+    {
+     coords 3.869 0 1.682
+    }
+    {
+     coords 1.318 0 1.679
+    }
+    {
+     coords 1.281 2.544 1.623
+    }
+    {
+     coords -3.835 2.544 1.635
+    }
+    {
+     coords -3.844 2.544 -1.503
+     angleY 180
+    }
+    {
+     coords -1.284 2.544 1.638
+    }
+    {
+     coords -1.293 2.544 -1.5
+     angleY 180
+    }
+    {
+     coords 1.272 2.544 -1.515
+     angleY 180
+    }
+    {
+     coords 3.823 2.544 -1.512
+     angleY 180
+    }
+    {
+     coords 3.832 2.544 1.626
+    }
+   }
+   GenericEntity : "{E149B20BCA1BC51B}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_USSR.et" {
+    coords 5.294 0.19 0.144
+    angleY 90
+   }
+  }
+ }
+}
+$grp GenericEntity : "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et" {
+ {
+  coords 58.968 1 126.274
+ }
+ {
+  coords 76.149 1 129.421
+ }
+}
+GenericEntity : "{2E10FD09B66A44FF}Prefabs/Props/Military/SupplyBox/SupplyPortableContainers/SupplyPortableContainer_01/SupplyPortableContainers_01_large_Vehicle.et" {
+ coords 60.454 1 125.737
+}
+$grp Tree : "{2E810552D5E6CF78}Prefabs/Vegetation/Tree/t_betula_pendula_2sw.et" {
+ {
+  coords 113.363 0 133.386
+ }
+ {
+  components {
+   MeshObject "{1F9B278F171CFC33}" {
+    Object "{1FE3EA3B87F08553}Assets/Vegetation/Tree/Betula_Pendula/t_betula_pendula_2t.xob"
+   }
+  }
+  coords 110.794 0.001 128.384
+ }
+}
+Vehicle ORS_Mi8MT_Supplies1 : "{2FF27BCE04A24E51}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT_Supplies.et" {
+ components {
+  SCR_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
+   m_aBudgetsToEvaluate {
+    2147483647 2147483647 2147483647
+   }
+  }
+ }
+ coords 221.161 1 33.803
+}
+Vehicle ORS_Mi8MT2 : "{2FF27BCE04A24E52}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT.et" {
+ coords 82.942 1 107.816
+}
+GenericEntity : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
+ components {
+  Hierarchy "{5DC704E508136864}" {
+   Enabled 1
+  }
+ }
+ coords 233.193 1 74.811
+ {
+  GenericEntity : "{1EC801E208CB16C6}Prefabs/Vegetation/Cuttings/Rubus_idaeus_small_01.et" {
+   coords -4.045 0 -1.514
+   angleY -50.257
+  }
+  GenericEntity : "{24F98A215FAA249C}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_FIA.et" {
+   components {
+    Hierarchy "{5E331960ECC46AF5}" {
+     Enabled 1
+    }
+   }
+   coords 0.042 0 -1.432
+   angleX 0.133
+   angleY -2.838
+   angleZ 0.83
+  }
+  GenericEntity : "{49ADEF17D3D91B4F}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_A_Soviet.et" {
+   components {
+    Hierarchy "{5D64773615F68FE3}" {
+     Enabled 1
+    }
+   }
+   coords 0 0 -3.779
+  }
+  GenericEntity : "{4A09EF1D855AF2C4}Prefabs/Vegetation/Cuttings/Rosa_canina_small_01.et" {
+   coords -3.698 0 -1.402
+  }
+  GenericEntity : "{89EF4CBC37EABDBE}Prefabs/Vegetation/Cuttings/Carpinus_betulus_large_01.et" {
+   coords 3.569 0 -2.244
+   angleX 41.208
+   angleY 89.73
+   angleZ -0.145
+  }
+  GenericEntity : "{9AE2149222FAD9A3}Prefabs/Compositions/Misc/SubCompositions/Storage/Slotted/Storage_Supplies_FIA_03.et" {
+   components {
+    SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+     m_aEncapsulators {
+      SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+       m_aActions {
+        SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+         m_bEnableResourceGain 0
+        }
+       }
+      }
+     }
+    }
+   }
+   coords -0.134 0.295 -4.007
+   {
+    $grp GenericEntity : "{3FD3F403025BBDF5}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_storage.et" {
+     {
+      coords -0.645 -0.295 -1.348
+      angleY -6.992
+     }
+     {
+      coords -0.876 -0.295 1.486
+      angleY 1.214
+     }
+     {
+      coords -0.775 -0.295 0.237
+      angleY 1.412
+     }
+    }
+   }
+  }
+  GenericEntity : "{A85E67003277D049}Prefabs/Vegetation/Cuttings/Malus_domestica_large_01.et" {
+   coords -3.942 0 -4.466
+   angleY 52.057
+  }
+  GenericEntity : "{C258AD45887AA8CA}Prefabs/Vegetation/Cuttings/Picea_abies_medium_01.et" {
+   coords 3.159 0 -0.868
+   angleY -70.264
+  }
+  GenericEntity : "{CC66836BF4E211F9}Prefabs/Props/Military/Camps/Duckboard_01.et" {
+   components {
+    Hierarchy "{5D647736141AE9A2}" {
+     Enabled 1
+    }
+   }
+   coords -0.098 0 -0.274
+   angleY 87.03
+  }
+  GenericEntity : "{D16F58EC1C0027D7}Prefabs/Vegetation/Cuttings/Salix_cinerea_medium_01.et" {
+   coords 0.563 0 -6.103
+   angleY -180
+  }
+  StaticModelEntity : "{DF649B29EC7635F3}Prefabs/Structures/Military/Fortifications/DirtPile_01/DirtPile_01_small.et" {
+   components {
+    Hierarchy "{5D6477361410326D}" {
+     Enabled 1
+    }
+   }
+   coords 0.04 0 -1.446
+  }
+  GenericEntity : "{E8181E2E360A8AF4}Prefabs/Vegetation/Cuttings/Juniperus_communis_medium_01.et" {
+   coords 2.059 0 -6.081
+   angleY 68.893
+  }
+  GenericEntity : "{EFA7233213E77C2E}Prefabs/Systems/SpawnPoints/SpawnPosition.et" {
+   components {
+    Hierarchy "{5E331960ECDD8DD3}" {
+     Enabled 1
+    }
+   }
+   coords 1.017 0.01 -1.213
+   angleY -8.367
+  }
+  GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+   components {
+    Hierarchy "{5E5CB307E510DDF1}" {
+    }
+   }
+   coords -2.695 0 -0.41
+   angleY -82.492
+  }
+ }
+}
+GenericEntity : "{4510C273B794F3A9}Prefabs/Compositions/Slotted/SlotFlatMedium/VehicleMaintenance_M_USSR_01.et" {
+ coords 57.046 1 141.559
+}
+Tree : "{585B412BC51E59F3}Prefabs/Vegetation/Bush/b_juniperus_communis_1s.et" {
+ coords 97.583 0 145.295
+}
+Vehicle Ural4320_engineer1 : "{6E9142CD2471741C}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_engineer.et" {
+ coords 204.318 1 32.811
+}
+GenericEntity : "{847605BB95F1F066}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_Headquarters_S_USSR_01.et" {
+ coords 88.767 1 143.897
+}
+GenericEntity : "{894A1AFDCB71CD0D}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_02.et" {
+ coords 231.858 1 70.839
+ angleY 46.846
+ {
+  DecalEntity {
+   ID "56DEFDB4A9499F9B"
+   coords -1.116 0 2.616
+   angleX -90
+   angleY -180
+   angleZ -138.842
+  }
+ }
+}
+Tree : "{9025E96A11516E7A}Prefabs/Vegetation/Bush/b_juniperus_communis_2w.et" {
+ coords 98.923 0 136.791
+}
+Tree : "{A5DE58FC9FB6BA60}Prefabs/Vegetation/Bush/b_corylus_avellana_2.et" {
+ coords 100.828 0 133.005
+}
+Tree : "{C98A6C1C2372354E}Prefabs/Vegetation/Bush/b_corylus_avellana_1.et" {
+ coords 104.336 0.001 137.604
+}
+Tree : "{F0B4F9601CEF4BE3}Prefabs/Vegetation/Tree/t_alnus_glutinosa_3s.et" {
+ coords 107.366 0.001 151.884
+}

@@ -1,0 +1,41 @@
+SCR_CampaignFactionManager : "{F1AC26310BAE3788}Prefabs/MP/Campaign/CampaignFactionManager.et" {
+ ID "50A6CDA4F7C1474A"
+ coords 1384.026 38.01 2888.961
+ Factions {
+  SCR_CampaignFaction "{50B30C3AF4BFD934}" {
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C9E82F285C09E24}" {
+     m_aEntityEntryList {
+      SCR_EntityCatalogEntry "{5D2348260FAC0091}" {
+       m_bEnabled 0
+      }
+      SCR_EntityCatalogEntry "{5D2348264A1BDEA3}" {
+       m_bEnabled 0
+      }
+      SCR_EntityCatalogEntry "{5E48B2F67C89A886}" {
+       m_bEnabled 0
+      }
+     }
+    }
+   }
+  }
+  SCR_CampaignFaction "{50B30C3ADB052C80}" {
+   m_bIsPlayable 0
+   m_aEntityCatalogs {
+    SCR_EntityCatalogMultiList "{5C9E82F29B327997}" {
+     m_aEntityEntryList {
+      SCR_EntityCatalogEntry "{5D23482664F150D9}" {
+       m_bEnabled 0
+      }
+      SCR_EntityCatalogEntry "{5D23482661E39833}" {
+       m_bEnabled 0
+      }
+      SCR_EntityCatalogEntry "{5E48B2F63A087FE5}" {
+       m_bEnabled 0
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{33E3D08C2B13A817}Prefabs/Structures/Military/CamoNets/FIA/ORS_CamoNet_Medium_FIA_01_V2.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

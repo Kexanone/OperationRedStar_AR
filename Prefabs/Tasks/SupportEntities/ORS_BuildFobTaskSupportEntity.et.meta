@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{0FEB5AC6942C7F6E}Prefabs/Tasks/SupportEntities/ORS_BuildFobTaskSupportEntity.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

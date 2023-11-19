@@ -1,0 +1,12 @@
+Vehicle : "{E6AEC014D162D686}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_FIA_command.et" {
+ ID "5206D4E7C4A16F13"
+ coords 3271.27 2 2885.71
+ {
+  GenericEntity : "{33E3D08C2B13A817}Prefabs/Structures/Military/CamoNets/FIA/ORS_CamoNet_Medium_FIA_01_V2.et" {
+   ID "5EBA85220CCE757D"
+   coords -0.194 0.425 -1.49
+   angleX -0.895
+   angleZ 0.895
+  }
+ }
+}

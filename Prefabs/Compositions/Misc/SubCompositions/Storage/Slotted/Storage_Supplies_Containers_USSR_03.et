@@ -1,0 +1,48 @@
+GenericEntity : "{FC1D746F2767842B}Prefabs/Compositions/Slotted/SupplyStorage_Empty.et" {
+ ID "5282DCB5DFC8538F"
+ components {
+  SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+   m_bOrientChildrenToTerrain 0
+  }
+  SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+   m_aContainers {
+    SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+     m_vBoundingVolumeMins -3.155 0 -5.437
+     m_vBoundingVolumeMaxs 3.323 2.682 5.433
+    }
+   }
+  }
+ }
+ coords 799.746 51.001 1494.888
+ {
+  $grp GenericEntity : "{13A99500A14FA14C}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/SupplyShippingContainers_01_20ft.et" {
+   {
+    ID "5EB875BAA0B69190"
+    coords 0.2 -0.001 4.125
+    angleY 89.399
+   }
+   {
+    ID "5EB875BAA0B69191"
+    coords -0.069 -0.001 -1.33
+    angleY 90.613
+   }
+   {
+    ID "5EB875BAA0B6919F"
+    coords 0.247 -0.001 -4.019
+    angleY 88.91
+   }
+  }
+  $grp GenericEntity : "{190CC54D175F52CB}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/SupplyShippingContainers_01_10ft.et" {
+   {
+    ID "5EB875BAA0B6919E"
+    coords -1.539 -0.001 1.41
+    angleY 88.269
+   }
+   {
+    ID "5EB875BAA0B71D9A"
+    coords 1.752 -0.001 1.406
+    angleY 91.026
+   }
+  }
+ }
+}

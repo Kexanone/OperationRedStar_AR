@@ -1,0 +1,11 @@
+SCR_PlayerController : "{CD2B8EF361478648}Prefabs/Characters/Core/DefaultPlayerControllerMP_ScenarioFramework.et" {
+ ID "1A9BA6BEFA06E3B1"
+ components {
+  SCR_CampaignFeedbackComponent "{5EBB23830EC6FF1B}" {
+  }
+  SCR_CampaignNetworkComponent "{5EBA38E4BAC473E9}" {
+  }
+  SCR_SpawnerRequestComponent "{5EB8B599A28E1A5A}" {
+  }
+ }
+}

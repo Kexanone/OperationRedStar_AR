@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{C91D8FE614BA01E3}worlds/ORS/Eden/Eden_Blufor.ent"
+ Configurations {
+  ENTResourceClass PC {
+  }
+  ENTResourceClass XBOX_ONE : PC {
+  }
+  ENTResourceClass XBOX_SERIES : PC {
+  }
+  ENTResourceClass PS4 : PC {
+  }
+  ENTResourceClass HEADLESS : PC {
+  }
+ }
+}
