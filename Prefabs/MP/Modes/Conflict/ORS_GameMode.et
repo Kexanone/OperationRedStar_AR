@@ -4,6 +4,10 @@ ORS_GameMode : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et
   SCR_GroupsManagerComponent "{5706EC99934496F5}" {
    m_sDefaultGroupPrefab "{5D1731EDAA56A96E}Prefabs/Groups/COE_PlayableGroup.et"
   }
+  SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
+   m_iKillFeedType FULL
+   m_iReceiveKillFeedType ALL
+  }
   SCR_RespawnBriefingComponent "{5B2A94A3CF791D6F}" {
    m_sJournalConfigPath "{7D17B2E96AC77862}Configs/Journal/ORS_Journal.conf"
   }
