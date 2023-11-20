@@ -2,7 +2,8 @@
 modded class SCR_CampaignBuildingPlacingObstructionEditorComponent : SCR_BaseEditorComponent
 {
 	//------------------------------------------------------------------------------------------------
-	// Check if the preview is outisde of the current objective area.
+	// Check if the preview is at a valid area.
+	// Can only build if it is inside the current or previous objective area.
 	override bool IsPreviewOutOfRange(out ENotification outNotification = -1)
 	{
 		bool result = super.IsPreviewOutOfRange(outNotification);
@@ -16,20 +17,29 @@ modded class SCR_CampaignBuildingPlacingObstructionEditorComponent : SCR_BaseEdi
 		if (!gameMode)
 			return false;
 
-		ORS_ObjectiveArea area = gameMode.GetCurrentObjectiveArea();
-		if (!area)
+		ORS_ObjectiveArea currentArea = gameMode.GetCurrentObjectiveArea();
+		if (!currentArea)
 		{
 			outNotification = ENotification.EDITOR_PLACING_OUT_OF_CAMPAIGN_BUILDING_ZONE;
 			return true;
 		};
 		
-		// Can only build if it's in the current objective area
-		if (vector.DistanceXZ(m_PreviewEnt.GetOrigin(), area.GetOrigin()) > area.GetBuildingPlacingRadius())
+		if (vector.DistanceXZ(m_PreviewEnt.GetOrigin(), currentArea.GetOrigin()) <= currentArea.GetBuildingPlacingRadius())
+			return false;
+		
+		ORS_ObjectiveArea previousArea = gameMode.GetPreviousObjectiveArea();
+		if (!previousArea)
 		{
 			outNotification = ENotification.EDITOR_PLACING_OUT_OF_CAMPAIGN_BUILDING_ZONE;
 			return true;
 		};
+		
+		
+		if (vector.DistanceXZ(m_PreviewEnt.GetOrigin(), previousArea.GetOrigin()) <= previousArea.GetBuildingPlacingRadius())
+			return false;
+		
 
-		return false;
+		outNotification = ENotification.EDITOR_PLACING_OUT_OF_CAMPAIGN_BUILDING_ZONE;
+		return true;
 	}
 }

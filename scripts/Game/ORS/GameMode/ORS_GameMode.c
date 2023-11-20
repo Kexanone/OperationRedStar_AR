@@ -17,6 +17,7 @@ class ORS_GameMode : SCR_GameModeCampaign
 	[RplProp(onRplName: "OnObjectiveAreaChangedProxy")]
 	protected RplId m_iCurrentObjectiveAreaRplId = Replication.INVALID_ID;
 	protected ORS_ObjectiveArea m_pCurrentObjectiveArea;
+	protected ORS_ObjectiveArea m_pPreviousObjectiveArea;
 	protected int m_iCurrentObjectiveAreaIdx = 0;
 	
 	protected ref SCR_MissionHeader m_pMissionHeader;
@@ -122,6 +123,7 @@ class ORS_GameMode : SCR_GameModeCampaign
 		if (!rpl)
 			return;
 		
+		m_pPreviousObjectiveArea = m_pCurrentObjectiveArea;
 		m_pCurrentObjectiveArea = ORS_ObjectiveArea.Cast(rpl.GetEntity());
 	}
 	
@@ -132,12 +134,19 @@ class ORS_GameMode : SCR_GameModeCampaign
 	}
 	
 	//------------------------------------------------------------------------------------------------
+	ORS_ObjectiveArea GetPreviousObjectiveArea()
+	{
+		return m_pPreviousObjectiveArea;
+	}
+	
+	//------------------------------------------------------------------------------------------------
 	void SpawnObjective()
 	{
 		// No more objective left => End game mode
 		if (m_iCurrentObjectiveAreaIdx >= m_aObjectiveAreas.Count())
 			EndGameMode(SCR_GameModeEndData.CreateSimple(EGameOverTypes.COMBATPATROL_VICTORY));
 		
+		m_pPreviousObjectiveArea = m_pCurrentObjectiveArea;
 		m_pCurrentObjectiveArea = m_aObjectiveAreas[m_iCurrentObjectiveAreaIdx];
 		m_pCurrentObjectiveArea.Spawn();
 		
