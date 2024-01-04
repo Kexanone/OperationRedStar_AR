@@ -1,0 +1,8 @@
+GenericEntity : "{3260189525F39062}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   Enabled 0
+  }
+ }
+}

@@ -20,12 +20,12 @@ Vehicle : "{70BAEEFC2D3FEE64}Prefabs/Vehicles/Helicopters/UH1H/UH1H.et" {
     RegisteringComponentSlotInfo SupplyStorage_01 {
      Offset 0.5563 0.8858 0.913
      Angles 0 -90 0
-     Prefab "{98A34AE10104A932}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V1_storage.et"
+     Prefab "{98E824A028C63F8F}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/ORS_SupplyStack_01_V1_Vehicle.et"
     }
     RegisteringComponentSlotInfo SupplyStorage_02 {
      Offset -0.5119 0.8858 0.913
      Angles 0 -90 0
-     Prefab "{98A34AE10104A932}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/SupplyStack_01_V1_storage.et"
+     Prefab "{98E824A028C63F8F}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/ORS_SupplyStack_01_V1_Vehicle.et"
     }
     RegisteringComponentSlotInfo SupplyStorage_03 {
      Offset 0.788 0.8781 -0.1313
@@ -88,6 +88,8 @@ Vehicle : "{70BAEEFC2D3FEE64}Prefabs/Vehicles/Helicopters/UH1H/UH1H.et" {
   ActionsManagerComponent "{C97BE5489221AE18}" {
    additionalActions {
     SCR_ResourceContainerVehicleLoadAction "{5E42966A989974E7}" {
+    }
+    SCR_ResourceContainerVehicleUnloadAction "{5E42966A9D4BFB90}" {
     }
     SCR_CampaignBuildingStartUserAction "{5EB8669114C65B44}" {
      ParentContextList {

@@ -144,7 +144,10 @@ class ORS_GameMode : SCR_GameModeCampaign
 	{
 		// No more objective left => End game mode
 		if (m_iCurrentObjectiveAreaIdx >= m_aObjectiveAreas.Count())
-			EndGameMode(SCR_GameModeEndData.CreateSimple(EGameOverTypes.COMBATPATROL_VICTORY));
+		{
+			GetGame().GetCallqueue().CallLater(EndGameMode, 10000, false, SCR_GameModeEndData.CreateSimple(EGameOverTypes.COMBATPATROL_VICTORY));
+			return;
+		};
 		
 		m_pPreviousObjectiveArea = m_pCurrentObjectiveArea;
 		m_pCurrentObjectiveArea = m_aObjectiveAreas[m_iCurrentObjectiveAreaIdx];

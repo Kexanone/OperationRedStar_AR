@@ -1,0 +1,15 @@
+Vehicle : "{D03C0F6044DB5208}Prefabs/Vehicles/Helicopters/UH1H/UH1H_base.et" {
+ ID "5DB688595BAB2FD7"
+ components {
+  ActionsManagerComponent "{C97BE5489221AE18}" {
+   additionalActions {
+    SCR_ResourceContainerVehicleLoadAction "{5E42966A989974E7}" {
+     Duration -1
+    }
+    SCR_ResourceContainerVehicleUnloadAction "{5E42966A9D4BFB90}" {
+     Duration -1
+    }
+   }
+  }
+ }
+}

@@ -17,18 +17,22 @@ Vehicle : "{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT.et" {
     RegisteringComponentSlotInfo SupplyStorage_01 {
      Offset -0.56 1.0177 -2.4617
      Angles 0 -90 0
+     DisablePhysicsInteraction 1
     }
     RegisteringComponentSlotInfo SupplyStorage_02 {
      Offset 0.53 1.0177 -2.4617
      Angles 0 90 0
+     DisablePhysicsInteraction 1
     }
     RegisteringComponentSlotInfo SupplyStorage_03 {
      Offset 0.53 1.0177 -1.3095
      Angles 0 90 0
+     DisablePhysicsInteraction 1
     }
     RegisteringComponentSlotInfo SupplyStorage_04 {
      Offset -0.56 1.0177 -1.3095
      Angles 0 -90 0
+     DisablePhysicsInteraction 1
     }
     RegisteringComponentSlotInfo SupplyStorage_05 {
      Offset 0.55 1.0177 -0.166
