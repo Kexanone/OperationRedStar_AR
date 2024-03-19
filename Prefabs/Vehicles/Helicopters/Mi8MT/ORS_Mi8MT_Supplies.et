@@ -4,9 +4,44 @@ Vehicle : "{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT.et" {
   SCR_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
    m_bUserActionActivationOnly 1
    m_fBuildingRadius 35
-   m_iMaxPropValue -1
    m_aAvailableTraits {
-    230
+    30
+   }
+  }
+  SCR_ResourceComponent "{5E429668F7A8358A}" {
+   m_aContainers {
+    SCR_ResourceContainer "{5E42966B382452A6}" {
+     m_fResourceValueMax 0
+    }
+   }
+   m_aGenerators {
+    SCR_ResourceGenerator "{5EB8B5AA66EF6DA0}" {
+     m_sDebugName "Generator - Engineer Helo"
+     m_eResourceRights ALL
+     m_fStorageRange 25
+     m_ContainerQueue SCR_ResourceGeneratorContainerQueue "{5EB8B5AB86BF1113}" {
+      m_StoragePolicies {
+       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB809D86BB}" {
+        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5AB9587324A}" {
+        }
+        m_eStorageType CARGO_VEHICLE
+       }
+       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB8FB25BBC}" {
+        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5AB9939A5FC}" {
+        }
+        m_eStorageType STORED
+       }
+       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB88E4C089}" {
+        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5ABA5BD4E4D}" {
+        }
+       }
+      }
+     }
+     m_aActions {
+      SCR_ResourceGeneratorActionStore "{5EB8B5AA7DB4D5C0}" {
+      }
+     }
+    }
    }
   }
   SlotManagerComponent "{55BCE45E438E4CFF}" {
@@ -71,42 +106,6 @@ Vehicle : "{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT.et" {
      }
      Duration 2
      "Sort Priority" 23
-    }
-   }
-  }
-  SCR_ResourceComponent "{5E429668F7A8358A}" {
-   m_aContainers {
-    SCR_ResourceContainer "{5E42966B382452A6}" {
-     m_fResourceValueMax 0
-    }
-   }
-   m_aGenerators {
-    SCR_ResourceGenerator "{5EB8B5AA66EF6DA0}" {
-     m_sDebugName "Generator - Engineer Helo"
-     m_eResourceRights ALL
-     m_fStorageRange 25
-     m_ContainerQueue SCR_ResourceGeneratorContainerQueue "{5EB8B5AB86BF1113}" {
-      m_StoragePolicies {
-       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB809D86BB}" {
-        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5AB9587324A}" {
-        }
-        m_eStorageType CARGO_VEHICLE
-       }
-       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB8FB25BBC}" {
-        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5AB9939A5FC}" {
-        }
-        m_eStorageType STORED
-       }
-       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB88E4C089}" {
-        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5ABA5BD4E4D}" {
-        }
-       }
-      }
-     }
-     m_aActions {
-      SCR_ResourceGeneratorActionStore "{5EB8B5AA7DB4D5C0}" {
-      }
-     }
     }
    }
   }

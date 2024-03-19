@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{11037F1D2CCE0ED7}Prefabs/Vehicles/Wheeled/Ural4320/VehParts/Ural4320_engineer_box.et"
+ Name "{0CD6E71D33E1CCD0}Prefabs/Vehicles/Core/Vehicle_EngineerBox_Base.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -8,6 +8,8 @@ MetaFileClass {
   EntityTemplateResourceClass XBOX_SERIES : PC {
   }
   EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
   }

@@ -9,13 +9,13 @@ class ORS_DestroyTaskSupportEntity : ORS_SubjectBaseTaskSupportEntity
 	override SCR_BaseTask CreateTask(IEntity subject)
 	{
 		ORS_DestroyTask task = ORS_DestroyTask.Cast(super.CreateTask(subject));
-		ScriptedDamageManagerComponent objectDmgManager = ScriptedDamageManagerComponent.Cast(subject.FindComponent(ScriptedDamageManagerComponent));
+		SCR_DamageManagerComponent objectDmgManager = SCR_DamageManagerComponent.Cast(subject.FindComponent(SCR_DamageManagerComponent));
 		
 		// Set subjet to child if parent is not destructible
 		if (!objectDmgManager)
 		{
 			subject = subject.GetChildren();
-			objectDmgManager = ScriptedDamageManagerComponent.Cast(subject.FindComponent(ScriptedDamageManagerComponent));
+			objectDmgManager = SCR_DamageManagerComponent.Cast(subject.FindComponent(SCR_DamageManagerComponent));
 		};
 		
 		if (objectDmgManager)

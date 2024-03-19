@@ -3,9 +3,6 @@ GenericEntity ORS_MainBase {
  {
   GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
    components {
-    SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
-     m_bOrientChildrenToTerrain 0
-    }
     SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
      m_aContainers {
       SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
@@ -24,6 +21,9 @@ GenericEntity ORS_MainBase {
        }
       }
      }
+    }
+    SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+     m_bOrientChildrenToTerrain 0
     }
     Hierarchy "{5DE29DEA80C1E29B}" {
     }

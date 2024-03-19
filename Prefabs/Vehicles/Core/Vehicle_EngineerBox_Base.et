@@ -1,0 +1,10 @@
+GenericEntity : "{A507D9AE39652BD6}Prefabs/Vehicles/Core/Vehicle_Part_Base.et" {
+ ID "4B42E71698F5739C"
+ components {
+  SCR_CampaignBuildingProviderComponent "{5DF54421B01A7FF8}" {
+   m_aAvailableTraits + {
+    30
+   }
+  }
+ }
+}

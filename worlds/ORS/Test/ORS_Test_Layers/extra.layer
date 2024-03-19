@@ -43,9 +43,6 @@ $grp GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStora
  }
  {
   components {
-   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
-    m_bOrientChildrenToTerrain 0
-   }
    SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
     m_aContainers {
      SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
@@ -64,6 +61,9 @@ $grp GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStora
       }
      }
     }
+   }
+   SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+    m_bOrientChildrenToTerrain 0
    }
    Hierarchy "{5DE29DEA858102C7}" {
    }
@@ -133,6 +133,17 @@ $grp GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStora
     angleY 90
    }
   }
+ }
+}
+$grp GenericEntity : "{0CD6E71D33E1CCD0}Prefabs/Vehicles/Core/Vehicle_EngineerBox_Base.et" {
+ {
+  coords 89.054 1 134.445
+ }
+ {
+  coords 100.083 1 132.813
+ }
+ {
+  coords 95.439 1 146.656
  }
 }
 $grp GenericEntity : "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et" {
@@ -237,319 +248,17 @@ Vehicle ORS_Mi8MT_Supplies1 : "{2FF27BCE04A24E51}Prefabs/Vehicles/Helicopters/Mi
     }
    }
   }
-  SCR_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
-   m_aBudgetsToEvaluate {
-    2147483647 2147483647 2147483647
-   }
-  }
-  SCR_EditableVehicleComponent "{50DEB7C26B5EB312}" {
-   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
-    Name "#AR-Vehicle_Mi8MT_Name"
-    m_Image "{4FDC9EAA538B6EF8}UI/Textures/EditorPreviews/Vehicles/Helicopters/Mi8MT/Mi8MT.edds"
-    m_aAuthoredLabels +{
-    }
-   }
-  }
-  VehicleHelicopterSimulation "{51FAEE57F7DA270E}" {
-   Animation VehicleAnimation "{5D9CEE85AD0EE074}" {
-    VehicleParts {
-     VehiclePartAnimation "{5DF4B41DE714F310}" {
-      StartNode "eco_body_out"
-     }
-    }
-   }
-  }
-  SlotManagerComponent "{55BCE45E438E4CFF}" {
-   Slots {
-    RegisteringComponentSlotInfo door_rear {
-     PivotID "Scene_Root"
-     Prefab "{8952883E000BE636}Prefabs/Vehicles/Helicopters/Mi8MT/VehParts/Mi8MT_rear_door.et"
-    }
-    RegisteringComponentSlotInfo SeatsRear {
-     Enabled 0
-    }
-    RegisteringComponentSlotInfo SupplyStorage_01 {
-     Offset -0.56 1.0177 -2.4617
-     Angles 0 -90 0
-     DisablePhysicsInteraction 1
-    }
-    RegisteringComponentSlotInfo SupplyStorage_02 {
-     Offset 0.53 1.0177 -2.4617
-     Angles 0 90 0
-     DisablePhysicsInteraction 1
-    }
-    RegisteringComponentSlotInfo SupplyStorage_03 {
-     Offset 0.53 1.0177 -1.3095
-     Angles 0 90 0
-     DisablePhysicsInteraction 1
-    }
-    RegisteringComponentSlotInfo SupplyStorage_04 {
-     Offset -0.56 1.0177 -1.3095
-     Angles 0 -90 0
-     DisablePhysicsInteraction 1
-    }
-    RegisteringComponentSlotInfo SupplyStorage_05 {
-     Offset 0.55 1.0177 -0.166
-     Angles 0 90 0
-     Prefab "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
-     DisablePhysicsInteraction 1
-    }
-    RegisteringComponentSlotInfo SupplyStorage_06 {
-     Offset -0.5 1.0177 -0.1359
-     Angles 0 -90 0
-     Prefab "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
-     DisablePhysicsInteraction 1
-    }
-    RegisteringComponentSlotInfo SupplyStorage_07 {
-     Offset 0.566 1.0177 0.8904
-     Angles 0 -90 0
-     Prefab "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
-     DisablePhysicsInteraction 1
-    }
-    RegisteringComponentSlotInfo SupplyStorage_08 {
-     Offset -0.5 1.0177 0.8904
-     Angles 0 90 0
-     Prefab "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
-     DisablePhysicsInteraction 1
-    }
-   }
-  }
-  ActionsManagerComponent "{C97BE5489221AE18}" {
-   additionalActions {
-    SCR_ResourceEntityRefundAction "{5D5EC6128E6342C0}" {
-     ParentContextList +{
-     }
-    }
-    SCR_ResourceContainerVehicleLoadAction "{5DAD751A3D2FE182}" : "{A0E53319BFA4E848}Configs/Resources/Supplies/Actions/Supplies_Vehicle_Load.conf" {
-     ParentContextList {
-      "door_l01"
-     }
-    }
-    SCR_ResourceContainerVehicleUnloadAction "{5DAD751A3BF8492E}" : "{F10C4B3E2E87F15B}Configs/Resources/Supplies/Actions/Supplies_Vehicle_Unload.conf" {
-     ParentContextList {
-      "door_l01"
-     }
-    }
-    SCR_CampaignBuildingStartUserAction "{5EB8669114C65B44}" {
-     ParentContextList +{
-     }
-     UIInfo UIInfo "{5EB86691204A1630}" {
-      Name "#ORS-Action_StartBuildingFob_Name"
-     }
-     Duration 2
-     "Sort Priority" 23
-    }
-   }
-  }
-  SCR_ResourceComponent "{5E429668F7A8358A}" {
-   m_aContainers {
-    SCR_ResourceContainer "{5E42966B382452A6}" {
-     m_fResourceValueMax 0
-    }
-   }
-   m_aGenerators {
-    SCR_ResourceGenerator "{5E42966B6826B221}" : "{D0F12FFFB07D3955}Configs/Resources/Supplies/Generators/Generator_HelicopterLoad.conf" {
-    }
-    SCR_ResourceGenerator "{5E42966B68E9CC42}" : "{F02DC41374D82975}Configs/Resources/Supplies/Generators/Generator_HelicopterUnload.conf" {
-    }
-    SCR_ResourceGenerator "{5EB8B5AA66EF6DA0}" {
-     m_sDebugName "Generator - Engineer Helo"
-     m_eResourceRights ALL
-     m_fStorageRange 25
-     m_ContainerQueue SCR_ResourceGeneratorContainerQueue "{5EB8B5AB86BF1113}" {
-      m_StoragePolicies {
-       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB809D86BB}" {
-        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5AB9587324A}" {
-        }
-        m_eStorageType CARGO_VEHICLE
-       }
-       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB8FB25BBC}" {
-        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5AB9939A5FC}" {
-        }
-        m_eStorageType STORED
-       }
-       SCR_ResourceGeneratorStoragePolicy "{5EB8B5AB88E4C089}" {
-        m_StorageQueue SCR_ResourceGeneratorContainerStorageQueueExtended "{5EB8B5ABA5BD4E4D}" {
-        }
-       }
-      }
-     }
-    }
-   }
-  }
- }
- coords 221.161 1 33.803
-}
-Vehicle ORS_Mi8MT2 : "{2FF27BCE04A24E52}Prefabs/Vehicles/Helicopters/Mi8MT/ORS_Mi8MT.et" {
- coords 82.942 1 107.816
-}
-GenericEntity : "{3BA9D94C4EE9B33B}Prefabs/Compositions/Slotted/CompositionBase.et" {
- components {
-  Hierarchy "{5DC704E508136864}" {
-   Enabled 1
-  }
- }
- coords 233.193 1 74.811
- {
-  GenericEntity : "{1EC801E208CB16C6}Prefabs/Vegetation/Cuttings/Rubus_idaeus_small_01.et" {
-   coords -4.045 0 -1.514
-   angleY -50.257
-  }
-  GenericEntity : "{24F98A215FAA249C}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_FIA.et" {
-   components {
-    Hierarchy "{5E331960ECC46AF5}" {
-     Enabled 1
-    }
-   }
-   coords 0.042 0 -1.432
-   angleX 0.133
-   angleY -2.838
-   angleZ 0.83
-  }
-  GenericEntity : "{49ADEF17D3D91B4F}Prefabs/Structures/Military/Camps/Canvas_Covers/Soviet/CanvasCover_Medium_A_Soviet.et" {
-   components {
-    Hierarchy "{5D64773615F68FE3}" {
-     Enabled 1
-    }
-   }
-   coords 0 0 -3.779
-  }
-  GenericEntity : "{4A09EF1D855AF2C4}Prefabs/Vegetation/Cuttings/Rosa_canina_small_01.et" {
-   coords -3.698 0 -1.402
-  }
-  GenericEntity : "{89EF4CBC37EABDBE}Prefabs/Vegetation/Cuttings/Carpinus_betulus_large_01.et" {
-   coords 3.569 0 -2.244
-   angleX 41.208
-   angleY 89.73
-   angleZ -0.145
-  }
-  GenericEntity : "{9AE2149222FAD9A3}Prefabs/Compositions/Misc/SubCompositions/Storage/Slotted/Storage_Supplies_FIA_03.et" {
-   components {
-    SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
-     m_aEncapsulators {
-      SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
-       m_aActions {
-        SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
-         m_bEnableResourceGain 0
-        }
-       }
-      }
-     }
-    }
-   }
-   coords -0.134 0.295 -4.007
-   {
-    $grp GenericEntity : "{3FD3F403025BBDF5}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_storage.et" {
-     {
-      coords -0.645 -0.295 -1.348
-      angleY -6.992
-     }
-     {
-      coords -0.876 -0.295 1.486
-      angleY 1.214
-     }
-     {
-      coords -0.775 -0.295 0.237
-      angleY 1.412
-     }
-    }
-   }
-  }
-  GenericEntity : "{A85E67003277D049}Prefabs/Vegetation/Cuttings/Malus_domestica_large_01.et" {
-   coords -3.942 0 -4.466
-   angleY 52.057
-  }
-  GenericEntity : "{C258AD45887AA8CA}Prefabs/Vegetation/Cuttings/Picea_abies_medium_01.et" {
-   coords 3.159 0 -0.868
-   angleY -70.264
-  }
-  GenericEntity : "{CC66836BF4E211F9}Prefabs/Props/Military/Camps/Duckboard_01.et" {
-   components {
-    Hierarchy "{5D647736141AE9A2}" {
-     Enabled 1
-    }
-   }
-   coords -0.098 0 -0.274
-   angleY 87.03
-  }
-  GenericEntity : "{D16F58EC1C0027D7}Prefabs/Vegetation/Cuttings/Salix_cinerea_medium_01.et" {
-   coords 0.563 0 -6.103
-   angleY -180
-  }
-  StaticModelEntity : "{DF649B29EC7635F3}Prefabs/Structures/Military/Fortifications/DirtPile_01/DirtPile_01_small.et" {
-   components {
-    Hierarchy "{5D6477361410326D}" {
-     Enabled 1
-    }
-   }
-   coords 0.04 0 -1.446
-  }
-  GenericEntity : "{E8181E2E360A8AF4}Prefabs/Vegetation/Cuttings/Juniperus_communis_medium_01.et" {
-   coords 2.059 0 -6.081
-   angleY 68.893
-  }
-  GenericEntity : "{EFA7233213E77C2E}Prefabs/Systems/SpawnPoints/SpawnPosition.et" {
-   components {
-    Hierarchy "{5E331960ECDD8DD3}" {
-     Enabled 1
-    }
-   }
-   coords 1.017 0.01 -1.213
-   angleY -8.367
-  }
-  GenericEntity : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
-   components {
-    Hierarchy "{5E5CB307E510DDF1}" {
-    }
-   }
-   coords -2.695 0 -0.41
-   angleY -82.492
-  }
  }
 }
-GenericEntity : "{4510C273B794F3A9}Prefabs/Compositions/Slotted/SlotFlatMedium/VehicleMaintenance_M_USSR_01.et" {
- coords 57.046 1 141.559
+SCR_BaseTaskManager : "{42922D9971F7C251}Prefabs/Managers/ORS_TaskManager.et" {
+ coords 115.666 1 168.305
 }
-Vehicle ORS_UH1H_Supplies1 : "{4C2C8B0A1BEAC690}Prefabs/Vehicles/Helicopters/UH1H/ORS_UH1H_Supplies.et" {
- coords 111.913 1 47.105
+SCR_SpawnPoint : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
+ coords 107.818 1 137.472
 }
-Tree : "{585B412BC51E59F3}Prefabs/Vegetation/Bush/b_juniperus_communis_1s.et" {
- coords 97.583 0 145.295
+SCR_SpawnPoint : "{5A2220DD0C16958B}Prefabs/MP/Spawning/SpawnPoint_US.et" {
+ coords 107.152 1 134.268
 }
-Vehicle Ural4320_engineer1 : "{6E9142CD2471741C}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_engineer.et" {
- coords 204.318 1 32.811
-}
-Vehicle UH1H1 : "{70BAEEFC2D3FEE64}Prefabs/Vehicles/Helicopters/UH1H/UH1H.et" {
- coords 82.291 1 48.312
-}
-GenericEntity : "{847605BB95F1F066}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_Headquarters_S_USSR_01.et" {
- coords 88.767 1 143.897
-}
-GenericEntity : "{894A1AFDCB71CD0D}Prefabs/Compositions/Misc/CustomEntities/CompositionDecals/CompositionDecal_Dirt_Patch_02.et" {
- coords 231.858 1 70.839
- angleY 46.846
- {
-  DecalEntity {
-   ID "56DEFDB4A9499F9B"
-   coords -1.116 0 2.616
-   angleX -90
-   angleY -180
-   angleZ -138.842
-  }
- }
-}
-Tree : "{9025E96A11516E7A}Prefabs/Vegetation/Bush/b_juniperus_communis_2w.et" {
- coords 98.923 0 136.791
-}
-GenericEntity : "{98E824A028C63F8F}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/ORS_SupplyStack_01_V1_Vehicle.et" {
- coords 35.826 1 116.761
-}
-Tree : "{A5DE58FC9FB6BA60}Prefabs/Vegetation/Bush/b_corylus_avellana_2.et" {
- coords 100.828 0 133.005
-}
-Tree : "{C98A6C1C2372354E}Prefabs/Vegetation/Bush/b_corylus_avellana_1.et" {
- coords 104.336 0.001 137.604
-}
-Tree : "{F0B4F9601CEF4BE3}Prefabs/Vegetation/Tree/t_alnus_glutinosa_3s.et" {
- coords 107.366 0.001 151.884
+ORS_DestroyTaskSupportEntity : "{7F92F33D2BBCD98E}Prefabs/Tasks/SupportEntities/KSC_DestroyTaskSupportEntity.et" {
+ coords 102.683 1 148.713
 }

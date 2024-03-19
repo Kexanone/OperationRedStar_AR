@@ -556,7 +556,7 @@ class ORS_TargetToDestroyWrapper : Managed
 	protected ORS_ObjectiveArea m_pArea;
 	protected ORS_BaseTask m_pTask;
 	protected IEntity m_pAsset;
-	protected ScriptedDamageManagerComponent m_pDamageManager;
+	protected SCR_DamageManagerComponent m_pDamageManager;
 	protected SCR_Faction m_PlayerFaction;
 	
 	//------------------------------------------------------------------------------------------------
@@ -566,9 +566,9 @@ class ORS_TargetToDestroyWrapper : Managed
 		m_pAsset = asset;
 		m_PlayerFaction = playerFaction;
 		
-		m_pDamageManager = ScriptedDamageManagerComponent.Cast(asset.FindComponent(ScriptedDamageManagerComponent));
+		m_pDamageManager = SCR_DamageManagerComponent.Cast(asset.FindComponent(SCR_DamageManagerComponent));
 		if (!m_pDamageManager)
-			m_pDamageManager = ScriptedDamageManagerComponent.Cast(asset.GetChildren().FindComponent(ScriptedDamageManagerComponent));
+			m_pDamageManager = SCR_DamageManagerComponent.Cast(asset.GetChildren().FindComponent(SCR_DamageManagerComponent));
 		
 		m_pDamageManager.GetOnDamageStateChanged().Insert(OnStateChanged);
 	}

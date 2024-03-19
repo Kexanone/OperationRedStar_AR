@@ -1,0 +1,17 @@
+SCR_EditorModeEntity : "{E56F54E533ACE527}Prefabs/Editor/Modes/EditorModeBase.et" {
+ ID "518A34314C7CB324"
+ components {
+  SCR_ContentBrowserEditorComponent "{597071D8310A282F}" {
+   m_aContentBrowserTabStates {
+    SCR_EditorContentBrowserSaveStateDataUI "{60AC570708D23156}" {
+     m_iSavedLabels {
+      30
+     }
+     m_BrowserStateUIInfo SCR_UIInfo "{60AC570732978D2B}" {
+      Icon "{0E394621271B080B}UI/Textures/Editor/Attributes/FreeRoamBuilding/HQ_Tab-64.edds"
+     }
+    }
+   }
+  }
+ }
+}
