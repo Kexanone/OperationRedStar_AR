@@ -1,0 +1,12 @@
+GenericEntity : "{10C26F96EF7A8CF5}Prefabs/Props/Core/Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  SCR_CampaignBuildingProviderComponent "{5EBCED04D0321687}" {
+   m_aBudgetsToEvaluate {
+    SCR_CampaignBuildingMaxValueBudgetToEvaluateData "{5EFAB309A0482ACF}" {
+     m_iMaxValue 3600
+    }
+   }
+  }
+ }
+}
