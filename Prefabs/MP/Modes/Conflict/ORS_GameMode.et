@@ -8,6 +8,9 @@ ORS_GameMode : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et
    m_iKillFeedType FULL
    m_iReceiveKillFeedType ALL
   }
+  SCR_PlayerSpawnPointManagerComponent "{5CDABA98894199D0}" {
+   Enabled 0
+  }
   SCR_RespawnBriefingComponent "{5B2A94A3CF791D6F}" {
    m_sJournalConfigPath "{7D17B2E96AC77862}Configs/Journal/ORS_Journal.conf"
   }

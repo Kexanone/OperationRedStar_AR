@@ -4,9 +4,8 @@ Vehicle : "{70BAEEFC2D3FEE64}Prefabs/Vehicles/Helicopters/UH1H/UH1H.et" {
   SCR_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
    m_bUserActionActivationOnly 1
    m_fBuildingRadius 35
-   m_iMaxPropValue -1
    m_aAvailableTraits {
-    230
+    30
    }
   }
   SlotManagerComponent "{55BCE45E438E4CFF}" {

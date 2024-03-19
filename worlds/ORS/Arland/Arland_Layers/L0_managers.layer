@@ -13,9 +13,6 @@ SCR_AIWorld AIWorld : "{01DC74137CFDDB6A}Prefabs/AI/SCR_AIWorld_Arland.et" {
 PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
  coords 1383.184 39 2822.974
 }
-TagManager TagManager : "{2FA9E172CAB1857A}Prefabs/MP/Managers/TagManager.et" {
- coords 1378.222 39.214 2824.714
-}
 ORS_GameMode ORS_GameMode : "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et" {
  components {
   SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
@@ -93,41 +90,34 @@ COE_ObjectiveManager ObjectiveManager : "{973B5090288C8ADC}Prefabs/Managers/COE_
  m_aLocationConfigs {
   COE_FreeRoamingLocationConfig "{5E7B42E9CB2B02CF}" {
    m_bWeight 42
-   m_fMaxDistanceMainBase 10000
   }
   COE_PrefabLocationConfig "{5E7B42D1349C35C1}" {
    m_bWeight 18
-   m_fMaxDistanceMainBase 10000
   }
   COE_SlotLocationConfig "{5E7B42D0793541FB}" {
    m_bWeight 10
-   m_fMaxDistanceMainBase 10000
   }
   COE_NamedLocationConfig "{5E7D7A70CD6A5F2A}" {
    m_sComment "Towns"
    m_bWeight 12
-   m_fMaxDistanceMainBase 10000
    m_aNamedLocations {
     "C_Location_St_Pierre" "C_LocationChotain" "C_LocationDurras" "C_LocationEntreDeux" "C_LocationErquy" "C_LocationFigari" "C_LocationGravette" "C_LocationLamentin" "C_LocationLaruns" "C_LocationLeMoule" "C_LocationLevie" "C_LocationMeaux" "C_LocationMontignac" "C_LocationMorton" "C_LocationProvins" "C_LocationRegina" "C_LocationStPhilippe" "C_LocationTyrone" "C_LocationVernon" "C_LocationVilleneuve"
    }
   }
   COE_NamedLocationConfig "{5E8F1CE937D132EA}" {
    m_bWeight 3
-   m_fMaxDistanceMainBase 10000
    m_aNamedLocations {
     "G_Military" "G_Military2" "G_Military3" "G_Military4" "G_Military5" "G_Military6"
    }
   }
   COE_NamedLocationConfig "{5E8F1CE955E96A2B}" {
    m_bWeight 3
-   m_fMaxDistanceMainBase 10000
    m_aNamedLocations {
     "G_Harbour" "G_Harbour2" "G_Harbour3" "G_Harbour4" "G_Harbour5" "G_Harbour6"
    }
   }
   COE_NamedLocationConfig "{5E8F1CE953563688}" {
    m_bWeight 3
-   m_fMaxDistanceMainBase 10000
    m_aNamedLocations {
     "G_Industrial" "G_Industrial3" "G_Sawmill" "G_Quarry" "G_Landfill"
    }
