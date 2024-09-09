@@ -1,0 +1,376 @@
+ORS_MainBaseEntity {
+ ID "623C8C2C35EBD46F"
+ components {
+  SCR_EditableEntityComponent "{6242AED019482AE1}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{6242AED00B2C85DF}" {
+    Name "HMAS Adelaide"
+    Icon "{ADBB2339EDD1ED95}UI/Textures/Editor/EditableEntities/Base/EditableEntity_Base.edds"
+    m_Image "{78D266024F88F434}UI/Textures/EditorPreviews/Auto/Props/Naval/Screenshot 2022-09-29 172924.edds"
+   }
+   m_bAutoRegister ALWAYS
+   m_bStatic 1
+   m_Flags NON_DELETABLE
+  }
+  SCR_SlotCompositionComponent "{6242AED079C2B22D}" {
+  }
+  RplComponent "{623CEAC036B2938D}" {
+  }
+  Hierarchy "{623CEAC035E8A8E8}" {
+  }
+ }
+ coords 58.02 1 77.408
+ {
+  GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
+   ID "623C8C2C35EBD3D9"
+   components {
+    SCR_EditableEntityComponent "{6242AEDE7505E255}" {
+     m_UIInfo SCR_EditableEntityUIInfo "{6242AEDF9F0E3F55}" {
+      Name "Supplies"
+      Description "Supplies"
+      Icon "{ADBB2339EDD1ED95}UI/Textures/Editor/EditableEntities/Base/EditableEntity_Base.edds"
+     }
+     m_bAutoRegister ALWAYS
+     m_bStatic 1
+     m_Flags NON_DELETABLE
+    }
+    SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+     m_aContainers {
+      SCR_ResourceContainerVirtual "{5D8AA552C6324D54}" {
+       m_vBoundingVolumeMins -2.711 0 -1.989
+       m_vBoundingVolumeMaxs 2.585 1.367 2.221
+      }
+     }
+     m_aEncapsulators {
+      SCR_ResourceEncapsulator "{5DAD1D48DACE9DE8}" {
+       m_aActions {
+        SCR_ResourceEncapsulatorActionChangeGain "{5DE296D4D87F56EC}" {
+         m_bEnableResourceGain 1
+         m_fResourceGain 900
+         m_fResourceGainTickrate 3600
+        }
+       }
+      }
+     }
+    }
+    SCR_SlotCompositionComponent "{52CAE30B655050CF}" {
+     m_bOrientChildrenToTerrain 0
+    }
+    Hierarchy "{5DE29DEA80C1E29B}" {
+    }
+   }
+   coords 7.381 17.555 37.32
+   angleY 90
+   {
+    GenericEntity : "{0037D9DD160A9044}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_US.et" {
+     ID "623C8C2C35EBD3C6"
+     coords 4.983 -0.059 0.223
+     angleY 90
+    }
+    $grp GenericEntity : "{7D0C0B23F2608D50}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/ORS_SupplyShippingContainers_01_10ft.et" {
+     {
+      ID "623C8C2C35E41908"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -4.24 2.526 -1.206
+      angleY 180
+     }
+     {
+      ID "623C8C2C35E4190B"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -1.531 2.526 -1.356
+      angleY 180
+     }
+     {
+      ID "623C8C2C35E43700"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -1.505 2.526 1.856
+     }
+     {
+      ID "623C8C2C35E4863E"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -4.187 0 1.65
+     }
+     {
+      ID "623C8C2C35E4863F"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -4.159 2.526 1.676
+     }
+     {
+      ID "623C8C2C35E5814A"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 1.081 2.526 -1.219
+      angleY 180
+     }
+     {
+      ID "623C8C2C35E5814B"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 1.155 2.526 1.846
+     }
+     {
+      ID "623C8C2C35E5E907"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 3.741 2.526 1.792
+     }
+     {
+      ID "623C8C2C35E5E908"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 3.667 2.526 -1.27
+      angleY 180
+     }
+     {
+      ID "623C8C2C35EB3D8C"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 1.054 0 -1.244
+      angleY -180
+     }
+     {
+      ID "623C8C2C35EB3D8D"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 1.128 0 1.82
+     }
+     {
+      ID "623C8C2C35EB3D8E"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -1.559 0 -1.382
+      angleY -180
+     }
+     {
+      ID "623C8C2C35EB5273"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 3.64 0 -1.295
+      angleY -180
+     }
+     {
+      ID "623C8C2C35EB5274"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords 3.714 0 1.767
+     }
+     {
+      ID "623C8C2C35EBD333"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -4.268 0 -1.231
+      angleY -180
+     }
+     {
+      ID "623C8C2C35EBD3CC"
+      components {
+       SCR_ResourceComponent "{5D247A59598D71AE}" {
+        m_aContainers {
+         SCR_ResourceContainer "{5D3CDAE74F1A6127}" {
+         }
+        }
+       }
+      }
+      coords -1.532 0 1.831
+     }
+    }
+   }
+  }
+  $grp GenericEntity : "{2931BB9C0AE559BF}PrefabsEditable/Auto/Compositions/Misc/CustomEntities/InteractionPoints/E_ArsenalBox_US_NoAffiliation.et" {
+   {
+    ID "623C8C2C35EBD45E"
+    components {
+     SCR_EditableEntityComponent "{5DD8881028F49879}" {
+      m_Flags 2833
+     }
+    }
+    coords 8.143 17.317 20.702
+    angleY -90
+   }
+   {
+    ID "623C8C2C35EBD45F"
+    components {
+     SCR_EditableEntityComponent "{5DD8881028F49879}" {
+      m_Flags 2833
+     }
+    }
+    coords 8.143 17.356 23.327
+    angleY -90
+   }
+  }
+  GenericEntity : "{47B7E8CA1935BB28}PrefabsEditable/SupportStationSystems/E_SupportStationSystem_Fuel.et" {
+   ID "623C8C2C35EBD444"
+   components {
+    SCR_EditableDescriptorComponent "{5B2AD5BA907797AD}" {
+     m_Flags 34899
+    }
+    SCR_FuelSupportStationComponent "{5E1CF311DF6C3CBE}" {
+     m_fRange 70
+    }
+   }
+   coords -5.751 17.246 0.957
+  }
+  GenericEntity : "{64454FA087931713}PrefabsEditable/SupportStationSystems/E_SupportStationSystem_Repair.et" {
+   ID "623C8C2C35EBD44F"
+   components {
+    SCR_EditableDescriptorComponent "{5B2AD5BA907797AD}" {
+     m_Flags 34899
+    }
+    SCR_RepairSupportStationComponent "{5E1CF31185E317FE}" {
+     m_fRange 70
+    }
+   }
+   coords -5.751 17.019 -4.005
+  }
+  SCR_SpawnPoint : "{987991DCED3DC197}PrefabsEditable/SpawnPoints/E_SpawnPoint.et" {
+   ID "623C8C2C35EBD3B0"
+   components {
+    SCR_EditableSpawnPointComponent "{52E65E94E3532698}" {
+     m_Flags 34903
+    }
+   }
+   coords 5.221 17.331 21.625
+   angleY 90
+  }
+  StaticModelEntity : "{98FE7FDB84B147BD}PrefabsEditable/Auto/Structures/Military/Vessels/VessleHMAS_Adelaide_01/E_VessleHMAS_Adelaide_01.et" {
+   ID "623C8C2C35EBD3BC"
+   components {
+    SCR_EditableEntityComponent "{5E24B5E7518CC75B}" {
+     Enabled 0
+     m_Flags 2064
+    }
+   }
+   {
+    GenericEntity {
+     ID "5E24B5E6C78922C7"
+     components {
+      SPC_ElevatorComponent "{5A7C23CAE7A4CD36}" {
+       Enabled 0
+      }
+      ActionsManagerComponent "{5A7C23C95F15F590}" {
+       additionalActions {
+        ORS_NoUserAction "{5A7C23CA8BD6F50C}" {
+        }
+       }
+      }
+     }
+    }
+    SCR_DestructibleBuildingEntity {
+     ID "5E24A630ABBAEDE5"
+     components {
+      RplComponent "{50A4E7C9B5728062}" {
+       Streamable Disabled
+      }
+     }
+    }
+   }
+  }
+  GenericEntity : "{E02FCD78B2793314}PrefabsEditable/Auto/Compositions/Misc/CustomEntities/InteractionPoints/E_VehicleService_US_Large_NoAffiliation.et" {
+   ID "623C8C2C35EBD3ED"
+   components {
+    SCR_CampaignBuildingProviderComponent "{5ED49CDEA85A0083}" {
+     m_fBuildingRadius 70
+    }
+    SCR_EditableEntityComponent "{5EF0C528F1544FBB}" {
+     m_Flags 2833
+    }
+   }
+   coords 7.23 17.409 27.067
+   angleY -90
+  }
+ }
+}

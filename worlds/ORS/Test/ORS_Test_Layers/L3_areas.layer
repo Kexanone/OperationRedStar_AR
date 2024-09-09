@@ -1,0 +1,54 @@
+$grp PolylineArea {
+ CarrierSpawnInnerBorder {
+  coords 133.421 1 92.144
+  {
+   PolylineShapeEntity {
+    components {
+     Hierarchy "{623CA248E641459E}" {
+     }
+    }
+    coords 17.325 0 -42.988
+    Points {
+     ShapePoint "{623CA2489DA4F245}" {
+      Position -248.268 0 -138.753
+     }
+     ShapePoint "{623CA2489DA45A10}" {
+      Position 199.722 0 -152.066
+     }
+     ShapePoint "{623CA2489177A28A}" {
+      Position 217.299 0 324.789
+     }
+     ShapePoint "{623CA24A12AE178E}" {
+      Position -255.577 0 306.987
+     }
+    }
+   }
+  }
+ }
+ CarrierSpawnOuterBorder {
+  coords 89.085 1 140.172
+  {
+   PolylineShapeEntity {
+    components {
+     Hierarchy "{623CA248E641459E}" {
+     }
+    }
+    coords 17.325 0 -42.988
+    Points {
+     ShapePoint "{623CA2489DA4F245}" {
+      Position -242.382 0 -217.505
+     }
+     ShapePoint "{623CA2489DA45A10}" {
+      Position 275.494 0 -222.786
+     }
+     ShapePoint "{623CA2489177A28A}" {
+      Position 300.816 0 306.279
+     }
+     ShapePoint "{623CA24A12AE178E}" {
+      Position -252.066 0 291.95
+     }
+    }
+   }
+  }
+ }
+}

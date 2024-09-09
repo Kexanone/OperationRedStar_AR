@@ -1,0 +1,134 @@
+$grp PolylineArea {
+ CarrierSpawnInnerBorder {
+  coords 2257.053 65.696 2080.541
+  {
+   PolylineShapeEntity {
+    components {
+     Hierarchy "{623CA248E641459E}" {
+     }
+    }
+    coords 0 0 0
+    Points {
+     ShapePoint "{623CA2489177A28A}" {
+      Position -1155.602 0 -1941.096
+     }
+     ShapePoint "{623CA24A12AE178E}" {
+      Position -1869.218 0 -1457.007
+     }
+     ShapePoint "{623CA2541CA45C13}" {
+      Position -2836.387 0 350.862
+     }
+     ShapePoint "{623CA25412724CA3}" {
+      Position -2194.486 0 1909.341
+     }
+     ShapePoint "{623CA254175F0758}" {
+      Position -868.021 -0 2409.725
+     }
+     ShapePoint "{623CA2540807C8AA}" {
+      Position 1414.234 -0.002 1938.381
+     }
+     ShapePoint "{623CA25401B34D94}" {
+      Position 2275.671 -0.041 943.035
+     }
+     ShapePoint "{623CA254045058B1}" {
+      Position 2220.525 -0.552 -867.127
+     }
+     ShapePoint "{623CA2543516024F}" {
+      Position 1114.667 -7.996 -1881.534
+     }
+     ShapePoint "{623CA2542E4461BD}" {
+      Position -25.506 2.477 -2275.419
+     }
+    }
+    IsClosed 1
+   }
+  }
+ }
+ CarrierSpawnOuterBorder {
+  coords 0 65.696 0
+  {
+   PolylineShapeEntity {
+    components {
+     Hierarchy "{623CD1C48632FAEB}" {
+     }
+    }
+    Points {
+     ShapePoint "{623CCDAFF443C66C}" {
+      Position 245.947 0 521.316
+     }
+     ShapePoint "{623CCDAFF44489B0}" {
+      Position 1017.542 0 -31.806
+     }
+     ShapePoint "{623CCDAF137A1948}" {
+      Position 2176.05 0 -362.584
+     }
+     ShapePoint "{623CCDAF15863841}" {
+      Position 3436.647 0 3.31
+     }
+     ShapePoint "{623CCDAF0A73AD0A}" {
+      Position 4651.508 0 1107.798
+     }
+     ShapePoint "{623CCDAF080DC2C5}" {
+      Position 4742.475 0 3021.783
+     }
+     ShapePoint "{623CCDAF0EB13059}" {
+      Position 3815.631 0 4113.554
+     }
+     ShapePoint "{623CCDAF0CC09B2E}" {
+      Position 1358.361 0 4731.188
+     }
+     ShapePoint "{623CCDAF03E7946E}" {
+      Position -26.817 0 4096.967
+     }
+     ShapePoint "{623CCDAF01B7A9BB}" {
+      Position -706.098 0 2446.87
+     }
+    }
+    IsClosed 1
+   }
+  }
+ }
+}
+$grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" {
+ AO_Beauregard {
+  coords 3253.55 12.62 2748.128
+  angleX 0.895
+  angleZ -0.895
+  m_fAreaRadius 600
+ }
+ AO_Arleville {
+  coords 2879.754 79.586 1513.381
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 600
+ }
+ AO_Airfield {
+  coords 1172.675 37.004 3135.43
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 600
+ }
+ AO_Military {
+  coords 1371.413 -3.588 1907.945
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 650
+ }
+ AO_SignalHill {
+  coords 2374.85 53.11 2382.79
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 500
+ }
+ AO_Sandbank {
+  coords 2258.912 65.608 3284.367
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 550
+ }
+}

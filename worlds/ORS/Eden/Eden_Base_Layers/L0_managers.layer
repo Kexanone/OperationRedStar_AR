@@ -9,7 +9,7 @@ SCR_AIWorld AIWorld : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et" {
   NavmeshWorldComponent "{5584F30EEFEE1223}" {
    NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
     NavmeshFilesConfig BaseNavmeshFilesConfig "{5CF6FEFBD1A09749}" {
-     NavmeshFile "{C35ECF3276824653}worlds/GameMaster/Navmeshes/GM_Eden_vehicles.nmn"
+     NavmeshFile "{C35ECF3276824654}worlds/GameMaster/Navmeshes/GM_Eden_vehicles.nmn"
     }
    }
   }
@@ -26,14 +26,7 @@ ScriptedChatEntity ChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity
  coords 3756.554 0 11271.347
  Flags 0
 }
-COE_VehicleSpawnManager VehicleSpawnManager : "{03A3F74C83B9255B}Prefabs/Managers/COE_VehicleSpawnManager.et" {
- coords 5745.315 0 11387.72
- m_fDesertedDelay 5
-}
-HitRegistrationManager HitRegManager : "{0EDA3D48791120DD}Prefabs/MP/HitRegManager.et" {
- coords 4828.453 28.296 11831.553
-}
-SCR_LoadoutManager LoadoutManager : "{4193EDCF6585A770}Prefabs/MP/Managers/COE_LoadoutManager.et" {
+SCR_LoadoutManager LoadoutManager {
  coords 4828.56 28.299 11834.719
 }
 SCR_BaseTaskManager TaskManager : "{42922D9971F7C251}Prefabs/Managers/ORS_TaskManager.et" {

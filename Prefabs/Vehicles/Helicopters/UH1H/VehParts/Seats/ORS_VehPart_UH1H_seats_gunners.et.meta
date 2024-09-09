@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{BF582E7D6E908DF8}Prefabs/Vehicles/Helicopters/UH1H/VehParts/Seats/ORS_VehPart_UH1H_seats_gunners.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

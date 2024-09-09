@@ -1,0 +1,26 @@
+GenericEntity {
+ ID "623CEACCF378A305"
+ components {
+  SCR_EditableEntityComponent "{623CEAC119234DCF}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{623CEAC1055C67EA}" {
+    Name "Fire Direction Center"
+    Description "Fire Direction Center"
+    Icon "{ADBB2339EDD1ED95}UI/Textures/Editor/EditableEntities/Base/EditableEntity_Base.edds"
+   }
+   m_bAutoRegister ALWAYS
+   m_bStatic 1
+   m_Flags NON_DELETABLE
+  }
+  RplComponent "{623CEAC1FEB689A6}" {
+  }
+  Hierarchy "{623CEAC1EA6D44D1}" {
+  }
+ }
+ coords 1657.168 39 2828.165
+ {
+  SCR_DestructibleBuildingEntity : "{05AF4DA50A1ABC83}Prefabs/Structures/Military/Bunkers/AirfieldBunker_E_01/AirfieldBunker_E_01_big_V2.et" {
+   ID "623CEACCF378A371"
+   coords 0 1.5 0
+  }
+ }
+}

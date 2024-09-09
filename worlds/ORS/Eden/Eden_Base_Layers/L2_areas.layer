@@ -1,112 +1,18 @@
 $grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" {
  AO_StPhillipe {
-  coords 4814.909 12.869 10913.588
+  coords 4557.419 17.839 10786.305
   angleY -0.042
-  m_fAreaRadius 800
+  m_fAreaRadius 600
   {
    GenericEntity {
     components {
      Hierarchy "{5EC6B54DAF869A41}" {
      }
     }
-    coords -356.733 -0.41 -159.864
+    coords 355.168 10.754 1052.747
     angleX 0.893
     angleY -0.014
     angleZ -3.576
-   }
-   $grp SCR_SiteSlotEntity : "{588A3DAF0296B0C1}PrefabsEditable/Slots/Flat/E_SlotFlatSmall.et" {
-    {
-     coords -351.277 -7.104 303.66
-     angleY 0.042
-     {
-      StaticModelEntity {
-       ID "52E8C3643526D54D"
-       coords 0 0.021 0
-       angleX -0.203
-       angleZ 0.178
-      }
-     }
-    }
-    {
-     coords -473.522 -11.276 61.008
-     angleY 0.042
-     {
-      StaticModelEntity {
-       ID "52E8C3643526D54D"
-       coords 0 0.001 0
-      }
-     }
-    }
-    {
-     coords -586.896 -11.544 -235.194
-     angleY 0.042
-     {
-      StaticModelEntity {
-       ID "52E8C3643526D54D"
-       coords 0 0.045 0
-       angleX -0.241
-       angleZ 0.194
-      }
-     }
-    }
-    {
-     coords -169.301 14.912 301.848
-     angleY 0.042
-     {
-      StaticModelEntity {
-       ID "52E8C3643526D54D"
-       coords 0 0.023 0
-       angleX 0.105
-       angleZ -0.172
-      }
-     }
-    }
-    {
-     coords -156.416 14.655 216.759
-     angleY 0.042
-     {
-      StaticModelEntity {
-       ID "52E8C3643526D54D"
-       coords 0 0.152 0
-       angleX 0.186
-       angleZ -0.45
-      }
-     }
-    }
-    {
-     coords -174.075 14.955 217.075
-     angleY 0.042
-     {
-      StaticModelEntity {
-       ID "52E8C3643526D54D"
-       coords 0 0.017 0
-       angleX 0.256
-       angleZ 0.449
-      }
-     }
-    }
-    {
-     coords -134.138 14.974 211.732
-     angleY 0.042
-     {
-      StaticModelEntity {
-       ID "52E8C3643526D54D"
-       coords 0 0.001 0
-      }
-     }
-    }
-    {
-     coords -405.248 -11.186 124.823
-     angleY 0.042
-     {
-      StaticModelEntity {
-       ID "52E8C3643526D54D"
-       coords 0 -0.025 0
-       angleX 0.176
-       angleZ -0.283
-      }
-     }
-    }
    }
   }
  }
@@ -240,7 +146,7 @@ $grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" 
      Hierarchy "{5EC6B54DAAD87412}" {
      }
     }
-    coords 3.675 -0 198.054
+    coords 3.675 0 198.054
    }
    $grp SCR_SiteSlotEntity : "{588A3DAF0296B0C1}PrefabsEditable/Slots/Flat/E_SlotFlatSmall.et" {
     {
@@ -809,8 +715,8 @@ $grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" 
   }
  }
  AO_Kermovan {
-  coords 6173.122 12.203 10080.453
-  m_fAreaRadius 750
+  coords 6306.257 12.203 9722.017
+  m_fAreaRadius 650
   {
    GenericEntity {
     components {
@@ -1815,7 +1721,7 @@ $grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" 
  }
  AO_Figari {
   coords 5472.622 95.901 5175.773
-  m_fAreaRadius 500
+  m_fAreaRadius 550
   {
    GenericEntity {
     components {
@@ -1898,7 +1804,7 @@ $grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" 
  }
  AO_Meaux {
   coords 4637.543 23.544 9697.218
-  m_fAreaRadius 500
+  m_fAreaRadius 600
   {
    GenericEntity {
     components {
@@ -1936,7 +1842,7 @@ $grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" 
  }
  AO_Tyrone {
   coords 5350.415 12.252 8603.244
-  m_fAreaRadius 800
+  m_fAreaRadius 850
   {
    GenericEntity {
     components {
@@ -2018,6 +1924,91 @@ $grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" 
        coords 0 0.026 0
        angleX 3.142
        angleZ -1.034
+      }
+     }
+    }
+   }
+  }
+ }
+ AO_Lancre {
+  coords 11399.564 50.823 1896.149
+  angleY -0.042
+  m_fAreaRadius 1000
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54DAF869A41}" {
+     }
+    }
+    coords 270.809 -42.586 303.977
+    angleX 0.893
+    angleY -0.014
+    angleZ -3.576
+   }
+  }
+ }
+ AO_Perelle {
+  coords 9318.439 2.041 5176.924
+  m_fAreaRadius 750
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54DA0540B23}" {
+     }
+    }
+    coords 21.648 3.059 -119.497
+   }
+  }
+ }
+ AO_Airport {
+  coords 4758.322 24.866 11974.564
+  angleY -0.042
+  m_fAreaRadius 600
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54DAF869A41}" {
+     }
+    }
+    coords -119.216 -5.054 -39.373
+    angleX 0.893
+    angleY -0.014
+    angleZ -3.576
+   }
+  }
+ }
+ AO_Etoupe {
+  coords 5473.633 34.465 10371.085
+  m_fAreaRadius 550
+  {
+   GenericEntity {
+    components {
+     Hierarchy "{5EC6B54C2EAB996A}" {
+     }
+    }
+    coords -45.132 11.521 175.789
+   }
+   $grp SCR_SiteSlotEntity : "{588A3DAF0296B0C1}PrefabsEditable/Slots/Flat/E_SlotFlatSmall.et" {
+    {
+     coords -102.001 -8.963 -222.657
+     {
+      StaticModelEntity {
+       ID "52E8C3643526D54D"
+       coords 0 0.034 0
+       angleX -0.092
+       angleZ -1.111
+      }
+     }
+    }
+    {
+     coords -97.997 -9 -269.204
+     angleY -0.014
+     {
+      StaticModelEntity {
+       ID "52E8C3643526D54D"
+       coords 0 -0.014 0
+       angleX 0.266
+       angleZ 2.652
       }
      }
     }

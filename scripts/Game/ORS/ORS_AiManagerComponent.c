@@ -1,3 +1,4 @@
+/*
 enum ORS_EAiManagementMode
 {
 	DEFEND,
@@ -141,7 +142,7 @@ class ORS_AiManagerComponent : ScriptComponent
 		{
 			group.AddAgent(orphan);
 		};
-		*/
+		*//*
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -344,3 +345,4 @@ class ORS_AiManagerComponent : ScriptComponent
 			SCR_EntityHelper.DeleteEntityAndChildren(group);
 	}
 }
+*/

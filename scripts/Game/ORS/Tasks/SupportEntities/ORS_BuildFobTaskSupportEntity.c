@@ -1,3 +1,4 @@
+/*
 //------------------------------------------------------------------------------------------------
 class ORS_BuildFobTaskSupportEntityClass : ORS_LocationBaseTaskSupportEntityClass
 {
@@ -7,3 +8,4 @@ class ORS_BuildFobTaskSupportEntityClass : ORS_LocationBaseTaskSupportEntityClas
 class ORS_BuildFobTaskSupportEntity : ORS_LocationBaseTaskSupportEntity
 {
 };
+*/

@@ -1,3 +1,4 @@
+/*
 //------------------------------------------------------------------------------------------------
 class ORS_DestroyTaskClass: ORS_BaseTaskClass
 {
@@ -19,3 +20,4 @@ class ORS_DestroyTask : ORS_BaseTask
 		supportEntity.FinishTask(this);				
 	}
 }
+*/

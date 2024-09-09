@@ -1,74 +1,149 @@
-ORS_GameMode : "{3B230AAC5252108F}Prefabs/MP/Modes/Conflict/GameMode_Campaign.et" {
+ORS_GameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
  ID "56B2B479C6B96951"
  components {
-  SCR_GroupsManagerComponent "{5706EC99934496F5}" {
-   m_sDefaultGroupPrefab "{5D1731EDAA56A96E}Prefabs/Groups/COE_PlayableGroup.et"
+  SignalsManagerComponent "{5E6F1867E2884BD3}" {
+  }
+  SCR_CommunicationSoundComponent "{5E757D047CE171AF}" {
+   Filenames {
+    "{91D53896F5AD5DB4}Sounds/RadioProtocol/RadioProtocol_CombatPatrol_US.acp"
+   }
+  }
+  EPF_PersistenceManagerComponent "{6252AE6EDBEB1DEC}" {
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{6252AE6EC1DEA817}" {
+    m_sDatabaseName "ORS"
+   }
+  }
+  SCR_CampaignBuildingManagerComponent "{616A2D22D895D15C}" {
+   m_sFreeRoamBuildingClientTrigger "{5E191CEAF4B95816}Prefabs/MP/FreeRoamBuildingClientTrigger.et"
+   m_BudgetType CAMPAIGN
+   m_iCompositionRefundPercentage 100
+   m_OutlineManager SCR_CampaignBuildingCompositionOutlineManager "{616A2D22092CE8E6}" : "{96A8B496A076F1C0}scripts/Game/Building/CampaignBuildingCompositionOutline.conf" {
+   }
+   m_sPrefabsToBuildResource "{D2527D9AA5B4A33E}Configs/Editor/PlaceableEntities/Compositions/Compositions_FreeRoamBuilding.conf"
+  }
+  SCR_CommandingManagerComponent "{5E6F1867E2884BA4}" {
+   m_iMaxAIPerGroup 10
+  }
+  SCR_CompositionSlotManagerComponent "{5E8ED61996D6450A}" {
+  }
+  SCR_DebriefingScreenComponent "{5E6F1867E2884BA2}" {
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_DebriefingScreenUnevenFourTiles "{5E6F1867E2884BBF}" {
+    m_TopLeftTile SCR_DebriefingScreenBigImageContent "{5E6F1867E2884BBD}" {
+     m_sContentImage "{C9D485F6F055C410}UI/Textures/MissionLoadingScreens/COE_Arland_Preview.edds"
+    }
+    m_TopRightTile SCR_DebriefingScreenFinishedObjectivesContent "{5E6F1867E2884BBB}" {
+     m_sTitleText "#AR-DebriefingScreen_Objectives"
+    }
+    m_BottomLeftTile SCR_DebriefingScreenSummaryContent "{5E6F1867E2884BB9}" {
+     m_sTitleText "#AR-DebriefingScreen_Debriefing"
+     m_sSubtitleText "#AR-DebriefingScreen_Subtitle"
+    }
+    m_BottomRightTile SCR_DebriefingScreenStatisticsContent "{5E6F1867E2884BB6}" {
+     m_sTitleText "#AR-DebriefingScreen_Statistics"
+     m_aStatistics {
+      SCR_DebriefingScreenStatisticShotsFired "{5E83095F660AB0A2}" {
+      }
+      SCR_DebriefingScreenStatisticKills "{5E83095F67BFBC71}" {
+      }
+      SCR_DebriefingScreenStatisticDeaths "{5E83095F659FABBF}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceWalked "{5E83095F619EFC94}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceDriven "{5E83095F6EE0B393}" {
+      }
+     }
+    }
+   }
+  }
+  SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
+   m_sConfigPath "{09F7AAA14A642683}Configs/NameTags/NametagFriendlies.conf"
   }
   SCR_NotificationSenderComponent "{56FA84B04BE7D4C0}" {
    m_iKillFeedType FULL
    m_iReceiveKillFeedType ALL
   }
-  SCR_PlayerSpawnPointManagerComponent "{5CDABA98894199D0}" {
-   Enabled 0
+  SCR_PlayerSpawnPointManagerComponent "{609CD73D4B95B9D9}" {
+   m_SpawnPointPrefab "{6FC8BA123C919DB3}Prefabs/MP/PlayerRadioSpawnPointCampaign.et"
   }
-  SCR_RespawnBriefingComponent "{5B2A94A3CF791D6F}" {
-   m_sJournalConfigPath "{7D17B2E96AC77862}Configs/Journal/ORS_Journal.conf"
-  }
-  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
-   m_Struct SCR_MissionStruct "{5C6E86B1D6F0EC89}" {
-    m_Struct0 ORS_SessionStruct "{5C6E86B1D41E4E2F}" {
-    }
-    m_Struct1 ORS_EmptyStruct "{5E2C9BB6F87D9794}" {
+  SCR_RespawnBriefingComponent "{5E6F1867E2884BB0}" {
+   m_Info SCR_UIInfo "{5E6F1867E2884B89}" {
+    Description "#CombatScenario_Briefing"
+   }
+   m_aGameModeHints {
+    SCR_HintUIInfo "{5E6F1867E2884B84}" {
+     Name "#AR-Workshop_TabName_Briefing"
+     Description "#AR-CombatScenario_Briefing"
     }
    }
   }
-  SCR_WelcomeScreenComponent "{5D349E3E9CC39991}" {
-   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5D349E3E90D4315E}" {
-    m_MiddleColumn SCR_WelcomeScreenMissionObjectivesContent "{5D349E3E8A5CF4C3}" {
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_MenuSpawnLogic "{5D36888CC966608A}" {
+   }
+  }
+  SCR_RespawnTimerComponent "{5E6F1867E2884B95}" {
+  }
+  SCR_SaveLoadComponent "{623C9D8D9E68C04A}" {
+   Enabled 0
+   m_Struct SCR_MissionStruct "{623C9D8D9DB5A10E}" {
+    m_Struct0 SCR_EditorStruct "{623C9D8DDA05B255}" {
+     m_AttributeList SCR_EditorAttributeList "{623C9D8DD98DA516}" : "{F3D6C6D25642352C}Configs/Editor/AttributeLists/Edit.conf" {
+     }
+    }
+    m_Struct1 ORS_SessionStruct "{6242AED151B408EF}" {
+    }
+   }
+   m_iAutosavePeriod 120
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5E6F1867E2884B93}" {
+   m_bRandomStartingDaytime 1
+   m_bRandomStartingWeather 1
+   m_bAllowHeaderSettings 1
+  }
+  SCR_WelcomeScreenComponent "{5E6F1867E2884B90}" {
+   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5E6F1867E2884B91}" {
+    m_LeftColumn SCR_WelcomeScreenFactionContent "{5E6F1867E2884A6E}" {
+     m_sTitleText "#AR-DeployScreen_AvailableFactionsTitle"
+     m_sBottomTitleText "#AR-DeployScreen_MoreFactions"
+    }
+    m_MiddleColumn SCR_WelcomeScreenMissionObjectivesContent "{5E6F1867E2884A6C}" {
+     m_sTitleText "Possible Objectives"
      m_aMissionObjectives {
-      SCR_WelcomeScreenMissionObjectives "{5D349E3F455821CC}" {
-       m_sObjectiveQuadName "Ressuply"
-       m_sDescription "#ORS-Briefing_Task_BuildFob_Description"
+      SCR_WelcomeScreenMissionObjectives "{5E6F1867E2884A63}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#KSC-Task_ClearArea_Description"
       }
-      SCR_WelcomeScreenMissionObjectives "{5D349E3F45C63A88}" {
-       m_sDescription "#ORS-Briefing_Task_Seize_Description"
+      SCR_WelcomeScreenMissionObjectives "{6172533B76692165}" {
+       m_sObjectiveQuadName "Eliminate"
+       m_sDescription "#KSC-Task_Destroy_Description"
       }
-      SCR_WelcomeScreenMissionObjectives "{5D349E3F45967A8B}" {
-       m_sObjectiveQuadName "Defend"
-       m_sDescription "#ORS-Briefing_Task_Defend_Description"
+      SCR_WelcomeScreenMissionObjectives "{5E6F1867E2884A68}" {
+       m_sObjectiveQuadName "Eliminate"
+       m_sDescription "#KSC-Task_Kill_Description"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5E6F1867E2884A66}" {
+       m_sObjectiveQuadName "Custom"
+       m_sDescription "#KSC-Task_FindIntel_Description"
+      }
+      SCR_WelcomeScreenMissionObjectives "{6172533ACFCFDC92}" {
+       m_sObjectiveQuadName "GetOut"
+       m_sDescription "#KSC-Task_ExfilFrom_Description"
       }
      }
     }
-    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5D349E3E89289BE9}" {
+    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5E6F1867E289B95B}" {
+     m_sTitleText "Introduction"
      m_aIntroduction {
-      SCR_WelcomeScreenIntroduction "{5D349E3F6FF705DE}" {
-       m_sContentImage "{DE06FBCB3D1D9E6F}gfx/preview.edds"
-       m_sContentTitleText "#ORS-Scenario_Everon_USSR_Name"
-       m_sContentDescriptionText "#ORS-Scenario_Everon_Description"
-      }
-      SCR_WelcomeScreenIntroduction "{5D349E3F6C78332F}" {
-       m_sContentImage ""
-       m_sContentTitleText ""
-       m_sContentDescriptionText ""
-      }
-      SCR_WelcomeScreenIntroduction "{5D349E3F6C38011F}" {
-       m_sContentImage ""
-       m_sContentTitleText ""
-       m_sContentDescriptionText ""
+      SCR_WelcomeScreenIntroduction "{5E6F1867E289B951}" {
+       m_sContentTitleText "#AR-Workshop_TabName_Briefing"
+       m_sContentDescriptionText "#COE-Briefing_Description"
       }
      }
     }
    }
-  }
-  SCR_XPHandlerComponent "{5CAAA397E5408ABF}" {
-   Enabled 0
   }
  }
  PlayerControllerPrefab "{BF6438F6F5CD15E3}Prefabs/Characters/Core/ORS_PlayerController.et"
  m_bAutoPlayerRespawn 0
- m_bAllowFactionChange 1
  m_fAutoReloadTime 30
- m_bAutostart 0
- m_bTerminateScenario 0
- m_sMainBaseEntityName "ORS_MainBase"
 }

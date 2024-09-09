@@ -1,3 +1,4 @@
+/*
 //------------------------------------------------------------------------------------------------
 class ORS_LocationBaseTaskSupportEntityClass: SCR_BaseTaskSupportEntityClass
 {
@@ -45,3 +46,4 @@ class ORS_LocationBaseTaskSupportEntity : SCR_BaseTaskSupportEntity
 		
 	}
 }
+*/

@@ -1,3 +1,4 @@
+/*
 //------------------------------------------------------------------------------------------------
 //! This array behaves like an urn problem
 class COE_UrnArray<Class T> : Managed
@@ -179,3 +180,4 @@ class COE_SlotsManagerComponent : ScriptComponent
 		return true;
 	}
 }
+*/

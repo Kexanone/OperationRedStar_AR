@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{BF6438F6F5CD15E3}Prefabs/Characters/Core/DefaultPlayerControllerMP_ORS.et"
+ Name "{BF6438F6F5CD15E3}Prefabs/Characters/Core/ORS_PlayerController.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -10,6 +10,8 @@ MetaFileClass {
   EntityTemplateResourceClass PS4 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
   }
  }
 }

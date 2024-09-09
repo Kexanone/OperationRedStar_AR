@@ -1,3 +1,4 @@
+/*
 //------------------------------------------------------------------------------------------------
 class ORS_SubjectBaseTaskSupportEntityClass: SCR_BaseTaskSupportEntityClass
 {
@@ -41,3 +42,4 @@ class ORS_SubjectBaseTaskSupportEntity : SCR_BaseTaskSupportEntity
 		
 	}
 };
+*/

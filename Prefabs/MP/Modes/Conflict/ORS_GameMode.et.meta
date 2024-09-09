@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{6517929F629FB623}Prefabs/MP/Modes/Conflict/COE_GameMode.et"
+ Name "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -10,6 +10,8 @@ MetaFileClass {
   EntityTemplateResourceClass PS4 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
   }
  }
 }

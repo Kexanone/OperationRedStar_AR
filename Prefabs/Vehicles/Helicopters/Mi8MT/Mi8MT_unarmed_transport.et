@@ -1,0 +1,35 @@
+Vehicle : "{B6B8C164FD6377EA}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_unarmed_base.et" {
+ ID "5A7CEB06421662F8"
+ components {
+  SCR_ResourceComponent "{60DAD313D31A3A96}" {
+   Enabled 0
+  }
+  SlotManagerComponent "{55BCE45E438E4CFF}" {
+   Slots {
+    RegisteringComponentSlotInfo SeatsRear {
+     Prefab "{8382BDAE21E0D6FF}Prefabs/Vehicles/Helicopters/Mi8MT/VehParts/Seats/ORS_VehPart_MI8_seats_cargo.et"
+    }
+    RegisteringComponentSlotInfo SupplyStorage_01 {
+     Enabled 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_02 {
+     Enabled 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_03 {
+     Enabled 0
+    }
+    RegisteringComponentSlotInfo SupplyStorage_04 {
+     Enabled 0
+    }
+   }
+  }
+  ActionsManagerComponent "{C97BE5489221AE18}" {
+   additionalActions {
+    ORS_NoUserAction "{5DAD751A3D2FE182}" {
+    }
+    ORS_NoUserAction "{5DAD751A3BF8492E}" {
+    }
+   }
+  }
+ }
+}

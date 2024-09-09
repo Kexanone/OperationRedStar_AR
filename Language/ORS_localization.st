@@ -82,28 +82,28 @@ StringTable {
    LastChanged "kexanone"
   }
   CustomStringTableItem "{5ED213025E4A7924}" {
-   Id "ORS-Task_Destroy_Description"
-   Target_en_us "Destroy the designated target."
-   Target_de_de "Zerstören Sie das angegebene Ziel."
-   Modified 1590837974
-   Author "kexanone"
-   LastChanged "kexanone"
+   Id "ORS-Task_DestroyCommNodes_Description"
+   Target_en_us "Seek and destroy antennas, radars and command trucks in the area in order to stop reinforcements."
+   Target_de_de "Suche und zerstöre Antennen, Radare und Kommandolastwagen im Gebiet um Verstärkungen zu kappen."
+   Modified 1648589773
+   Author "Kexanone"
+   LastChanged "Kexanone"
   }
   CustomStringTableItem "{5ED2130F0748AC9A}" {
-   Id "ORS-Task_Destroy_Name"
-   Target_en_us "Destroy %1"
-   Target_de_de "Zerstöre %1"
-   Modified 1590836134
-   Author "kexanone"
-   LastChanged "kexanone"
+   Id "ORS-Task_DestroyCommNodes_Name"
+   Target_en_us "Seek and destroy comm nodes (%1/%2)"
+   Target_de_de "Suche und zerstöre Kommunikationsknoten (%1/%2)"
+   Modified 1648589697
+   Author "Kexanone"
+   LastChanged "Kexanone"
   }
   CustomStringTableItem "{5ED21310EBB2BCE8}" {
    Id "ORS-Task_Seize_Description"
-   Target_en_us "Seek and destroy targets and hold the area."
-   Target_de_de "Suchen und zerstören Sie Ziele und halten Sie das Gebiet."
-   Modified 1590837739
+   Target_en_us "Capture and hold the area."
+   Target_de_de "Erobern und halten Sie das Gebiet."
+   Modified 1648563284
    Author "kexanone"
-   LastChanged "kexanone"
+   LastChanged "Kexanone"
   }
   CustomStringTableItem "{5ED213039379AC5A}" {
    Id "ORS-Task_Seize_Name"

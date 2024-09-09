@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{5DACF18ACE9FB8CF}worlds/ORS_Test/ORS_Test.ent"
+ Name "{5DACF18ACE9FB8CF}worlds/ORS/Test/ORS_Test.ent"
  Configurations {
   ENTResourceClass PC {
   }
@@ -10,6 +10,8 @@ MetaFileClass {
   ENTResourceClass PS4 : PC {
   }
   ENTResourceClass HEADLESS : PC {
+  }
+  ENTResourceClass PS5 : PC {
   }
  }
 }

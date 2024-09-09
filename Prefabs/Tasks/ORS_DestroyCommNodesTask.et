@@ -1,0 +1,15 @@
+KSC_CounterTask {
+ ID "62436DDE001B2BB7"
+ components {
+  SCR_MapDescriptorComponent "{62436DDE001B2B9F}" {
+   VisibleOnMap 0
+   MainType Task
+  }
+ }
+ coords 1356.394 1.677 1054.424
+ m_sName "#ORS-Task_DestroyCommNodes_Name"
+ m_sDescription "#ORS-Task_DestroyCommNodes_Description"
+ m_sMapIconName "Icon_Task_Sabotage"
+ m_sTaskListIconName "Icon_Task_Sabotage"
+ m_sIconImageset "{10C0A9A305E8B3A4}UI/Imagesets/Tasks/Task_Icons.imageset"
+}

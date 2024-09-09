@@ -1,14 +1,13 @@
 //------------------------------------------------------------------------------------------------
 [BaseContainerProps()]
 class ORS_SessionStruct : SCR_JsonApiStruct
-//class ORS_SessionStruct : SCR_CampaignStruct
 {
-	protected int m_iCurrentObjectiveIdx;
+	protected ref array<int> m_aObjectiveAreaStates;
 	
 	//------------------------------------------------------------------------------------------------
 	void ORS_SessionStruct()
 	{
-		RegV("m_iCurrentObjectiveIdx");
+		RegV("m_aObjectiveAreaStates");
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -28,25 +27,25 @@ class ORS_SessionStruct : SCR_JsonApiStruct
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	int GetCurrentObjectiveAreaIdx()
+	array<int> GetObjectiveAreaStates()
 	{
-		return m_iCurrentObjectiveIdx;
+		return m_aObjectiveAreaStates;
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void SetCurrentObjectiveAreaIdx(int idx)
+	void SetObjectiveAreaStates(array<int> states)
 	{
-		m_iCurrentObjectiveIdx = idx;
+		m_aObjectiveAreaStates = states;
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	/*
-	override void Clear()
+	override void ClearCache()
 	{
-		super.Clear();
-		m_iCurrentObjectiveIdx = 0;
+		super.ClearCache();
+		
+		if (m_aObjectiveAreaStates)
+			m_aObjectiveAreaStates.Clear();
 	}
-	*/
 }
 
 //------------------------------------------------------------------------------------------------

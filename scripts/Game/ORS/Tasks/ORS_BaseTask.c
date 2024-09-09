@@ -1,3 +1,4 @@
+/*
 //------------------------------------------------------------------------------------------------
 class ORS_BaseTaskClass: SCR_BaseTaskClass
 {
@@ -177,3 +178,4 @@ class ORS_BaseTask : SCR_BaseTask
 		reader.ReadString(m_sFormatParam3);
 	}
 }
+*/

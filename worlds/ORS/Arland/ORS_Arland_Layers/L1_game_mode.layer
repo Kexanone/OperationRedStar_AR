@@ -1,0 +1,12 @@
+ORS_GameMode GameMode : "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et" {
+ components {
+  EPF_PersistenceManagerComponent "{6252AE6EDBEB1DEC}" {
+   m_pConnectionInfo EDF_JsonFileDbConnectionInfo "{6252AE6EC1DEA817}" {
+    m_sDatabaseName "ORS_Arland"
+   }
+  }
+ }
+ coords 0 0 0
+ m_sKSC_WorldSlotsConfigName "{721FEF4568F1F815}Configs/Slots/Arland/KSC_Slots_Arland.conf"
+ m_sCarrierPrefabName "{89C4840256E31EE7}Prefabs/Compositions/Misc/ORS/ORS_Carrier.et"
+}

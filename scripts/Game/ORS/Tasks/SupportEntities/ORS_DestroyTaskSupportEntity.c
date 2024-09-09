@@ -1,3 +1,4 @@
+/*
 //------------------------------------------------------------------------------------------------
 class ORS_DestroyTaskSupportEntityClass: ORS_SubjectBaseTaskSupportEntityClass
 {
@@ -24,3 +25,4 @@ class ORS_DestroyTaskSupportEntity : ORS_SubjectBaseTaskSupportEntity
 		return task;
 	}
 };
+*/

@@ -1,3 +1,4 @@
+/*
 //------------------------------------------------------------------------------------------------
 //! Fix writing/reading of task prefab name
 modded class SCR_BaseTaskManager : GenericEntity
@@ -59,3 +60,4 @@ modded class SCR_BaseTaskManager : GenericEntity
 		}
 	}
 }
+&/
