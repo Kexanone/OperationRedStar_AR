@@ -1,0 +1,56 @@
+$object "" {
+ #version 1.0
+ #tag MergeMeshes "1"
+ #tag Coords "XZY"
+ #tag Scale "1.000000"
+ $materials {
+  $material "DefaultGeneratedMaterial" {
+   #UVset 0
+  }
+ }
+ $colliders {
+  $box "UBX_Plane" {
+   $frame {
+     1 0 0
+     0 1 0
+     0 -0 1
+     0 -0.4999999 -0.0000001
+    
+   }
+   #weight 0
+   #material "Metal_CE9253778DD8FBDE"
+   #layers "BuildingFireView"
+   #corner 16 0.5 96
+  }
+ }
+ $lod 0 {
+  #lodFactor 0.5
+  $mesh "Plane" {
+   #texCoords 1
+   $faces {
+     0 4 0 1 2 3
+   }
+   $faceVerts {
+     2 0 0
+     3 0 1
+     1 0 2
+     0 0 3
+   }
+   $verts {
+     -16 0.000016 -96 0
+     16 0.000016 -96 0
+     -16 -0.000016 96 0
+     16 -0.000016 96 0
+   }
+   $texCoords {
+     0.16669 0.99996
+     0.00004 0.99996
+     0.00004 0.00004
+     0.16669 0.00004
+   }
+   $normals {
+     0 1 0
+   }
+  }
+ }
+}

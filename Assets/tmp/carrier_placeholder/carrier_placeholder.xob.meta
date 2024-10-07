@@ -1,0 +1,37 @@
+MetaFileClass {
+ Name "{A1C8F965C7EDD3DB}Assets/tmp/carrier_placeholder/carrier_placeholder.xob"
+ Configurations {
+  FBXResourceClass PC {
+   MaterialAssigns {
+    MaterialAssignClass "{625D00F82C5FC1A5}" {
+     SourceMaterial "DefaultGeneratedMaterial"
+     AssignedMaterial "{0DD48328B1527756}Assets/Props/Industrial/BarrelMetal_01/Data/BarrelMetal_01_red.emat"
+    }
+   }
+   MeshParams {
+    MeshParam Plane {
+    }
+   }
+   GeometryParams {
+    GeometryParam UBX_Plane {
+     LayerPreset "BuildingFireView"
+     SurfaceProperties {
+      "{CE9253778DD8FBDE}Common/Materials/Game/metal.gamemat"
+     }
+     Mass 0
+     Margin 0
+    }
+   }
+  }
+  FBXResourceClass XBOX_ONE : PC {
+  }
+  FBXResourceClass XBOX_SERIES : PC {
+  }
+  FBXResourceClass PS4 : PC {
+  }
+  FBXResourceClass PS5 : PC {
+  }
+  FBXResourceClass HEADLESS : PC {
+  }
+ }
+}

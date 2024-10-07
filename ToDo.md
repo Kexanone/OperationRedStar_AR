@@ -1,0 +1,8 @@
+- [ ] Fix placing of helos
+- [x] Fix invisibility
+- [x] Make sure vehicles don't despawn
+- [ ] Fix spawning of crew (LoD)
+- [ ] Commanding menu
+- [ ] FOB Marker
+- [ ] Old antennas
+- [ ] Distance between antennas (and previous ones)

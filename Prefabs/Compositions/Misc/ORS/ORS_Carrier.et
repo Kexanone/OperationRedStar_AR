@@ -20,6 +20,52 @@ ORS_MainBaseEntity {
  }
  coords 58.02 1 77.408
  {
+  GenericEntity {
+   ID "625D00F9DE7D4157"
+   components {
+    MeshObject "{625D00F9AFED7ECA}" {
+     Object "{A1C8F965C7EDD3DB}Assets/tmp/carrier_placeholder/carrier_placeholder.xob"
+    }
+    RigidBody "{625D00F9A002AD3E}" {
+     ModelGeometry 1
+     Static 1
+    }
+    RplComponent "{625D03EA50377EB4}" {
+     Streamable Disabled
+    }
+   }
+   coords -0.727 17.203 14.857
+  }
+  StaticModelEntity {
+   ID "623C8C2C35EBD3BC"
+   components {
+    SCR_EditableEntityComponent "{5E24B5E7518CC75B}" {
+     Enabled 0
+     m_Flags 2064
+    }
+   }
+   {
+    GenericEntity {
+     ID "5E24B5E6C78922C7"
+     components {
+      ActionsManagerComponent "{5A7C23C95F15F590}" {
+       additionalActions {
+        ORS_NoUserAction "{5A7C23CA8BD6F50C}" {
+        }
+       }
+      }
+     }
+    }
+    SCR_DestructibleBuildingEntity {
+     ID "5E24A630ABBAEDE5"
+     components {
+      RplComponent "{50A4E7C9B5728062}" {
+       Streamable Disabled
+      }
+     }
+    }
+   }
+  }
   GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
    ID "623C8C2C35EBD3D9"
    components {
@@ -325,39 +371,6 @@ ORS_MainBaseEntity {
    }
    coords 5.221 17.331 21.625
    angleY 90
-  }
-  StaticModelEntity : "{98FE7FDB84B147BD}PrefabsEditable/Auto/Structures/Military/Vessels/VessleHMAS_Adelaide_01/E_VessleHMAS_Adelaide_01.et" {
-   ID "623C8C2C35EBD3BC"
-   components {
-    SCR_EditableEntityComponent "{5E24B5E7518CC75B}" {
-     Enabled 0
-     m_Flags 2064
-    }
-   }
-   {
-    GenericEntity {
-     ID "5E24B5E6C78922C7"
-     components {
-      SPC_ElevatorComponent "{5A7C23CAE7A4CD36}" {
-       Enabled 0
-      }
-      ActionsManagerComponent "{5A7C23C95F15F590}" {
-       additionalActions {
-        ORS_NoUserAction "{5A7C23CA8BD6F50C}" {
-        }
-       }
-      }
-     }
-    }
-    SCR_DestructibleBuildingEntity {
-     ID "5E24A630ABBAEDE5"
-     components {
-      RplComponent "{50A4E7C9B5728062}" {
-       Streamable Disabled
-      }
-     }
-    }
-   }
   }
   GenericEntity : "{E02FCD78B2793314}PrefabsEditable/Auto/Compositions/Misc/CustomEntities/InteractionPoints/E_VehicleService_US_Large_NoAffiliation.et" {
    ID "623C8C2C35EBD3ED"

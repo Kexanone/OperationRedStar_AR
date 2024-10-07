@@ -1,0 +1,11 @@
+- [ ] Helo spawning at carrier
+- [ ] Despawn Helos at carrier
+- [ ] Infinite supplies CP
+- [ ] Save/load CP list
+- [ ] Fix supply regeneration
+- [ ] Defend task
+- [ ] Spawn reinforcements periodically
+- [ ] Building area gets small on restart
+- [ ] Block switching seasts with supplies
+- [ ] Mark spawns on map
+- [ ] Increase distance between comm nodes
