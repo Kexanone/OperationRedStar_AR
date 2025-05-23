@@ -8,6 +8,10 @@ ORS_GameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
     "{91D53896F5AD5DB4}Sounds/RadioProtocol/RadioProtocol_CombatPatrol_US.acp"
    }
   }
+  SCR_ArsenalManagerComponent "{6120A34EB1E9BBEF}" {
+   m_fLoadoutSpawnSupplyCostMultiplier 1
+   m_eArsenalGameModeType CAMPAIGN
+  }
   SCR_CampaignBuildingManagerComponent "{616A2D22D895D15C}" {
    m_sFreeRoamBuildingClientTrigger "{5E191CEAF4B95816}Prefabs/MP/FreeRoamBuildingClientTrigger.et"
    m_BudgetType CAMPAIGN
@@ -51,6 +55,11 @@ ORS_GameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
     }
    }
   }
+  SCR_MapConfigComponent "{5C669498E250A34B}" {
+   m_sGadgetMapConfigPath "{B2618D88AEE72583}Configs/Map/ORS_MapFullscreen.conf"
+   m_sSpawnMapConfigPath "{BE68AD71E34EA261}Configs/Map/ORS_MapSpawnMenu.conf"
+   m_sEditorMapConfigPath "{7C703F28B75B7A0A}Configs/Map/ORS_MapEditor.conf"
+  }
   SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
    m_sConfigPath "{09F7AAA14A642683}Configs/NameTags/NametagFriendlies.conf"
   }
@@ -60,6 +69,8 @@ ORS_GameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
   }
   SCR_PlayerSpawnPointManagerComponent "{609CD73D4B95B9D9}" {
    m_SpawnPointPrefab "{6FC8BA123C919DB3}Prefabs/MP/PlayerRadioSpawnPointCampaign.et"
+   m_bEnablePlayerSpawnPoints 0
+   m_bDeployableSpawnPointsEnabled 0
   }
   SCR_RespawnBriefingComponent "{5E6F1867E2884BB0}" {
    m_Info SCR_UIInfo "{5E6F1867E2884B89}" {

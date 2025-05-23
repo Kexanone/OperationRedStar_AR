@@ -1,0 +1,18 @@
+@startuml
+start
+    while (Comm nodes available?) is (yes)
+        :Mark destroyed nodes\nas unavailable;
+        if (Too few AI?) then (yes)
+            :Spawn defenders at\nunderstaffed nodes;
+            if (Still too few AI?) then (yes)
+                :Spawn attackers based on\nlast know enemy positions;
+            else (no)
+            endif
+        else (no)
+        endif
+        :Reassign defenders of\ndestroyed nodes;
+        :Reassign attackers as defenders\nof remaining understaffed nodes;
+        :Move orphaned units\nto larger groups;
+    end while (no)
+stop
+@enduml

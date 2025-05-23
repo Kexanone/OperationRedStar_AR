@@ -1,6 +1,12 @@
 SCR_EditorModeEntity : "{E56F54E533ACE527}Prefabs/Editor/Modes/EditorModeBase.et" {
  ID "518A34314C7CB324"
  components {
+  SCR_CampaignBuildingPlacingEditorComponent "{5A0ACCCCDF0C0F65}" {
+   m_Registries {
+    SCR_PlaceableEntitiesRegistry "{5D389C6EA4E9A394}" {
+    }
+   }
+  }
   SCR_ContentBrowserEditorComponent "{597071D8310A282F}" {
    m_aContentBrowserTabStates {
     SCR_EditorContentBrowserSaveStateDataUI "{60AC570708D23156}" {

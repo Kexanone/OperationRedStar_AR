@@ -36,7 +36,7 @@ class ORS_MainBaseEntity : GenericEntity
 		if (factionManager)
 			SetFaction(factionManager.GetPlayerFaction());
 		
-		CreateMapMarker();
+		//CreateMapMarker();
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -61,6 +61,7 @@ class ORS_MainBaseEntity : GenericEntity
 		}
 	}
 	
+	/*
 	//------------------------------------------------------------------------------------------------
 	protected void CreateMapMarker()
 	{
@@ -97,4 +98,5 @@ class ORS_MainBaseEntity : GenericEntity
 		ruleSet.UpdateSymbol(symbol, factionManager.GetPlayerFaction());
 		return symbol.GetIdentity();
 	}
+	*/
 }

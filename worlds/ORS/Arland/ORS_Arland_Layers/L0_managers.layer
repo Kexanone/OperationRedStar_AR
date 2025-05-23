@@ -43,10 +43,10 @@ ORS_FactionManager FactionManager : "{ECDF8CB21677FE75}Prefabs/Managers/ORS_Fact
  }
 }
 ScriptedChatEntity ChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity.et" {
- coords 0 0 0
  Flags 0
+ coords 0 0 0
 }
-MusicManager MusicManager : "{359452CCDBDD03F5}Prefabs/Sounds/Music/MusicManager_Base.et" {
+MusicManager MusicManager : "{359452CCDBDD03F5}Prefabs/Sounds/Music/MusicManager_Campaign.et" {
 }
 SCR_LoadoutManager LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
  coords 0 0 0

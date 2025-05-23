@@ -117,16 +117,20 @@ class ORS_GameMode : SCR_BaseGameMode
 	//------------------------------------------------------------------------------------------------
 	protected void SetUpStartPosition()
 	{
-		PolylineArea outerBorderPicker = PolylineArea.Cast(GetGame().GetWorld().FindEntityByName(m_sCarrierSpawnOuterBorderPickerName));
+		PolylineShapeEntity outerBorderPicker = PolylineShapeEntity.Cast(GetGame().GetWorld().FindEntityByName(m_sCarrierSpawnOuterBorderPickerName));
 		if (!outerBorderPicker)
 			return;
 		
-		PolylineArea innerBorderPicker = PolylineArea.Cast(GetGame().GetWorld().FindEntityByName(m_sCarrierSpawnInnerBorderPickerName));
+		PolylineShapeEntity innerBorderPicker = PolylineShapeEntity.Cast(GetGame().GetWorld().FindEntityByName(m_sCarrierSpawnInnerBorderPickerName));
 		if (!innerBorderPicker)
 			return;
 		
-		KSC_PolygonArea outerBorder = KSC_PolygonArea.Cast(outerBorderPicker.KSC_GetPolygonArea());
-		KSC_PolygonArea innerBorder = KSC_PolygonArea.Cast(innerBorderPicker.KSC_GetPolygonArea());
+		array<vector> outerPoints = {};
+		outerBorderPicker.GetPointsPositions(outerPoints);
+		KSC_PolygonArea outerBorder = KSC_PolygonArea.FromPoints(outerPoints);
+		array<vector> innerPoints = {};
+		innerBorderPicker.GetPointsPositions(innerPoints);
+		KSC_PolygonArea innerBorder = KSC_PolygonArea.FromPoints(innerPoints);
 		Math.Randomize(-1);
 		KSC_GameTools.SpawnPrefab(m_sCarrierPrefabName, KSC_AreaBase.SamplePointInArea(outerBorder, innerBorder), Math.RandomFloat(0, 360));
 	}
@@ -217,6 +221,11 @@ class ORS_GameMode : SCR_BaseGameMode
 		
 		CreateSeizeAreaTask();
 		CreateDestroyCommNodesTask();
+		
+		ORS_ReinforcementComponent reinforcementComponent = ORS_ReinforcementComponent.Cast(m_pCurrentObjectiveArea.FindComponent(ORS_ReinforcementComponent));
+		ORS_ReinforcementSystem reinforcementSystem = ORS_ReinforcementSystem.GetInstance();
+		if (reinforcementComponent && reinforcementSystem)
+			reinforcementSystem.Register(reinforcementComponent);
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -321,6 +330,25 @@ class ORS_GameMode : SCR_BaseGameMode
 		{
 			m_aCommNodes.Insert(new ORS_TargetToDestroyWrapper(damageManager, m_pDestroyCommNodesTask));
 		}
+		
+		m_pDestroyCommNodesTask.GetOnStateChanged().Insert(OnCommNodesDestroyed);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Disable reinforcements when all comm nodes are destroyed
+	void OnCommNodesDestroyed(KSC_BaseTask task, SCR_TaskState previousState, SCR_TaskState newState)
+	{
+		if (newState != SCR_TaskState.FINISHED)
+			return;
+		
+		task.GetOnStateChanged().Remove(OnCommNodesDestroyed);
+		
+		m_pCurrentObjectiveArea.RevealEnemyPositions();
+		
+		ORS_ReinforcementComponent reinforcementComponent = ORS_ReinforcementComponent.Cast(m_pCurrentObjectiveArea.FindComponent(ORS_ReinforcementComponent));
+		ORS_ReinforcementSystem reinforcementSystem = ORS_ReinforcementSystem.GetInstance();
+		if (reinforcementComponent && reinforcementSystem)
+			reinforcementSystem.Unregister(reinforcementComponent);
 	}
 	
 	//------------------------------------------------------------------------------------------------

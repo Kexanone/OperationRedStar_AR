@@ -1,0 +1,10 @@
+@startuml ORS_GameMode
+class ORS_ReinforcementSystem {
+}
+class ORS_ReinforcementComponent {
+}
+
+ORS_ReinforcementSystem "1" o-- "*" ORS_ReinforcementComponent
+
+
+@enduml

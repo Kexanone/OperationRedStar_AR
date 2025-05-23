@@ -4,9 +4,9 @@ modded class SCR_CampaignBuildingPlacingObstructionEditorComponent : SCR_BaseEdi
 	//------------------------------------------------------------------------------------------------
 	// Check if the preview is at a valid area.
 	// Cannot build inside locked AOs
-	override bool IsPreviewOutOfRange(out ENotification outNotification = -1)
+	override bool IsPreviewOutOfRange(SCR_EditorPreviewParams instantPlacingParam, out ENotification outNotification = -1)
 	{
-		bool result = super.IsPreviewOutOfRange(outNotification);
+		bool result = super.IsPreviewOutOfRange(instantPlacingParam, outNotification);
 		if (result)
 			return true;
 		
