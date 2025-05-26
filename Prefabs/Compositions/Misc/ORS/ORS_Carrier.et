@@ -34,6 +34,7 @@ ORS_MainBaseEntity {
      Streamable Disabled
     }
    }
+   Flags 2097155
    coords -0.727 17.203 14.857
   }
   GenericEntity : "{08B059F856BF38EF}Prefabs/Compositions/Slotted/SupplyStorage_Base.et" {
@@ -356,7 +357,7 @@ ORS_MainBaseEntity {
      components {
       ActionsManagerComponent "{5A7C23C95F15F590}" {
        additionalActions {
-        ORS_NoUserAction "{5A7C23CA8BD6F50C}" {
+        ACE_NoUserAction "{5A7C23CA8BD6F50C}" {
         }
        }
       }
