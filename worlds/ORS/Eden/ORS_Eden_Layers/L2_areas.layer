@@ -1,0 +1,252 @@
+$grp PolylineShapeEntity {
+ CarrierSpawnInnerBorder {
+  coords 0 0 0
+  Points {
+   ShapePoint "{623CA2489177A28A}" {
+    Position 5775.360 0 13201.865
+   }
+   ShapePoint "{623CA24A12AE178E}" {
+    Position 3634.719 0 12858.175
+   }
+   ShapePoint "{623CA2541CA45C13}" {
+    Position 2965.203 0 8643.958
+   }
+   ShapePoint "{623CA25412724CA3}" {
+    Position 1560.803 0 8102.637
+   }
+   ShapePoint "{623CA254175F0758}" {
+    Position 8.480 0 6151.123
+   }
+   ShapePoint "{623CA2540807C8AA}" {
+    Position 2102.975 0 3311.172
+   }
+   ShapePoint "{623CA25401B34D94}" {
+    Position 4577.096 0 2578.141
+   }
+   ShapePoint "{623CA254045058B1}" {
+    Position 7195.620 0 609.899
+   }
+   ShapePoint "{623CA2543516024F}" {
+    Position 9239.785 0 -475.291
+   }
+   ShapePoint "{623CA2542E4461BD}" {
+    Position 10888.553 0 -395.104
+   }
+   ShapePoint "{751688D6FD6D453C}" {
+    Position 12960.835 0 1713.899
+   }
+   ShapePoint "{951C41BEC1B144FC}" {
+    Position 10207.915 0 6084.092
+   }
+   ShapePoint "{6FB7C921A1144B77}" {
+    Position 8209.789 0 6509.498
+   }
+   ShapePoint "{C09FB550C111472D}" {
+    Position 8424.458 0 8275.258
+   }
+   ShapePoint "{FCC90D8C45E8411F}" {
+    Position 8248.959 0 9761.148
+   }
+   ShapePoint "{E2CB82ED24FC43ED}" {
+    Position 6696.082 0 11027.567
+   }
+  }
+  IsClosed 1
+ }
+ CarrierSpawnOuterBorder {
+  coords 0 0 0
+  Points {
+   ShapePoint "{5439D3D7C21B4122}" {
+    Position 5839.958 0 13325.342
+   }
+   ShapePoint "{566F23B1B073474B}" {
+    Position 3527.616 0 12968.449
+   }
+   ShapePoint "{2EC41766B8F1443C}" {
+    Position 2830.107 0 8750.961
+   }
+   ShapePoint "{0E1A0E0276D34B1B}" {
+    Position 1460.549 0 8225.933
+   }
+   ShapePoint "{93111940B15F461B}" {
+    Position -154.650 0 6157.396
+   }
+   ShapePoint "{14F7879071724A0B}" {
+    Position 1999.571 0 3192.148
+   }
+   ShapePoint "{BBB191747B744014}" {
+    Position 4502.933 0 2441.291
+   }
+   ShapePoint "{CB95E1117AD14183}" {
+    Position 7111.636 0 483.203
+   }
+   ShapePoint "{D4C8DDBAE98546A8}" {
+    Position 9192.600 0 -627.423
+   }
+   ShapePoint "{35F7D24B86C94881}" {
+    Position 10944.214 0 -540.714
+   }
+   ShapePoint "{97D4E044A37E4250}" {
+    Position 13113.405 0 1707.898
+   }
+   ShapePoint "{EDD52FFC15984D71}" {
+    Position 10299.477 0 6199.292
+   }
+   ShapePoint "{F88E33CE6455465B}" {
+    Position 8366.753 0 6608.465
+   }
+   ShapePoint "{A50498F94DFC46C9}" {
+    Position 8579.337 0 8277.632
+   }
+   ShapePoint "{159CAA88951A4C61}" {
+    Position 8369.703 0 9842.137
+   }
+   ShapePoint "{1F955DB1B6A948F3}" {
+    Position 6821.942 0 11122.694
+   }
+  }
+  IsClosed 1
+ }
+}
+$grp ORS_ObjectiveArea : "{03F288A21E0985DF}Prefabs/Areas/ORS_ObjectiveArea.et" {
+ AO_Airfield {
+  coords 5257.864 3.705 11940.188
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_SaintPhilippe {
+  coords 4193.176 7.658 10653.808
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Kermovan {
+  coords 5727.524 19.152 10003.646
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Meaux {
+  coords 4290.218 36.472 8947.998
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Montignac {
+  coords 4512.015 135.553 7323.266
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Villeneuve {
+  coords 2668.483 71.226 6857.71
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Lamentin {
+  coords 1204.937 33.541 6035.714
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_LeMoule {
+  coords 2584.963 93.51 5043.994
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_PinewoodLake {
+  coords 3903.09 119.547 5842.93
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 700
+ }
+ AO_Provins {
+  coords 5482.561 83.295 5707.129
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Morton {
+  coords 5450.194 33.646 4040.601
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_EntreDeux {
+  coords 6183.25 195.97 7344.834
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_AndresBeacon {
+  coords 7237.876 58.504 8535.979
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Chotain {
+  coords 7291.214 81.162 6089.689
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Levie {
+  coords 7370.422 144.947 4439.552
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Perelle {
+  coords 9184.172 28.952 5158.986
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Durras {
+  coords 8978.183 196.918 3315.295
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Regina {
+  coords 7168.825 153.699 2713.293
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_SaintPierre {
+  coords 9553.495 30.836 1701.729
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+ AO_Lancre {
+  coords 11430.218 38.583 2079.446
+  angleX 0.895
+  angleY -0.014
+  angleZ -1.79
+  m_fAreaRadius 800
+ }
+}

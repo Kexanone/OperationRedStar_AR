@@ -1,0 +1,50 @@
+SCR_AIWorld AIWorld : "{70CCCF16487C927F}Prefabs/AI/SCR_AIWorld_Eden.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60B8A297F9E52831}" {
+     NavmeshFile "{AD5F99CD7C59D5E0}worlds/GameMaster/Navmeshes/GM_Eden.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60B8A297F3B4EE8A}" {
+     NavmeshFile "{C35ECF3276824654}worlds/GameMaster/Navmeshes/GM_Eden_vehicles.nmn"
+    }
+   }
+  }
+ }
+}
+PerceptionManager PerceptionManager : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 0 0 0
+}
+RadioManagerEntity RadioManager : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 0 0 0
+}
+ORS_FactionManager FactionManager : "{ECDF8CB21677FE75}Prefabs/Managers/ORS_FactionManager.et" {
+ coords 0 0 0
+ Factions {
+  SCR_Faction "{56DEAC40D2DBC8B1}" {
+  }
+  SCR_Faction "{56DEAC40D3C2E623}" {
+  }
+  SCR_Faction "{56DEAC40D132400B}" {
+  }
+  SCR_Faction "{607AA5C7A94496DA}" : "{3FA20B01D950D31F}Configs/Factions/CIV.conf" {
+  }
+ }
+}
+ScriptedChatEntity ChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity.et" {
+ Flags 0
+ coords 0 0 0
+}
+MusicManager MusicManager : "{359452CCDBDD03F5}Prefabs/Sounds/Music/MusicManager_Campaign.et" {
+ coords 0 0 0
+}
+SCR_LoadoutManager LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
+ coords 0 0 0
+}
+SCR_BaseTaskManager TaskManager : "{C26C0D332218980F}Prefabs/MP/Managers/Tasks/ORS_TaskManager.et" {
+ coords 0 0 0
+}

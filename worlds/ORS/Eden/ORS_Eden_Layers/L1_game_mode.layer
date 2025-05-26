@@ -1,0 +1,6 @@
+ORS_GameMode GameMode : "{6517929F629FB623}Prefabs/MP/Modes/Conflict/ORS_GameMode.et" {
+ coords 0 0 0
+ m_sKSC_WorldSlotsConfigName "{BE2360AA5B24FE81}Configs/Slots/Eden/KSC_Slots_Eden.conf"
+ m_sCarrierPrefabName "{89C4840256E31EE7}Prefabs/Compositions/Misc/ORS/ORS_Carrier.et"
+ m_fMaxAOUnlockDistance 3000
+}
