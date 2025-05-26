@@ -8,7 +8,7 @@ Vehicle : "{D03C0F6044DB5208}Prefabs/Vehicles/Helicopters/UH1H/UH1H_base.et" {
     30
    }
   }
-  SCR_ResourceComponent "{5E42966FDD776489}" {
+  SCR_ResourceComponent "{647A8BBB14D93D4B}" {
    Enabled 0
   }
   SlotManagerComponent "{55BCE45E438E4CFF}" {
@@ -53,13 +53,13 @@ Vehicle : "{D03C0F6044DB5208}Prefabs/Vehicles/Helicopters/UH1H/UH1H_base.et" {
   }
   ActionsManagerComponent "{C97BE5489221AE18}" {
    additionalActions {
-    ORS_NoUserAction "{5DAD751A3D2FE182}" {
+    ACE_NoUserAction "{647ACC80E66D2BEC}" {
     }
-    ORS_NoUserAction "{5DAD751A3BF8492E}" {
+    ACE_NoUserAction "{647ACC80E55D7FD1}" {
     }
-    ORS_NoUserAction "{5E42966A989974E7}" {
+    ACE_NoUserAction "{647ACC80E4CB7EB4}" {
     }
-    ORS_NoUserAction "{5E42966A9D4BFB90}" {
+    ACE_NoUserAction "{647ACC80FB80798A}" {
     }
     SCR_CampaignBuildingStartUserAction "{5EB8669114C65B44}" {
      ParentContextList {

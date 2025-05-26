@@ -23,13 +23,5 @@ Vehicle : "{B6B8C164FD6377EA}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_unarmed_ba
     }
    }
   }
-  ActionsManagerComponent "{C97BE5489221AE18}" {
-   additionalActions {
-    ORS_NoUserAction "{5DAD751A3D2FE182}" {
-    }
-    ORS_NoUserAction "{5DAD751A3BF8492E}" {
-    }
-   }
-  }
  }
 }

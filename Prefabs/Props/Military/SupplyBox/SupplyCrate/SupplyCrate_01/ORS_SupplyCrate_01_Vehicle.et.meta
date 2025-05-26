@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
+ Name "{E65D40F9998D158A}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/ORS_SupplyCrate_01_Vehicle.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -8,6 +8,8 @@ MetaFileClass {
   EntityTemplateResourceClass XBOX_SERIES : PC {
   }
   EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
   }

@@ -6,41 +6,40 @@ GenericEntity : "{205599C7074F1E02}Prefabs/Vehicles/Helicopters/UH1H/VehParts/Se
   }
   SCR_ResourceComponent "{62425EC80BFEA307}" {
    m_aContainers {
-    SCR_ResourceContainer "{62425EC861F26506}" {
+    SCR_ResourceContainer "{6574EB2A80D0ABA3}" {
      m_eResourceRights FACTION
      m_eStorageType CARGO_VEHICLE
     }
    }
    m_aEncapsulators {
-    SCR_ResourceEncapsulator "{62425EC861F26508}" {
-     m_sDebugName "Encapsulator - UH-1H"
+    SCR_ResourceEncapsulator "{6574EB2A80D0ABA7}" {
+     m_sDebugName "Encapsulator - UH1H Cargo"
      m_eResourceRights ALL
-     m_ContainerQueue SCR_ResourceEncapsulatorContainerQueue "{5E42966E59638D3A}" : "{F214C17E1F29E70A}Configs/Resources/Supplies/ContainerQueues/Encapsulator/Queue_Encapsulator_Vehicle.conf" {
+     m_ContainerQueue SCR_ResourceEncapsulatorContainerQueue "{5DB89931570C0D3D}" : "{F214C17E1F29E70A}Configs/Resources/Supplies/ContainerQueues/Encapsulator/Queue_Encapsulator_Vehicle.conf" {
      }
      m_aActions {
-      SCR_ResourceEncapsulatorActionChangeDecay "{62425EC861F26573}" {
+      SCR_ResourceEncapsulatorActionChangeDecay "{6574EB2A80D0ABA8}" {
       }
-      SCR_ResourceEncapsulatorActionChangeGain "{62425EC861F26577}" {
+      SCR_ResourceEncapsulatorActionChangeGain "{6574EB2A80D0ABAE}" {
       }
-      SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{62425EC861F26576}" {
+      SCR_ResourceEncapsulatorActionChangeOnEmptyBehavior "{6574EB2A80D0ABAC}" {
        m_eOnEmptyBehavior HIDE
       }
-      SCR_ResourceEncapsulatorActionChangeResourceValue "{62425EC861F2657B}" {
-       m_fResourceValueCurrent 0
+      SCR_ResourceEncapsulatorActionChangeResourceValue "{6574EB2A80D0AB91}" {
       }
      }
     }
    }
    m_aConsumers {
-    SCR_ResourceConsumer "{5E42966EB4B6C40C}" : "{CBFF9584EC5E51DD}Configs/Resources/Supplies/Consumers/Consumer_HelicopterLoad.conf" {
+    SCR_ResourceConsumer "{5DB899315A66AA3D}" : "{4126DC9D9F44E513}Configs/Resources/Supplies/Consumers/Consumer_VehicleLoad.conf" {
     }
-    SCR_ResourceConsumer "{5E42966EB7ABFDFF}" : "{332213624C5840B6}Configs/Resources/Supplies/Consumers/Consumer_HelicopterUnload.conf" {
+    SCR_ResourceConsumer "{5DB899315AF0ACB7}" : "{3FF0B8C036F14239}Configs/Resources/Supplies/Consumers/Consumer_VehicleUnload.conf" {
     }
    }
    m_aGenerators {
-    SCR_ResourceGenerator "{5E42966EB87D0B2E}" : "{D0F12FFFB07D3955}Configs/Resources/Supplies/Generators/Generator_HelicopterLoad.conf" {
+    SCR_ResourceGenerator "{5DB899315F7178DD}" : "{48782547A13061E2}Configs/Resources/Supplies/Generators/Generator_VehicleLoad.conf" {
     }
-    SCR_ResourceGenerator "{5E42966EB8A02BC1}" : "{F02DC41374D82975}Configs/Resources/Supplies/Generators/Generator_HelicopterUnload.conf" {
+    SCR_ResourceGenerator "{5DB899315E3605F6}" : "{F8496BD9E1CE43B3}Configs/Resources/Supplies/Generators/Generator_VehicleUnload.conf" {
     }
    }
   }
@@ -49,32 +48,28 @@ GenericEntity : "{205599C7074F1E02}Prefabs/Vehicles/Helicopters/UH1H/VehParts/Se
     RegisteringComponentSlotInfo SupplyStorage_01 {
      Offset 0.5563 0.8858 0.913
      Angles 0 -90 0
-     Prefab "{98E824A028C63F8F}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/ORS_SupplyStack_01_V1_Vehicle.et"
+     Prefab "{5971810A7958CFDA}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/ORS_SupplyStack_01_V1_storage.et"
     }
     RegisteringComponentSlotInfo SupplyStorage_02 {
      Offset -0.5119 0.8858 0.913
      Angles 0 -90 0
-     Prefab "{98E824A028C63F8F}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/ORS_SupplyStack_01_V1_Vehicle.et"
+     Prefab "{5971810A7958CFDA}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_01/ORS_SupplyStack_01_V1_storage.et"
     }
     RegisteringComponentSlotInfo SupplyStorage_03 {
      Offset -0.4532 1.776 0.6118
-     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
-     DisablePhysicsInteraction 1
+     Prefab "{E65D40F9998D158A}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/ORS_SupplyCrate_01_Vehicle.et"
     }
     RegisteringComponentSlotInfo SupplyStorage_04 {
      Offset 0.4532 1.776 0.6118
-     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
-     DisablePhysicsInteraction 1
+     Prefab "{E65D40F9998D158A}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/ORS_SupplyCrate_01_Vehicle.et"
     }
     RegisteringComponentSlotInfo SupplyStorage_05 {
      Offset -0.4532 1.776 1.1597
-     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
-     DisablePhysicsInteraction 1
+     Prefab "{E65D40F9998D158A}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/ORS_SupplyCrate_01_Vehicle.et"
     }
     RegisteringComponentSlotInfo SupplyStorage_06 {
      Offset 0.4532 1.776 1.1597
-     Prefab "{11E588E215EBCF23}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/SupplyCrate_01_Vehicle.et"
-     DisablePhysicsInteraction 1
+     Prefab "{E65D40F9998D158A}Prefabs/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/ORS_SupplyCrate_01_Vehicle.et"
     }
    }
   }

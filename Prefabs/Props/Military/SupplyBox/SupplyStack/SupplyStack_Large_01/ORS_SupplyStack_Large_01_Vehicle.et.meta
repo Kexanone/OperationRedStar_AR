@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{FE4A51A953C54DA0}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_Vehicle.et"
+ Name "{D0B619A718BF6044}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/ORS_SupplyStack_Large_01_Vehicle.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -8,6 +8,8 @@ MetaFileClass {
   EntityTemplateResourceClass XBOX_SERIES : PC {
   }
   EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
   }
