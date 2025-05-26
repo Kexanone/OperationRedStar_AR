@@ -21,6 +21,68 @@ GenericEntity {
   SCR_DestructibleBuildingEntity : "{05AF4DA50A1ABC83}Prefabs/Structures/Military/Bunkers/AirfieldBunker_E_01/AirfieldBunker_E_01_big_V2.et" {
    ID "623CEACCF378A371"
    coords 0 1.5 0
+   {
+    GenericEntity {
+     ID "5B0F0E3B51F83424"
+     {
+      GenericEntity {
+       ID "59F6E1B5B2CE37CB"
+       components {
+        DoorComponent "{221C667A9F7D4B69}" {
+         DoorAction ORS_NoDoorUserAction "{50888D3646A61640}" {
+         }
+         InitialAngle 90
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5B0F0E3B51F83AEC"
+     {
+      GenericEntity {
+       ID "59F6E1B5BF334341"
+       components {
+        DoorComponent "{221C667A9F7D4B69}" {
+         DoorAction ORS_NoDoorUserAction "{50888D3646A61640}" {
+         }
+         InitialAngle -90
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5B0F0E3B51F83AEE"
+     {
+      GenericEntity {
+       ID "59F6E1B5BF334341"
+       components {
+        DoorComponent "{221C667A9F7D4B69}" {
+         DoorAction ORS_NoDoorUserAction "{50888D3646A61640}" {
+         }
+         InitialAngle -90
+        }
+       }
+      }
+     }
+    }
+    GenericEntity {
+     ID "5B0F0E3B51FB6ABC"
+     {
+      GenericEntity {
+       ID "59F6E1B583C4D370"
+       components {
+        DoorComponent "{221C667A9F7D4B69}" {
+         DoorAction ORS_NoDoorUserAction "{50888D3646A61640}" {
+         }
+         InitialAngle -90
+        }
+       }
+      }
+     }
+    }
+   }
   }
  }
 }
