@@ -1,8 +1,0 @@
-GameEntity {
- ID "4BA426CBAED42A14"
- components {
-  EPF_PersistenceComponent "{5A28749FA22EC9AC}" {
-   Enabled 0
-  }
- }
-}

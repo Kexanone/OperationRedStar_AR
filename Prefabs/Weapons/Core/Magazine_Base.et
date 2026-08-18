@@ -1,8 +1,0 @@
-GenericEntity {
- ID "CA6BE4D6BB2D1077"
- components {
-  EPF_PersistenceComponent "{5A28749FCBB07AFB}" {
-   Enabled 0
-  }
- }
-}
