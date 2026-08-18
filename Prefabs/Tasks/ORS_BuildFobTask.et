@@ -1,12 +1,15 @@
-ORS_BaseTask : "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et" {
- ID "54C6755D430721B8"
+KSC_BuildTask : "{8C1CC5EB50B393C8}Prefabs/Tasks/KSC_BuildTask.et" {
+ ID "0000000000000001"
  components {
-  SCR_MapDescriptorComponent "{54C6755D2955E709}" {
-   ForceGroupScale 1
+  SCR_EditableEntityComponent "{6134822A405CCC8B}" {
+   m_UIInfo SCR_UIInfo "{616091CB2D599D4A}" {
+    Name "#ORS-Task_BuildFob_Name"
+    Description "#ORS-Task_BuildFob_Description"
+   }
   }
  }
- m_sName "#ORS-Task_BuildFob_Name"
- m_sDescription "#ORS-Task_BuildFob_Description"
- m_sMapIconName "Icon_Task_Build"
- m_sTaskListIconName "Icon_Task_Build"
+ m_TaskUIInfo SCR_TaskUIInfo "{645CDE114ACB9A88}" {
+  Name "#ORS-Task_BuildFob_Name"
+  Description "#ORS-Task_BuildFob_Description"
+ }
 }

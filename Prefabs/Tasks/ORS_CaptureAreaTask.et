@@ -1,5 +1,15 @@
-KSC_AreaTriggerTask : "{37913C6494E5B74A}Prefabs/Tasks/KSC_ClearAreaTask.et" {
+KSC_ClearAreaTask : "{2B6E6196395E9C08}Prefabs/Tasks/KSC_ClearAreaTask.et" {
  ID "60AD7B506D62E218"
- m_sName "#ORS-Task_Seize_Name"
- m_sDescription "#ORS-Task_Seize_Description"
+ components {
+  SCR_EditableEntityComponent "{6134822A405CCC8B}" {
+   m_UIInfo SCR_UIInfo "{616091CB2D599D4A}" {
+    Name "#ORS-Task_Seize_Name"
+    Description "#ORS-Task_Seize_Description"
+   }
+  }
+ }
+ m_TaskUIInfo SCR_TaskUIInfo "{645CDE114ACB9A88}" {
+  Name "#ORS-Task_Seize_Name"
+  Description "#ORS-Task_Seize_Description"
+ }
 }

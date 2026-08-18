@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{4EC23A29962C21F2}Prefabs/Tasks/ORS_BuildFobTask2.et"
+ Name "{23F2DCFF54CBD2F6}Prefabs/Tasks/ORS_BuildFobTask.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }
@@ -8,6 +8,8 @@ MetaFileClass {
   EntityTemplateResourceClass XBOX_SERIES : PC {
   }
   EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
   }
   EntityTemplateResourceClass HEADLESS : PC {
   }
