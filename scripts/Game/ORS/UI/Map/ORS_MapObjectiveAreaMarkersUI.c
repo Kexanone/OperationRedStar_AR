@@ -13,7 +13,6 @@ class ORS_MapObjectiveAreaMarkersUI : SCR_MapUIBaseComponent
 	protected int m_iCircleVertexCount;
 	
 	protected CanvasWidget m_Canvas;
-	protected ref array<ORS_ObjectiveArea> m_aAreas;
 	protected ref array<ref CanvasWidgetCommand> m_DrawingCommands;
 		
 	//------------------------------------------------------------------------------------------------
@@ -21,9 +20,8 @@ class ORS_MapObjectiveAreaMarkersUI : SCR_MapUIBaseComponent
 	{
 		super.OnMapOpen(config);
 		m_Canvas = CanvasWidget.Cast(config.RootWidgetRef.FindAnyWidget("ORS_Canvas"));
-		m_aAreas = ORS_ObjectiveArea.GetInstances();
 		m_DrawingCommands = {};
-		m_DrawingCommands.Reserve(m_aAreas.Count());
+		m_DrawingCommands.Reserve(ORS_ObjectiveArea.GetInstances().Count());
 		
 		ORS_FactionManager factionManager = ORS_FactionManager.Cast(GetGame().GetFactionManager());
 		if (!factionManager)
@@ -41,7 +39,7 @@ class ORS_MapObjectiveAreaMarkersUI : SCR_MapUIBaseComponent
 		super.Update(timeSlice);
 		m_DrawingCommands.Clear();
 
-		foreach (ORS_ObjectiveArea area : m_aAreas)
+		foreach (ORS_ObjectiveArea area : ORS_ObjectiveArea.GetInstances())
 		{
 			CanvasWidgetCommand command = GetDrawCommand(area);
 			if (command)
