@@ -18,27 +18,23 @@ class ORS_GameMode : SCR_BaseGameMode
 	[Attribute(defvalue: "1500", desc: "Maximum distance for a FOB to unlock an AO", category: "FOB")]
 	protected float m_fMaxAOUnlockDistance;
 	protected float m_fMaxAOUnlockDistanceSq;
-			
-	[Attribute(desc: "Names of the main base entity", category: "Operation Red Star")]
-	protected string m_sMainBaseEntityName;
-	protected vector m_vMainBasePos;
 	
-	[Attribute(desc: "Names of objective area entities", category: "Operation Red Star")]
-	protected ref array<string> m_aObjectiveAreaNames;
-	protected ref SCR_SortedArray<ORS_ObjectiveArea> m_aObjectiveAreas = new SCR_SortedArray<ORS_ObjectiveArea>();
+	[Attribute(uiwidget: UIWidgets.ResourceNamePicker, desc: "Prefab for seize task", params: "et", category: "Tasks")]
+	protected ResourceName m_sSeizeTaskPrefabName;
 	
-	[RplProp(onRplName: "OnObjectiveAreaChangedProxy")]
-	protected RplId m_iCurrentObjectiveAreaRplId = Replication.INVALID_ID;
+	[Attribute(uiwidget: UIWidgets.ResourceNamePicker, desc: "Prefab for build FOB task", params: "et", category: "Tasks")]
+	protected ResourceName m_sBuildFobTaskPrefabName;
+	
+	[Attribute(uiwidget: UIWidgets.ResourceNamePicker, desc: "Prefab for destroy all comm nodes task", params: "et", category: "Tasks")]
+	protected ResourceName m_sDestroyCommNodesTaskPrefabName;
+	
 	protected ORS_ObjectiveArea m_pCurrentObjectiveArea;
-	protected int m_iCurrentObjectiveAreaIdx = 0;
 	
 	protected ORS_MissionHeader m_pMissionHeader;
 	protected ORS_FactionManager m_pFactionManager;
-	protected SCR_BaseTaskManager m_pTaskManager;
 	
 	protected ResourceName m_sCommandPostPrefabName;
 	protected ref array<vector> m_aFobPositions = {};
-	protected bool m_bIsSessionLoadedFromSave = false;
 	protected KSC_CounterTask m_pDestroyCommNodesTask;
 	protected ref array<ref ORS_TargetToDestroyWrapper> m_aCommNodes;
 	
@@ -65,7 +61,6 @@ class ORS_GameMode : SCR_BaseGameMode
 		
 		m_pMissionHeader = ORS_MissionHeader.GetInstance();
 		m_pFactionManager = ORS_FactionManager.Cast(GetGame().GetFactionManager());
-		m_pTaskManager = GetTaskManager();
 		m_fMaxAOUnlockDistanceSq = Math.Pow(m_fMaxAOUnlockDistance, 2);
 		
 		KSC_GameTools.SetAISkill(m_pMissionHeader.m_eEnemyAISkill);
@@ -81,8 +76,19 @@ class ORS_GameMode : SCR_BaseGameMode
 		m_sCommandPostPrefabName = prefabNames[0];
 		SCR_CampaignBuildingCompositionComponent.KSC_GetOnCompositionSpawnedServer().Insert(OnCompositionBuilt);
 		
-		if (m_bIsSessionLoadedFromSave)
+		SaveGameManager saveManager = GetGame().GetSaveGameManager();
+		saveManager.SetEnabledSaveTypes(saveManager.GetEnabledSaveTypes() | ESaveGameType.AUTO | ESaveGameType.SHUTDOWN); // Force auto saves
+		if (saveManager.GetActiveSave())
 		{
+			foreach (ORS_ObjectiveArea area : ORS_ObjectiveArea.GetInstances())
+			{
+				if (area.GetState() == ORS_EObjectiveAreaState.CONTESTED)
+				{
+					m_pCurrentObjectiveArea = area;
+					break;
+				}
+			}
+			
 			if (m_pCurrentObjectiveArea)
 			{
 				CreateSeizeAreaTask();
@@ -208,6 +214,9 @@ class ORS_GameMode : SCR_BaseGameMode
 			.SpawnArmoredVehicle()
 			.SpawnArmoredVehicle()
 			.SpawnArmoredVehicle()
+			.SpawnMortar()
+			.SpawnMortar()
+			.SpawnMortar()
 			.SpawnCommNode()
 			.SpawnCommNode()
 			.SpawnCommNode()
@@ -222,24 +231,31 @@ class ORS_GameMode : SCR_BaseGameMode
 		CreateSeizeAreaTask();
 		CreateDestroyCommNodesTask();
 		
-		ORS_ReinforcementComponent reinforcementComponent = ORS_ReinforcementComponent.Cast(m_pCurrentObjectiveArea.FindComponent(ORS_ReinforcementComponent));
-		ORS_ReinforcementSystem reinforcementSystem = ORS_ReinforcementSystem.GetInstance();
-		if (reinforcementComponent && reinforcementSystem)
+		ORS_EnemyReinforcementComponent reinforcementComponent = ORS_EnemyReinforcementComponent.Cast(m_pCurrentObjectiveArea.FindComponent(ORS_EnemyReinforcementComponent));
+		ORS_EnemyReinforcementSystem reinforcementSystem = ORS_EnemyReinforcementSystem.GetInstance();
+		if (reinforcementSystem && reinforcementComponent)
 			reinforcementSystem.Register(reinforcementComponent);
+		
+		ORS_EnemySupportComponent supportComponent = ORS_EnemySupportComponent.Cast(m_pCurrentObjectiveArea.FindComponent(ORS_EnemySupportComponent));
+		ORS_EnemySupportSystem supportSystem = ORS_EnemySupportSystem.GetInstance();
+		if (supportSystem && supportComponent)
+			supportSystem.Register(supportComponent);
+		
+		GetGame().GetCallqueue().CallLater(GetGame().GetSaveGameManager().RequestSavePoint, 15000, param1: ESaveGameType.AUTO);
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	protected void CreateFOBBuildTask(vector pos)
 	{
-		KSC_BuildTaskSupportEntity buildTaskSupportEntity = KSC_BuildTaskSupportEntity.Cast(m_pTaskManager.FindSupportEntity(KSC_BuildTaskSupportEntity));
-		KSC_BaseTask task = KSC_BaseTask.Cast(buildTaskSupportEntity.CreateTask(m_pFactionManager.GetPlayerFaction(), pos, m_sCommandPostPrefabName));
+		KSC_BuildTask task = KSC_BuildTask.Cast(KSC_GameTools.SpawnPrefab(m_sBuildFobTaskPrefabName, m_pCurrentObjectiveArea.GetOrigin()));
+		task.SetParams(m_pFactionManager.GetPlayerFaction(), m_sCommandPostPrefabName);
 		task.GetOnStateChanged().Insert(OnFOBBuildTaskCompleted);
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void OnFOBBuildTaskCompleted(KSC_BaseTask task, SCR_TaskState previousState, SCR_TaskState newState)
+	void OnFOBBuildTaskCompleted(KSC_BaseTask task, SCR_ETaskState newState)
 	{
-		if (newState != SCR_TaskState.FINISHED)
+		if (newState != SCR_ETaskState.COMPLETED)
 			return;
 		
 		task.GetOnStateChanged().Remove(OnFOBBuildTaskCompleted);
@@ -249,19 +265,30 @@ class ORS_GameMode : SCR_BaseGameMode
 	//------------------------------------------------------------------------------------------------
 	protected void CreateSeizeAreaTask()
 	{
-		KSC_ClearAreaTaskSupportEntity seizeTaskSupportEntity = KSC_ClearAreaTaskSupportEntity.Cast(m_pTaskManager.FindSupportEntity(KSC_ClearAreaTaskSupportEntity));
-		KSC_BaseTask task = KSC_BaseTask.Cast(seizeTaskSupportEntity.CreateTask(m_pFactionManager.GetPlayerFaction(), m_pCurrentObjectiveArea.GetOrigin(), m_pCurrentObjectiveArea.GetAreaRadius(), 0.75));
+		KSC_ClearAreaTask task = KSC_ClearAreaTask.Cast(KSC_GameTools.SpawnPrefab(m_sSeizeTaskPrefabName, m_pCurrentObjectiveArea.GetOrigin()));
+		task.SetParams(m_pFactionManager.GetPlayerFaction(), m_pCurrentObjectiveArea.GetAreaRadius(), 0.75);
 		task.GetOnStateChanged().Insert(OnObjectiveAreaSeized);
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void OnObjectiveAreaSeized(KSC_BaseTask task, SCR_TaskState previousState, SCR_TaskState newState)
+	void OnObjectiveAreaSeized(KSC_BaseTask task, SCR_ETaskState newState)
 	{
-		if (newState != SCR_TaskState.FINISHED)
+		if (newState != SCR_ETaskState.COMPLETED)
 			return;
 		
+		ORS_EnemySupportComponent supportComponent = ORS_EnemySupportComponent.Cast(m_pCurrentObjectiveArea.FindComponent(ORS_EnemySupportComponent));
+		ORS_EnemySupportSystem supportSystem = ORS_EnemySupportSystem.GetInstance();
+		if (supportSystem && supportComponent)
+			supportSystem.Unregister(supportComponent);
+		
 		task.GetOnStateChanged().Remove(OnObjectiveAreaSeized);
+		m_pDestroyCommNodesTask.GetOnStateChanged().Remove(OnCommNodesDestroyed);
+		
+		if (m_pDestroyCommNodesTask.GetTaskState() != SCR_ETaskState.COMPLETED)
+			SCR_TaskSystem.GetInstance().SetTaskState(m_pDestroyCommNodesTask, SCR_ETaskState.CANCELLED);
+		
 		m_pCurrentObjectiveArea.SetState(ORS_EObjectiveAreaState.CAPTURED);
+		GetGame().GetSaveGameManager().RequestSavePoint(ESaveGameType.AUTO);
 		SetUpNextArea();
 	}
 	
@@ -283,7 +310,9 @@ class ORS_GameMode : SCR_BaseGameMode
 			if (!info)
 				continue;
 			
-			if (!info.HasEntityLabel(EEditableEntityLabel.KSC_TRAIT_HVT) && !(info.HasEntityLabel(EEditableEntityLabel.VEHICLE_TRUCK) && info.HasEntityLabel(EEditableEntityLabel.TRAIT_RADIO)))
+			if (!(info.HasEntityLabel(EEditableEntityLabel.SERVICE_ANTENNA) && info.HasEntityLabel(EEditableEntityLabel.TRAIT_DESTRUCTABLE)) && 
+				!(info.HasEntityLabel(EEditableEntityLabel.VEHICLE_TRUCK) && info.HasEntityLabel(EEditableEntityLabel.TRAIT_RADIO))
+			)
 				continue;
 			
 			if (vector.DistanceXZ(entity.GetOwner().GetOrigin(), m_pCurrentObjectiveArea.GetOrigin()) > m_pCurrentObjectiveArea.GetAreaRadius())
@@ -319,11 +348,8 @@ class ORS_GameMode : SCR_BaseGameMode
 		if (damageManagers.IsEmpty())
 			return;
 		
-		ORS_DestroyCommNodesTaskSupportEntity taskSupportEntity = ORS_DestroyCommNodesTaskSupportEntity.Cast(m_pTaskManager.FindSupportEntity(ORS_DestroyCommNodesTaskSupportEntity));
-		if (!taskSupportEntity)
-			return;
-		
-		m_pDestroyCommNodesTask = KSC_CounterTask.Cast(taskSupportEntity.CreateTask(m_pFactionManager.GetPlayerFaction(), m_pCurrentObjectiveArea.GetOrigin() + Vector(150, 0, 0), damageManagers.Count()));
+		m_pDestroyCommNodesTask = KSC_CounterTask.Cast(KSC_GameTools.SpawnPrefab(m_sDestroyCommNodesTaskPrefabName, m_pCurrentObjectiveArea.GetOrigin() + Vector(100, 0, 0)));
+		m_pDestroyCommNodesTask.SetParams(m_pFactionManager.GetPlayerFaction(), 0, damageManagers.Count());
 		m_aCommNodes = {};
 		
 		foreach (SCR_DamageManagerComponent damageManager : damageManagers)
@@ -336,140 +362,25 @@ class ORS_GameMode : SCR_BaseGameMode
 	
 	//------------------------------------------------------------------------------------------------
 	//! Disable reinforcements when all comm nodes are destroyed
-	void OnCommNodesDestroyed(KSC_BaseTask task, SCR_TaskState previousState, SCR_TaskState newState)
+	void OnCommNodesDestroyed(KSC_BaseTask task, SCR_ETaskState newState)
 	{
-		if (newState != SCR_TaskState.FINISHED)
+		if (newState != SCR_ETaskState.COMPLETED)
 			return;
 		
 		task.GetOnStateChanged().Remove(OnCommNodesDestroyed);
 		
 		m_pCurrentObjectiveArea.RevealEnemyPositions();
 		
-		ORS_ReinforcementComponent reinforcementComponent = ORS_ReinforcementComponent.Cast(m_pCurrentObjectiveArea.FindComponent(ORS_ReinforcementComponent));
-		ORS_ReinforcementSystem reinforcementSystem = ORS_ReinforcementSystem.GetInstance();
-		if (reinforcementComponent && reinforcementSystem)
+		ORS_EnemyReinforcementComponent reinforcementComponent = ORS_EnemyReinforcementComponent.Cast(m_pCurrentObjectiveArea.FindComponent(ORS_EnemyReinforcementComponent));
+		ORS_EnemyReinforcementSystem reinforcementSystem = ORS_EnemyReinforcementSystem.GetInstance();
+		if (reinforcementSystem && reinforcementComponent)
 			reinforcementSystem.Unregister(reinforcementComponent);
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	//! Loads the state of the previous session
-	protected void LoadSession()
-	{
-		string saveName = m_pMissionHeader.GetSaveFileName();
-		
-		if (!GetGame().GetSaveManager().HasLatestSave(saveName))
-			return;
-		
-		string fileName;
-		GetGame().GetSaveManager().FindLatestSave(saveName, fileName);
-		GetGame().GetSaveManager().Load(fileName);
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	//! Loads the state of the previous session
-	void LoadSessionData(ORS_SessionStruct data)
-	{
-		array<ORS_EObjectiveAreaState> states = data.GetObjectiveAreaStates();
-		
-		foreach (int i, ORS_ObjectiveArea area : ORS_ObjectiveArea.GetInstances())
-		{
-			area.SetState(states[i]);
-			
-			if (states[i] == ORS_EObjectiveAreaState.CONTESTED)
-				m_pCurrentObjectiveArea = area;
-		}
-		
-		m_bIsSessionLoadedFromSave = true;
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	//! Loads the state of the previous session
-	void SaveSessionData(out ORS_SessionStruct data)
-	{
-		array<ORS_ObjectiveArea> areas = ORS_ObjectiveArea.GetInstances();
-		array<ORS_EObjectiveAreaState> states = {};
-		states.Reserve(areas.Count());
-		
-		foreach (ORS_ObjectiveArea area : areas)
-		{
-			states.Insert(area.GetState());
-		}
-		
-		data.SetObjectiveAreaStates(states);
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	//! Delete auto save files when mission is finished
-	override void EndGameMode(SCR_GameModeEndData endData)
-	{
-		super.EndGameMode(endData);
-		
-		if (!IsMaster())
-			return;
-		
-		GetGame().GetSaveManager().Delete(ESaveType.AUTO);
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	//! Called when RplId of current objective area is updated
-	void OnObjectiveAreaChangedProxy()
-	{
-		RplComponent rpl = RplComponent.Cast(Replication.FindItem(m_iCurrentObjectiveAreaRplId));
-		if (!rpl)
-			return;
-		
-		m_pCurrentObjectiveArea = ORS_ObjectiveArea.Cast(rpl.GetEntity());
 	}
 	
 	//------------------------------------------------------------------------------------------------
 	ORS_ObjectiveArea GetCurrentObjectiveArea()
 	{
 		return m_pCurrentObjectiveArea;
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	void SpawnObjective()
-	{
-		// No more objective left => End game mode
-		if (m_iCurrentObjectiveAreaIdx >= m_aObjectiveAreas.Count())
-		{
-			GetGame().GetCallqueue().CallLater(EndGameMode, 10000, false, SCR_GameModeEndData.CreateSimple(EGameOverTypes.COMBATPATROL_VICTORY));
-			return;
-		};
-		
-		m_pCurrentObjectiveArea = m_aObjectiveAreas[m_iCurrentObjectiveAreaIdx];
-		/*
-		m_pCurrentObjectiveArea.Spawn();
-		*/
-		
-		// Update objective area on clients
-		RplComponent rpl = RplComponent.Cast(m_pCurrentObjectiveArea.FindComponent(RplComponent));
-		if (!rpl)
-			return;
-		
-		m_iCurrentObjectiveAreaRplId = rpl.Id();
-		Replication.BumpMe();
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	void ScheduleObjectiveCleanUp(int objectiveAreaIdx)
-	{
-		ORS_ObjectiveArea objectiveArea = m_aObjectiveAreas[objectiveAreaIdx];
-		/*
-		objectiveArea.ScheduleCleanUp();
-		*/
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	void SpawnNextObjective()
-	{
-		// Clean up previous objective
-		ScheduleObjectiveCleanUp(m_iCurrentObjectiveAreaIdx);
-		
-		// Generate next objective
-		m_iCurrentObjectiveAreaIdx++;
-		SCR_SaveManagerCore.Cast(GetGame().GetSaveManager()).Save(ESaveType.AUTO);
-		SpawnObjective();
 	}
 }
 
@@ -482,6 +393,7 @@ class ORS_TargetToDestroyWrapper : Managed
 	protected KSC_CounterTask m_pTask;
 		
 	protected static const ResourceName PLAYER_PRESENCE_TRIGGER_PREFAB_NAME = "{57EFA65FB424C4F3}Prefabs/ScenarioFramework/Triggers/KSC_PlayerPresenceTrigger.et";
+	protected static const ResourceName DESTROY_TASK_PREFAB_NAME = "{08E48A63D4CC7CBE}Prefabs/Tasks/ORS_DestroyTask.et";
 	
 	//------------------------------------------------------------------------------------------------
 	void ORS_TargetToDestroyWrapper(notnull SCR_DamageManagerComponent targetDamageManager, notnull KSC_CounterTask task)
@@ -501,12 +413,12 @@ class ORS_TargetToDestroyWrapper : Managed
 	//! Spawn destroy task if a player is nearby
 	void OnTargetFound()
 	{
-		KSC_DestroyObjectTaskSupportEntity destroyTaskSupportEntity = KSC_DestroyObjectTaskSupportEntity.Cast(GetTaskManager().FindSupportEntity(KSC_DestroyObjectTaskSupportEntity));
-		if (destroyTaskSupportEntity)
+		ORS_FactionManager factionManager = ORS_FactionManager.Cast(GetGame().GetFactionManager());
+		if (factionManager)
 		{
-			ORS_FactionManager factionManager = ORS_FactionManager.Cast(GetGame().GetFactionManager());
-			if (factionManager)
-				destroyTaskSupportEntity.CreateTask(factionManager.GetPlayerFaction(), m_pTarget);
+			KSC_DestroyObjectTask task = KSC_DestroyObjectTask.Cast(KSC_GameTools.SpawnPrefab(DESTROY_TASK_PREFAB_NAME, m_pTarget.GetOrigin()));
+			SCR_TaskSystem.GetInstance().AddChildTaskTo(m_pTask, task);
+			task.SetParams(factionManager.GetPlayerFaction(), m_pTarget);
 		}
 		
 		m_pPlayerTrigger.GetOnActivate().Remove(OnTargetFound);

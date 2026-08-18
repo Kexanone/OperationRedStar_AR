@@ -89,17 +89,6 @@ ORS_GameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
   }
   SCR_RespawnTimerComponent "{5E6F1867E2884B95}" {
   }
-  SCR_SaveLoadComponent "{623C9D8D9E68C04A}" {
-   m_Struct SCR_MissionStruct "{623C9D8D9DB5A10E}" {
-    m_Struct0 SCR_EditorStruct "{623C9D8DDA05B255}" {
-     m_AttributeList SCR_EditorAttributeList "{623C9D8DD98DA516}" : "{F3D6C6D25642352C}Configs/Editor/AttributeLists/Edit.conf" {
-     }
-    }
-    m_Struct1 ORS_SessionStruct "{6242AED151B408EF}" {
-    }
-   }
-   m_iAutosavePeriod 120
-  }
   SCR_TimeAndWeatherHandlerComponent "{5E6F1867E2884B93}" {
    m_bRandomStartingDaytime 1
    m_bRandomStartingWeather 1
@@ -151,4 +140,7 @@ ORS_GameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
  PlayerControllerPrefab "{BF6438F6F5CD15E3}Prefabs/Characters/Core/ORS_PlayerController.et"
  m_bAutoPlayerRespawn 0
  m_fAutoReloadTime 30
+ m_sSeizeTaskPrefabName "{FC4970246F8F497C}Prefabs/Tasks/ORS_CaptureAreaTask.et"
+ m_sBuildFobTaskPrefabName "{23F2DCFF54CBD2F6}Prefabs/Tasks/ORS_BuildFobTask.et"
+ m_sDestroyCommNodesTaskPrefabName "{A2223FC316336A46}Prefabs/Tasks/ORS_DestroyCommNodesTask.et"
 }
