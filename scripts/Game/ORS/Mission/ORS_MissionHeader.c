@@ -21,10 +21,7 @@ class ORS_MissionHeader : SCR_MissionHeader
 			s_pInstance = ORS_MissionHeader.Cast(GetGame().GetMissionHeader());
 			
 			if (!s_pInstance)
-			{
 				s_pInstance = SCR_ConfigHelperT<ORS_MissionHeader>.GetConfigObject(DEFAULT_MISSION_HEADER_CONFIG);
-				s_pInstance.m_sSaveFileName = FilePath.StripPath(FilePath.StripExtension(GetGame().GetWorldFile()));
-			}
 		}
 		
 		return s_pInstance;
