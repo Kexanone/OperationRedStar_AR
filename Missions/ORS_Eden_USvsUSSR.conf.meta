@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{35C2A97750EB2E8B}Missions/ORS_Arland.conf"
+ Name "{01C8135352E4A4A6}Missions/ORS_Eden_USvsUSSR.conf"
  Configurations {
   CONFResourceClass PC {
   }
@@ -9,9 +9,9 @@ MetaFileClass {
   }
   CONFResourceClass PS4 : PC {
   }
-  CONFResourceClass HEADLESS : PC {
-  }
   CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
   }
  }
 }

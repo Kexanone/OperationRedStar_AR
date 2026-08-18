@@ -33,10 +33,10 @@ https://reforger.armaplatform.com/workshop/5D881CA0DC56C71C
 
 ### Scenario IDs
 
-- Operation Red Star - Arland (US vs USSR): `"{8A819D80DA034565}Missions/ORS_Arland_Blufor.conf"`
-- Operation Red Star - Arland (USSR vs US): `"{35C2A97750EB2E8B}Missions/ORS_Arland_Opfor.conf"`
-- Operation Red Star - Everon (US vs USSR): `"{01C8135352E4A4A6}Missions/ORS_Eden_Blufor.conf"`
-- Operation Red Star - Everon (USSR vs US): `"{56AA3B1A43809887}Missions/ORS_Eden_Opfor.conf"`
+- Operation Red Star - Arland (US vs USSR): `"{8A819D80DA034565}Missions/ORS_Arland_USvsUSSR.conf"`
+- Operation Red Star - Arland (USSR vs US): `"{35C2A97750EB2E8B}Missions/ORS_Arland_USSRvsUS.conf"`
+- Operation Red Star - Everon (US vs USSR): `"{01C8135352E4A4A6}Missions/ORS_Eden_USvsUSSR.conf"`
+- Operation Red Star - Everon (USSR vs US): `"{56AA3B1A43809887}Missions/ORS_Eden_USSRvsUS.conf"`
 
 ### Mission Header
 
