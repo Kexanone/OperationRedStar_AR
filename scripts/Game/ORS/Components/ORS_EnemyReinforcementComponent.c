@@ -1,10 +1,11 @@
 //------------------------------------------------------------------------------------------------
-class ORS_ReinforcementComponentClass : ScriptComponentClass
+class ORS_EnemyReinforcementComponentClass : ScriptComponentClass
 {
 }
 
 //------------------------------------------------------------------------------------------------
-class ORS_ReinforcementComponent : ScriptComponent
+//! Enemy reinfocement data for an ORS_ObjectiveArea
+class ORS_EnemyReinforcementComponent : ScriptComponent
 {
 }
 
@@ -182,6 +183,7 @@ class ORS_HarassementData : Managed
 	}
 }
 
+/*
 //------------------------------------------------------------------------------------------------
 modded class SCR_AIGroup : ChimeraAIGroup
 {
@@ -191,3 +193,4 @@ modded class SCR_AIGroup : ChimeraAIGroup
 		Print(newLOD);
 	}
 }
+*/

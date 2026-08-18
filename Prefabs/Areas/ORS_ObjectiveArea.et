@@ -3,6 +3,10 @@ ORS_ObjectiveArea {
  components {
   Persistence "{6A234C8CAA6BFE8C}" {
   }
+  ORS_EnemyReinforcementComponent "{64573A18414B84DB}" {
+  }
+  ORS_EnemySupportComponent "{6570C0FED1CBDA7E}" {
+  }
   RplComponent "{5EBA63A81B534DD5}" {
    Streamable Disabled
   }

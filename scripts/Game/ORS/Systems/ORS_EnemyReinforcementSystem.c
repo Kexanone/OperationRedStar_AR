@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------------------------
-class ORS_ReinforcementSystem : BaseSystem
+class ORS_EnemyReinforcementSystem : BaseSystem
 {
 	[Attribute(defvalue: "15", desc: "Timeout between updates [s]")]
 	protected float m_fUpdateTimeout;
@@ -14,21 +14,14 @@ class ORS_ReinforcementSystem : BaseSystem
 	[Attribute(defvalue: "1000", desc: "If players are below this distance to a potential AI spawn position, a visibility check is done [m]")]
 	protected int m_fSoftBlockSpawnRadius;
 	
-	protected ref array<ORS_ReinforcementComponent> m_aComponents = {};
+	protected ref array<ORS_EnemyReinforcementComponent> m_aComponents = {};
 	protected ref map<IEntity, ref ORS_HarassementData> m_aHarassedPlayers = new map<IEntity, ref ORS_HarassementData>();
-	
-	static private ORS_ReinforcementSystem s_pInstance; 
-		
+			
 	//------------------------------------------------------------------------------------------------
-	static ORS_ReinforcementSystem GetInstance()
+	static ORS_EnemyReinforcementSystem GetInstance()
 	{
-		if (!s_pInstance)
-		{
-			World world = GetGame().GetWorld();
-			s_pInstance = ORS_ReinforcementSystem.Cast(world.FindSystem(ORS_ReinforcementSystem));
-		}
-		
-		return s_pInstance;
+		ChimeraWorld world = GetGame().GetWorld();
+		return ORS_EnemyReinforcementSystem.Cast(world.FindSystem(ORS_EnemyReinforcementSystem));
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -59,7 +52,7 @@ class ORS_ReinforcementSystem : BaseSystem
 		
 		m_fUpdateTimer = 0;
 		
-		foreach (ORS_ReinforcementComponent component : m_aComponents)
+		foreach (ORS_EnemyReinforcementComponent component : m_aComponents)
 		{
 			
 		}
@@ -173,7 +166,7 @@ class ORS_ReinforcementSystem : BaseSystem
 	//------------------------------------------------------------------------------------------------
 	protected bool IsSpawnPositionValid(vector pos)
 	{
-		if (!SCR_WorldTools.TraceCylinder(pos))
+		if (!SCR_WorldTools.TraceCilinderUtil(pos))
 			return false;
 		
 		if (KSC_TerrainHelper.SurfaceIsWater(pos))
@@ -212,7 +205,7 @@ class ORS_ReinforcementSystem : BaseSystem
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void Register(ORS_ReinforcementComponent component)
+	void Register(ORS_EnemyReinforcementComponent component)
 	{
 		m_aComponents.Insert(component);
 		
@@ -221,7 +214,7 @@ class ORS_ReinforcementSystem : BaseSystem
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	void Unregister(ORS_ReinforcementComponent component)
+	void Unregister(ORS_EnemyReinforcementComponent component)
 	{
 		m_aComponents.RemoveItem(component);
 		
