@@ -8,6 +8,68 @@ ORS_GameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
     "{91D53896F5AD5DB4}Sounds/RadioProtocol/RadioProtocol_CombatPatrol_US.acp"
    }
   }
+  ORS_GroupsManagerComponent "{5706EC99934496F5}" {
+   m_bAllowGroupLeaderVolunteering 1
+   m_aGroupRolePresetConfigs {
+    SCR_GroupRolePresetConfig "{6A2508A316B231E5}" {
+     m_eGroupRole ASSAULT
+     m_sGroupFlagName "infantry"
+     m_bIsPrivacyChangeable 0
+     m_sGroupRoleName "#AR-GroupRole-Assault"
+     m_bCanBeCreatedByPlayer 0
+    }
+    SCR_GroupRolePresetConfig "{6A2508A342A67710}" {
+     m_eGroupRole RECON
+     m_sGroupFlagName "recon"
+     m_bIsPrivacyChangeable 0
+     m_sGroupRoleName "#AR-GroupRole-Recon"
+     m_bCanBeCreatedByPlayer 0
+    }
+    SCR_GroupRolePresetConfig "{6A2508A370F459D5}" {
+     m_eGroupRole ENGINEER
+     m_sGroupFlagName "maintenance"
+     m_bIsPrivacyChangeable 0
+     m_sGroupRoleName "#AR-GroupRole-Engineer"
+     m_bCanBeCreatedByPlayer 0
+    }
+    SCR_GroupRolePresetConfig "{6A2508AC876B9425}" {
+     m_eGroupRole MEDIC
+     m_sGroupFlagName "medical"
+     m_bIsPrivacyChangeable 0
+     m_sGroupRoleName "#AR-GroupRole-Medic"
+     m_bCanBeCreatedByPlayer 0
+    }
+    SCR_GroupRolePresetConfig "{6A2508ACABB815D9}" {
+     m_eGroupRole HELI_TRANSPORT
+     m_sGroupFlagName "helicopter"
+     m_bIsPrivacyChangeable 0
+     m_sGroupRoleName "#AR-GroupRole-HeliTransport"
+     m_bCanBeCreatedByPlayer 0
+    }
+   }
+   m_aPredefinedGroups {
+    SCR_GroupPreset "{6A2508ACCB87F2D3}" {
+     m_eGroupRole ASSAULT
+     m_bIsPrivacyChangeable 0
+    }
+    SCR_GroupPreset "{6A2508ACFFD0EC6F}" {
+     m_eGroupRole RECON
+     m_bIsPrivacyChangeable 0
+    }
+    SCR_GroupPreset "{6A2508ACF8CD3360}" {
+     m_eGroupRole ENGINEER
+     m_bIsPrivacyChangeable 0
+    }
+    SCR_GroupPreset "{6A2508ACFA74A872}" {
+     m_eGroupRole MEDIC
+     m_bIsPrivacyChangeable 0
+    }
+    SCR_GroupPreset "{6A2508ACC52A342D}" {
+     m_eGroupRole HELI_TRANSPORT
+     m_bIsPrivacyChangeable 0
+    }
+   }
+  }
   SCR_ArsenalManagerComponent "{6120A34EB1E9BBEF}" {
    m_fLoadoutSpawnSupplyCostMultiplier 1
    m_eArsenalGameModeType CAMPAIGN
