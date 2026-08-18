@@ -1,13 +1,11 @@
 //------------------------------------------------------------------------------------------------
 class ORS_ObjectiveAreaBuilder : Managed
 {
-	protected static KSC_WorldSlotsConfig s_WorldSlotsConfig;
-	protected static ORS_GameMode s_pGameMode;
-	protected static ORS_FactionManager s_pFactionManager;
-	protected static SCR_GarbageSystem s_pGarabageSystem;
-	protected static ref map<EEditableEntityLabel, float> s_mSlotRadii;
-	
-	protected ORS_ObjectiveArea m_pObjectiveArea;
+	protected KSC_WorldSlotsConfig m_WorldSlotsConfig;
+	protected ORS_GameMode m_GameMode;
+	protected ORS_FactionManager m_FactionManager;
+	protected SCR_GarbageSystem m_GarabageSystem;
+	protected ORS_ObjectiveArea m_ObjectiveArea;
 	protected ref map<EEditableEntityLabel, ref array<vector>> m_mTerrainSlots;
 	
 	protected static const ResourceName FIRE_DIRECTION_CENTER_PREFAB_NAME = "{3FBC7F5559D51E55}Prefabs/Compositions/Installation/FIA/ORS_FireDirectionCenter.et";
@@ -17,17 +15,13 @@ class ORS_ObjectiveAreaBuilder : Managed
 	//------------------------------------------------------------------------------------------------
 	void ORS_ObjectiveAreaBuilder(ORS_ObjectiveArea objectiveArea)
 	{
-		if (!s_WorldSlotsConfig)
-		{
-			s_pGameMode = ORS_GameMode.GetInstance();
-			s_WorldSlotsConfig = s_pGameMode.KSC_GetWorldSlotsConfig();
-			s_pFactionManager = ORS_FactionManager.Cast(GetGame().GetFactionManager());
-			ChimeraWorld world = GetGame().GetWorld();
-			s_pGarabageSystem = SCR_GarbageSystem.Cast(world.FindSystem(SCR_GarbageSystem));
-		}
-		
-		m_pObjectiveArea = objectiveArea;
-		m_mTerrainSlots = s_WorldSlotsConfig.CompileTerrainSlotsInArea(m_pObjectiveArea.GetArea());
+		m_GameMode = ORS_GameMode.GetInstance();
+		m_WorldSlotsConfig = m_GameMode.KSC_GetWorldSlotsConfig();
+		m_FactionManager = ORS_FactionManager.Cast(GetGame().GetFactionManager());
+		ChimeraWorld world = GetGame().GetWorld();
+		m_GarabageSystem = SCR_GarbageSystem.Cast(world.FindSystem(SCR_GarbageSystem));
+		m_ObjectiveArea = objectiveArea;
+		m_mTerrainSlots = m_WorldSlotsConfig.CompileTerrainSlotsInArea(m_ObjectiveArea.GetArea());
 	}
 	
 	//------------------------------------------------------------------------------------------------
@@ -45,8 +39,8 @@ class ORS_ObjectiveAreaBuilder : Managed
 	ORS_ObjectiveAreaBuilder SpawnCommNode()
 	{
 		array<ResourceName> prefabNames = {};
-		s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.SERVICE_ANTENNA, EEditableEntityLabel.TRAIT_DESTRUCTABLE}, {}, prefabNames);
-		//s_pFactionManager.GetFactionEntityListWithLabel(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.VEHICLE, EEditableEntityLabel.TRAIT_RADIO, prefabNames);
+		m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.SERVICE_ANTENNA, EEditableEntityLabel.TRAIT_DESTRUCTABLE}, {}, prefabNames);
+		//m_FactionManager.GetFactionEntityListWithLabel(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.VEHICLE, EEditableEntityLabel.TRAIT_RADIO, prefabNames);
 		if (prefabNames.IsEmpty())
 			return this;
 		
@@ -72,10 +66,10 @@ class ORS_ObjectiveAreaBuilder : Managed
 			KSC_AITasks.Defend(group, pos, KSC_TerrainSlotTools.s_mSlotRadii[EEditableEntityLabel.SLOT_FLAT_SMALL]);
 			
 			float blockRadius = KSC_TerrainSlotTools.s_mSlotRadii[EEditableEntityLabel.SLOT_FLAT_SMALL];
-			map<EEditableEntityLabel, ref array<vector>> nearbyTerrainSlots = s_WorldSlotsConfig.CompileTerrainSlotsInArea(KSC_CircleArea(pos, OCCUPIED_SLOT_BLOCKING_RADIUS - blockRadius));
+			map<EEditableEntityLabel, ref array<vector>> nearbyTerrainSlots = m_WorldSlotsConfig.CompileTerrainSlotsInArea(KSC_CircleArea(pos, OCCUPIED_SLOT_BLOCKING_RADIUS - blockRadius));
 			KSC_TerrainSlotTools.BlockSlots(nearbyTerrainSlots, pos, blockRadius);
 			prefabNames.Clear();
-			s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_FORTIFICATION, EEditableEntityLabel.SLOT_FLAT_SMALL}, {EEditableEntityLabel.TRAIT_MORTAR}, prefabNames);
+			m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_FORTIFICATION, EEditableEntityLabel.SLOT_FLAT_SMALL}, {EEditableEntityLabel.TRAIT_MORTAR}, prefabNames);
 			
 			if (!prefabNames.IsEmpty())
 			{
@@ -102,8 +96,8 @@ class ORS_ObjectiveAreaBuilder : Managed
 	ORS_ObjectiveAreaBuilder SpawnServiceStructure()
 	{
 		array<ResourceName> entries = {};
-		s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_SUPPLYSTORAGE_LARGE, EEditableEntityLabel.SLOT_FLAT_MEDIUM}, {}, entries);
-		s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_SUPPLYSTORAGE_LARGE, EEditableEntityLabel.SLOT_FLAT_LARGE}, {}, entries);
+		m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_SUPPLYSTORAGE_LARGE, EEditableEntityLabel.SLOT_FLAT_MEDIUM}, {}, entries);
+		m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_SUPPLYSTORAGE_LARGE, EEditableEntityLabel.SLOT_FLAT_LARGE}, {}, entries);
 		
 		if (entries.IsEmpty())
 			return this;
@@ -113,7 +107,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 		if (!service)
 		{
 			entries.Clear();
-			s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_SUPPLYSTORAGE_LARGE, EEditableEntityLabel.SLOT_FLAT_MEDIUM}, {}, entries);
+			m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_SUPPLYSTORAGE_LARGE, EEditableEntityLabel.SLOT_FLAT_MEDIUM}, {}, entries);
 			
 			if (entries.IsEmpty())
 				return this;
@@ -131,8 +125,8 @@ class ORS_ObjectiveAreaBuilder : Managed
 			KSC_AITasks.Defend(group, service.GetOrigin(), KSC_TerrainSlotTools.s_mSlotRadii[EEditableEntityLabel.SLOT_FLAT_LARGE]);
 		
 		entries.Clear();
-		s_pFactionManager.GetFactionEntityListWithLabel(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.VEHICLE, EEditableEntityLabel.VEHICLE_CAR, entries);
-		s_pFactionManager.GetFactionEntityListWithLabel(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.VEHICLE, EEditableEntityLabel.VEHICLE_TRUCK, entries);
+		m_FactionManager.GetFactionEntityListWithLabel(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.VEHICLE, EEditableEntityLabel.VEHICLE_CAR, entries);
+		m_FactionManager.GetFactionEntityListWithLabel(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.VEHICLE, EEditableEntityLabel.VEHICLE_TRUCK, entries);
 		
 		if (!entries.IsEmpty())
 		{
@@ -143,7 +137,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 				if (vehicle)
 				{
 					KSC_SuppliesHelper.SetSupplyPercentage(vehicle, Math.RandomFloat01());
-					s_pGarabageSystem.Withdraw(vehicle);
+					m_GarabageSystem.Withdraw(vehicle);
 				}
 			}
 		}
@@ -156,7 +150,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 	ORS_ObjectiveAreaBuilder SpawnFortification()
 	{
 		array<ResourceName> prefabNames = {};
-		s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_FORTIFICATION, EEditableEntityLabel.SLOT_FLAT_SMALL}, {EEditableEntityLabel.TRAIT_MORTAR}, prefabNames);
+		m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_FORTIFICATION, EEditableEntityLabel.SLOT_FLAT_SMALL}, {EEditableEntityLabel.TRAIT_MORTAR}, prefabNames);
 		if (prefabNames.IsEmpty())
 			return this;
 		
@@ -175,7 +169,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 		foreach (EEditableEntityLabel label : labels)
 		{
 			array<ResourceName> entries = {};
-			s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_ARMED, label}, {}, entries);
+			m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, {EEditableEntityLabel.TRAIT_ARMED, label}, {}, entries);
 			
 			if (entries.IsEmpty())
 				continue;
@@ -199,7 +193,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 	ORS_ObjectiveAreaBuilder SpawnArmoredVehicle()
 	{
 		array<ResourceName> prefabNames = {};
-		s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.VEHICLE, {EEditableEntityLabel.TRAIT_ARMOR, EEditableEntityLabel.TRAIT_ARMED}, {}, prefabNames);
+		m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.VEHICLE, {EEditableEntityLabel.TRAIT_ARMOR, EEditableEntityLabel.TRAIT_ARMED}, {}, prefabNames);
 		
 		vector pos;
 		float yaw;
@@ -215,7 +209,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 			compartmentManager.SpawnDefaultOccupants({ECompartmentType.PILOT, ECompartmentType.TURRET});
 		}
 		
-		ORS_EnemySupportComponent supportComponent = ORS_EnemySupportComponent.Cast(m_pObjectiveArea.FindComponent(ORS_EnemySupportComponent));
+		ORS_EnemySupportComponent supportComponent = ORS_EnemySupportComponent.Cast(m_ObjectiveArea.FindComponent(ORS_EnemySupportComponent));
 		if (supportComponent)
 		{
 			ORS_EnemySupportContext context = new ORS_EnemySupportContext();
@@ -259,7 +253,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 	ORS_ObjectiveAreaBuilder SpawnMortar()
 	{
 		array<ResourceName> prefabNames = {};
-		s_pFactionManager.GetFactionEntityListWithLabel(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, EEditableEntityLabel.TRAIT_MORTAR, prefabNames);
+		m_FactionManager.GetFactionEntityListWithLabel(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.COMPOSITION, EEditableEntityLabel.TRAIT_MORTAR, prefabNames);
 		
 		IEntity mortarPit = KSC_TerrainSlotTools.SpawnInRandomRoadSlot(prefabNames.GetRandomElement(), m_mTerrainSlots, EEditableEntityLabel.SLOT_FLAT_SMALL);
 		if (!mortarPit)
@@ -267,7 +261,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 		
 		vector pos = mortarPit.GetOrigin();
 		prefabNames.Clear();
-		s_pFactionManager.GetFactionEntityListWithLabel(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.CHARACTER, EEditableEntityLabel.ROLE_RIFLEMAN, prefabNames);
+		m_FactionManager.GetFactionEntityListWithLabel(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.CHARACTER, EEditableEntityLabel.ROLE_RIFLEMAN, prefabNames);
 		SCR_ChimeraCharacter gunner = KSC_GameTools.SpawnCharacterPrefab(prefabNames.GetRandomElement(), pos);
 		AIGroup gunnerGroup = KSC_GroupHelper.GetGroup(gunner);
 		KSC_AITasks.Defend(gunnerGroup, pos, 5);
@@ -283,7 +277,7 @@ class ORS_ObjectiveAreaBuilder : Managed
 			Turret mortar = Turret.Cast(child);
 			if (mortar)
 			{
-				ORS_EnemySupportComponent supportComponent = ORS_EnemySupportComponent.Cast(m_pObjectiveArea.FindComponent(ORS_EnemySupportComponent));
+				ORS_EnemySupportComponent supportComponent = ORS_EnemySupportComponent.Cast(m_ObjectiveArea.FindComponent(ORS_EnemySupportComponent));
 				if (supportComponent)
 				{
 					ORS_EnemySupportContext context = new ORS_EnemySupportContext();
@@ -304,13 +298,13 @@ class ORS_ObjectiveAreaBuilder : Managed
 	protected AIGroup SpawnGroup(vector pos, array<EEditableEntityLabel> labels)
 	{
 		array<ResourceName> entries = {};
-		s_pFactionManager.GetFactionEntityListWithLabels(s_pFactionManager.GetEnemyFaction(), EEntityCatalogType.GROUP, labels, {}, entries);
+		m_FactionManager.GetFactionEntityListWithLabels(m_FactionManager.GetEnemyFaction(), EEntityCatalogType.GROUP, labels, {}, entries);
 		if (!entries)
 			return null;
 		
 		SCR_WorldTools.FindEmptyTerrainPosition(pos, pos, 25);
 		AIGroup group = KSC_GameTools.SpawnGroupPrefab(entries.GetRandomElement(), pos);
-		m_pObjectiveArea.AddAIGroup(group);
+		m_ObjectiveArea.AddAIGroup(group);
 		return group;
 	}
 }
