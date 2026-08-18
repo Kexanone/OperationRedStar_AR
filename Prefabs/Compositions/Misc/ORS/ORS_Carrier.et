@@ -83,8 +83,8 @@ ORS_MainBaseEntity {
    {
     GenericEntity : "{0037D9DD160A9044}Prefabs/Structures/Signs/Military/Supplies/Sign_SupplyStorage_01_Supplies_US.et" {
      ID "623C8C2C35EBD3C6"
-     coords 4.983 -0.059 0.223
-     angles 0 90 0
+     coords -0.253 -0.059 -3.872
+     angles 0 180 0
     }
     $grp GenericEntity : "{7D0C0B23F2608D50}Prefabs/Props/Military/SupplyBox/SupplyShippingContainers/SupplyShippingContainers_01/ORS_SupplyShippingContainers_01_10ft.et" {
      {
