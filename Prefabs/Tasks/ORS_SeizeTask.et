@@ -1,5 +1,0 @@
-KSC_AreaTriggerTask : "{37913C6494E5B74A}Prefabs/Tasks/KSC_ClearLocationTask.et" {
- ID "54C6755D430721B8"
- m_sName "#ORS-Task_Seize_Name"
- m_sDescription "#ORS-Task_Seize_Description"
-}
