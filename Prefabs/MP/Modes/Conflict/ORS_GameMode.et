@@ -192,7 +192,7 @@ ORS_GameMode : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
      m_aIntroduction {
       SCR_WelcomeScreenIntroduction "{5E6F1867E289B951}" {
        m_sContentTitleText "#AR-Workshop_TabName_Briefing"
-       m_sContentDescriptionText "#COE-Briefing_Description"
+       m_sContentDescriptionText "#ORS-Scenario_Everon_Description"
       }
      }
     }

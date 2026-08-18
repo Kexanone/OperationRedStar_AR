@@ -35,11 +35,11 @@ StringTable {
   }
   CustomStringTableItem "{5ED2131F0A00B846}" {
    Id "ORS-Scenario_Everon_Description"
-   Target_en_us "Capture the island under FIA insurgents control. Insert, build your FOB, complete objectives and defend the FOB."
-   Target_de_de "Erobere die Insel unter der Kontrolle von FIA Aufständischen. "
-   Modified 1590832314
+   Target_en_us "Capture the island under enemy control. Insert, build your FOB, complete objectives and defend the FOB."
+   Target_de_de "Erobere die Insel unter feindliche Kontrolle. Rücke vor, bau deine FOB, erfülle Einsatzziele und verteidige die FOB."
+   Modified 1780831261
    Author "kexanone"
-   LastChanged "kexanone"
+   LastChanged "Kexanone"
   }
   CustomStringTableItem "{5ED213148D62FDD9}" {
    Id "ORS-Scenario_Everon_US_Name"
