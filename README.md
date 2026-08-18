@@ -11,28 +11,45 @@ A PvE CTI game mode for Arma Reforger. Inspired by Conflict, Invade & Annex and 
 ## Features
 
 - [x] Tree removal interaction
-- [ ] Free roam building and supplies for FOBs
+- [x] Free roam building and supplies for FOBs
 - [ ] Wreck recovery system
-- [ ] Persistence of mission progress and FOBs 
+- [x] Persistence of mission progress and FOBs 
 - [ ] _TBD_
 
 ## References
 
 ### Workshop Link
 
-_TBD_
+https://reforger.armaplatform.com/workshop/5D881CA0DC56C71C
 
 ### Mods JSON
 
-_TBD_
+```json
+{
+    "modId": "5D881CA0DC56C71C",
+    "name": "Operation Red Star"
+}
+```
 
 ### Scenario IDs
 
-_TBD_
+- Operation Red Star - Arland (US vs USSR): `"{8A819D80DA034565}Missions/ORS_Arland_Blufor.conf"`
+- Operation Red Star - Arland (USSR vs US): `"{35C2A97750EB2E8B}Missions/ORS_Arland_Opfor.conf"`
+- Operation Red Star - Everon (US vs USSR): `"{01C8135352E4A4A6}Missions/ORS_Eden_Blufor.conf"`
+- Operation Red Star - Everon (USSR vs US): `"{56AA3B1A43809887}Missions/ORS_Eden_Opfor.conf"`
 
 ### Mission Header
 
-_TBD_
+```json
+"missionHeader":
+{
+	"m_sName": "Operation Red Star - Everon (USSR vs FIA)",
+	"m_iPlayerCount": 32,
+	"m_sPlayerFactionKey": "USSR",
+	"m_sEnemyFactionKey": "FIA",
+	"m_eEnemyAISkill": 50
+}
+```
 
 ### Creating Custom Scenarios
 
@@ -44,5 +61,3 @@ Please use our [Issue Tracker](https://github.com/Kexanone/OperationRedStar_AR/i
 
 ## License
 This mission is licensed under the Arma Public License ([APL](https://github.com/Kexanone/OperationRedStar_AR/blob/main/LICENSE.md)).
-
-
