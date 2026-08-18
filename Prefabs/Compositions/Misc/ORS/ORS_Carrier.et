@@ -356,6 +356,21 @@ ORS_MainBaseEntity {
    }
    {
     GenericEntity {
+     ID "5E24B5E6C5301283"
+     components {
+      SPC_ElevatorComponent "{5A7C1C44B941086E}" {
+       m_offsetHeight -6.52
+      }
+      ActionsManagerComponent "{5A7B7D6C8A5CE595}" {
+       additionalActions {
+        ACE_NoUserAction "{5A7B7D6CEFC6F35F}" {
+        }
+       }
+      }
+     }
+     coords 0 6.52 0
+    }
+    GenericEntity {
      ID "5E24B5E6C78922C7"
      components {
       ActionsManagerComponent "{5A7C23C95F15F590}" {
