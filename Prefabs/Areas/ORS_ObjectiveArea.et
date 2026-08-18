@@ -1,7 +1,7 @@
 ORS_ObjectiveArea {
  ID "5EBA38E50B96B502"
  components {
-  ORS_ReinforcementComponent "{64573A18414B84DB}" {
+  Persistence "{6A234C8CAA6BFE8C}" {
   }
   RplComponent "{5EBA63A81B534DD5}" {
    Streamable Disabled

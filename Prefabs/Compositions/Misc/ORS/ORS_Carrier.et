@@ -1,6 +1,8 @@
 ORS_MainBaseEntity {
  ID "623C8C2C35EBD46F"
  components {
+  Persistence "{6A236D72FA8D3B04}" {
+  }
   SCR_EditableEntityComponent "{6242AED019482AE1}" {
    m_UIInfo SCR_EditableEntityUIInfo "{6242AED00B2C85DF}" {
     Name "HMAS Adelaide"
