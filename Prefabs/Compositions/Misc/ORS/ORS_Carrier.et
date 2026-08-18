@@ -383,11 +383,6 @@ ORS_MainBaseEntity {
     }
     SCR_DestructibleBuildingEntity {
      ID "5E24A630ABBAEDE5"
-     components {
-      RplComponent "{50A4E7C9B5728062}" {
-       Streamable Disabled
-      }
-     }
     }
    }
   }
