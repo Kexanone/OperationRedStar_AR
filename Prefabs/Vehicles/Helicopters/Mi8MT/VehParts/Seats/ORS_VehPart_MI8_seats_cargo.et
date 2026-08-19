@@ -4,7 +4,7 @@ GenericEntity : "{9503E8AF9FFBA67A}Prefabs/Vehicles/Helicopters/Mi8MT/VehParts/S
   SCR_BaseCompartmentManagerComponent "{2CD4A765A7D52986}" {
    m_bBlockSuppliesIfOccupied 1
   }
-  SCR_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
+  ORS_CampaignBuildingProviderComponent "{5EB86691AACA10EE}" {
    m_bUserActionActivationOnly 1
    m_fBuildingRadius 35
    m_aAvailableTraits {
