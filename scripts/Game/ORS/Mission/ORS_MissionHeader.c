@@ -11,7 +11,7 @@ class ORS_MissionHeader : SCR_MissionHeader
 	EAISkill m_eEnemyAISkill;
 	
 	protected static ref ORS_MissionHeader s_pInstance;
-	protected static ResourceName DEFAULT_MISSION_HEADER_CONFIG = "{8A819D80DA034565}Missions/ORS_Arland_Blufor.conf";
+	protected static ResourceName DEFAULT_MISSION_HEADER_CONFIG = "{8A819D80DA034565}Missions/ORS_Arland_USvsUSSR.conf";
 	
 	//------------------------------------------------------------------------------------------------
 	static ORS_MissionHeader GetInstance()
