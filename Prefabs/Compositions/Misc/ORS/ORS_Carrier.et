@@ -381,9 +381,6 @@ ORS_MainBaseEntity {
       }
      }
     }
-    SCR_DestructibleBuildingEntity {
-     ID "5E24A630ABBAEDE5"
-    }
    }
   }
   GenericEntity : "{E02FCD78B2793314}PrefabsEditable/Auto/Compositions/Misc/CustomEntities/InteractionPoints/E_VehicleService_US_Large_NoAffiliation.et" {
