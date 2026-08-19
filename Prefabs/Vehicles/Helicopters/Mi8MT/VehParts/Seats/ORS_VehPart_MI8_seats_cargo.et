@@ -8,7 +8,7 @@ GenericEntity : "{9503E8AF9FFBA67A}Prefabs/Vehicles/Helicopters/Mi8MT/VehParts/S
    m_bUserActionActivationOnly 1
    m_fBuildingRadius 35
    m_aAvailableTraits {
-    30
+    TRAIT_SPAWNPOINT
    }
   }
   SCR_ResourceComponent "{62425EC6E0011B37}" {
