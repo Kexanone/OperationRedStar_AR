@@ -56,6 +56,8 @@ class ORS_GameMode : SCR_BaseGameMode
 	{
 		super.OnGameStart();
 		
+		RunPrefabPatchings();
+		
 		if (!IsMaster())
 			return;
 		
@@ -381,6 +383,35 @@ class ORS_GameMode : SCR_BaseGameMode
 	ORS_ObjectiveArea GetCurrentObjectiveArea()
 	{
 		return m_pCurrentObjectiveArea;
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	//! Workarounds through prefab patching:
+	//! - Set player faction as default faction for transport helos for building mode
+	protected void RunPrefabPatchings()
+	{
+		ORS_FactionManager factionManager = ORS_FactionManager.Cast(GetGame().GetFactionManager());
+		if (!factionManager)
+			return;
+		
+		FactionKey playerFactionKey = factionManager.GetPlayerFaction().GetFactionKey();
+		array<ResourceName> resourceNames = {
+			"{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_unarmed_transport.et",
+			"{70BAEEFC2D3FEE64}Prefabs/Vehicles/Helicopters/UH1H/UH1H.et"
+		};
+		
+		foreach (ResourceName resName : resourceNames)
+		{
+			Resource res = Resource.Load(resName);
+			if (!res.IsValid())
+				continue;
+			
+			IEntityComponentSource componentSrc = SCR_BaseContainerTools.FindComponentSource(res.GetResource().ToBaseContainer(), SCR_VehicleFactionAffiliationComponent);
+			if (!componentSrc)
+				continue;
+			
+			componentSrc.Set("faction affiliation", playerFactionKey);
+		}
 	}
 }
 
